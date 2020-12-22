@@ -13,19 +13,19 @@ PREFIX wd: <http://www.wikidata.org/entity/>
 
 CONSTRUCT { 
 	?obs a qb:Observation; 
-		qb:dataSet c19:dataset-healthWorkers; 
-		c19-dimension:refPeriod c19-interval:Year2017; 
-		c19-measure:physicians ?physicians ; 
-		sdmx-attribute:unitMultiplier  -2; 
-		sdmx-attribute:decimals  1; 
-		c19-measure:nursesAndMidwives ?nursesAndMidwives ; 
-		sdmx-attribute:unitMultiplier  -2; 
-		sdmx-attribute:decimals  1; 
-		c19-dimension:refArea ?wdID; 
+		qb:dataSet c19:dataset-health_workers ; 
+		c19-dimension:refPeriod c19-interval:Year2013-18 ; 
+		c19-measure:healthWorkersPhysicians ?physicians ; 
+		sdmx-attribute:unitMultiplier -3 ; 
+		sdmx-attribute:decimals 1 ; 
+		c19-measure:healthWorkersNursesAndMidwives ?nursesAndMidwives ; 
+		sdmx-attribute:unitMultiplier -3 ; 
+		sdmx-attribute:decimals 1 ; 
+		c19-dimension:refArea ?wdID ; 
 }
 FROM <file:https://raw.githubusercontent.com/davidrojas0791/Web-Datos-Proy1-T10/master/data/health_workers.tsv> 
 WHERE {
-	BIND (URI(CONCAT("c19:healthExpenditure-o0", ?id_row)) AS ?obs)
+	BIND (URI(CONCAT("c19:healthWorkers-o0", ?id_row)) AS ?obs)
 	BIND (URI(CONCAT("wd:",?ID)) AS ?wdID)
 	BIND (xsd:decimal(?Physicians) AS ?physicians)
 	BIND (xsd:decimal(?Nursesandmidwives) AS ?nursesAndMidwives)

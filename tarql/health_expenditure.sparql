@@ -13,23 +13,23 @@ PREFIX wd: <http://www.wikidata.org/entity/>
 
 CONSTRUCT { 
 	?obs a qb:Observation; 
-		qb:dataSet c19:dataset-healthExpenditure; 
+		qb:dataSet c19:dataset-health_expenditure; 
 		c19-dimension:refPeriod c19-interval:Year2017; 
-		c19-measure:current ?current ; 
-		sdmx-attribute:unitMultiplier  -2; 
-		sdmx-attribute:decimals  1; 
-		c19-measure:public ?public ; 
-		sdmx-attribute:unitMultiplier  -2; 
-		sdmx-attribute:decimals  1; 
-		c19-measure:outOfPocket ?outofpocket ; 
-		sdmx-attribute:unitMultiplier  -2; 
-		sdmx-attribute:decimals  1; 
-		c19-measure:perCapita ?percapita ; 
-		sdmx-attribute:unitMultiplier  -2; 
-		sdmx-attribute:decimals  1; 
-		c19-measure:perCapitaPPP ?percapitappp ; 
-		sdmx-attribute:unitMultiplier  -2; 
-		sdmx-attribute:decimals  1; 
+		c19-measure:currentHealthExpenditure ?current ; 
+		sdmx-attribute:unitMultiplier -2; 
+		sdmx-attribute:decimals 1; 
+		c19-measure:publicHealthExpenditure ?public ; 
+		sdmx-attribute:unitMultiplier -2; 
+		sdmx-attribute:decimals 1; 
+		c19-measure:outOfPocketHealthExpenditure ?outofpocket ; 
+		sdmx-attribute:unitMultiplier -2; 
+		sdmx-attribute:decimals 1; 
+		c19-measure:percapitaHealthExpenditure ?percapita ; 
+		sdmx-attribute:decimals 1; 
+		sdmx-attribute:currency wd:Q4917 ; 
+		c19-measure:percapitaPPPHealthExpenditure ?percapitappp ; 
+		sdmx-attribute:decimals 1; 
+		sdmx-attribute:currency wd:Q4917 ; 
 		c19-dimension:refArea ?wdID; 
 }
 FROM <file:https://raw.githubusercontent.com/davidrojas0791/Web-Datos-Proy1-T10/master/data/health_expenditure.tsv> 

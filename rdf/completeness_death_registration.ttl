@@ -12,10 +12,21 @@
 @prefix c19-interval:  <http://example.org/interval#> .
 @prefix sdmx-dimension:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
 
+c19:dataset-completeness_death_registration a qb:Dataset ; 
+	dct:title "Completeness of death registration"@en ; 
+	rdfs:label "completeness_death_registration"@en ; 
+	rdfs:comment "WV.2 | Global goals: ending poverty and improving lives"@en ; 
+	dct:description "Completeness of death registration"@en ; 
+	dct:publisher wd:Q7164 ; 
+	dct:issued "2020-09-22"^^xsd:date ; 
+	dct:source <http://wdi.worldbank.org/table/WV.2> ; 
+	qb:structure c19-structure:dsd-completeness_death_registration ; 
+. 
+
 <c19:completenessOfDeathRegistrations-o00>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  53.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -23,8 +34,8 @@
 
 <c19:completenessOfDeathRegistrations-o01>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -32,8 +43,8 @@
 
 <c19:completenessOfDeathRegistrations-o02>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  83.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -41,8 +52,8 @@
 
 <c19:completenessOfDeathRegistrations-o03>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -50,8 +61,8 @@
 
 <c19:completenessOfDeathRegistrations-o04>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -59,8 +70,8 @@
 
 <c19:completenessOfDeathRegistrations-o05>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -68,8 +79,8 @@
 
 <c19:completenessOfDeathRegistrations-o06>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -77,8 +88,8 @@
 
 <c19:completenessOfDeathRegistrations-o07>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  89.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -86,8 +97,8 @@
 
 <c19:completenessOfDeathRegistrations-o08>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  96.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -95,8 +106,8 @@
 
 <c19:completenessOfDeathRegistrations-o09>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  79.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -104,8 +115,8 @@
 
 <c19:completenessOfDeathRegistrations-o010>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -113,8 +124,8 @@
 
 <c19:completenessOfDeathRegistrations-o011>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -122,8 +133,8 @@
 
 <c19:completenessOfDeathRegistrations-o012>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  89.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -131,8 +142,8 @@
 
 <c19:completenessOfDeathRegistrations-o013>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  95.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -140,8 +151,8 @@
 
 <c19:completenessOfDeathRegistrations-o014>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  99.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -149,8 +160,8 @@
 
 <c19:completenessOfDeathRegistrations-o015>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -158,8 +169,8 @@
 
 <c19:completenessOfDeathRegistrations-o016>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -167,8 +178,8 @@
 
 <c19:completenessOfDeathRegistrations-o017>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  93.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -176,8 +187,8 @@
 
 <c19:completenessOfDeathRegistrations-o018>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -185,8 +196,8 @@
 
 <c19:completenessOfDeathRegistrations-o019>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  95.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -194,8 +205,8 @@
 
 <c19:completenessOfDeathRegistrations-o020>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  62.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -203,8 +214,8 @@
 
 <c19:completenessOfDeathRegistrations-o021>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  80.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -212,8 +223,8 @@
 
 <c19:completenessOfDeathRegistrations-o022>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  87.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -221,8 +232,8 @@
 
 <c19:completenessOfDeathRegistrations-o023>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -230,8 +241,8 @@
 
 <c19:completenessOfDeathRegistrations-o024>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -239,8 +250,8 @@
 
 <c19:completenessOfDeathRegistrations-o025>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  68.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -248,8 +259,8 @@
 
 <c19:completenessOfDeathRegistrations-o026>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -257,8 +268,8 @@
 
 <c19:completenessOfDeathRegistrations-o027>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -266,8 +277,8 @@
 
 <c19:completenessOfDeathRegistrations-o028>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -275,8 +286,8 @@
 
 <c19:completenessOfDeathRegistrations-o029>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  58.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -284,8 +295,8 @@
 
 <c19:completenessOfDeathRegistrations-o030>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  82.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -293,8 +304,8 @@
 
 <c19:completenessOfDeathRegistrations-o031>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  94.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -302,8 +313,8 @@
 
 <c19:completenessOfDeathRegistrations-o032>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  93.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -311,8 +322,8 @@
 
 <c19:completenessOfDeathRegistrations-o033>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -320,8 +331,8 @@
 
 <c19:completenessOfDeathRegistrations-o034>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -329,8 +340,8 @@
 
 <c19:completenessOfDeathRegistrations-o035>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -338,8 +349,8 @@
 
 <c19:completenessOfDeathRegistrations-o036>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -347,8 +358,8 @@
 
 <c19:completenessOfDeathRegistrations-o037>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  90.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -356,8 +367,8 @@
 
 <c19:completenessOfDeathRegistrations-o038>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -365,8 +376,8 @@
 
 <c19:completenessOfDeathRegistrations-o039>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -374,8 +385,8 @@
 
 <c19:completenessOfDeathRegistrations-o040>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -383,8 +394,8 @@
 
 <c19:completenessOfDeathRegistrations-o041>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -392,8 +403,8 @@
 
 <c19:completenessOfDeathRegistrations-o042>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  90.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -401,8 +412,8 @@
 
 <c19:completenessOfDeathRegistrations-o043>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  14.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -410,8 +421,8 @@
 
 <c19:completenessOfDeathRegistrations-o044>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -419,8 +430,8 @@
 
 <c19:completenessOfDeathRegistrations-o045>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -428,8 +439,8 @@
 
 <c19:completenessOfDeathRegistrations-o046>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  10.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -437,8 +448,8 @@
 
 <c19:completenessOfDeathRegistrations-o047>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  90.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -446,8 +457,8 @@
 
 <c19:completenessOfDeathRegistrations-o048>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  65.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -455,8 +466,8 @@
 
 <c19:completenessOfDeathRegistrations-o049>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -464,8 +475,8 @@
 
 <c19:completenessOfDeathRegistrations-o050>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -473,8 +484,8 @@
 
 <c19:completenessOfDeathRegistrations-o051>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -482,8 +493,8 @@
 
 <c19:completenessOfDeathRegistrations-o052>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  94.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -491,8 +502,8 @@
 
 <c19:completenessOfDeathRegistrations-o053>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -500,8 +511,8 @@
 
 <c19:completenessOfDeathRegistrations-o054>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  56.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -509,8 +520,8 @@
 
 <c19:completenessOfDeathRegistrations-o055>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  91.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -518,8 +529,8 @@
 
 <c19:completenessOfDeathRegistrations-o056>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -527,8 +538,8 @@
 
 <c19:completenessOfDeathRegistrations-o057>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  59.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -536,8 +547,8 @@
 
 <c19:completenessOfDeathRegistrations-o058>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  91.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -545,8 +556,8 @@
 
 <c19:completenessOfDeathRegistrations-o059>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -554,8 +565,8 @@
 
 <c19:completenessOfDeathRegistrations-o060>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -563,8 +574,8 @@
 
 <c19:completenessOfDeathRegistrations-o061>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -572,8 +583,8 @@
 
 <c19:completenessOfDeathRegistrations-o062>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  52.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -581,8 +592,8 @@
 
 <c19:completenessOfDeathRegistrations-o063>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  91.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -590,8 +601,8 @@
 
 <c19:completenessOfDeathRegistrations-o064>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -599,8 +610,8 @@
 
 <c19:completenessOfDeathRegistrations-o065>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -608,8 +619,8 @@
 
 <c19:completenessOfDeathRegistrations-o066>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -617,8 +628,8 @@
 
 <c19:completenessOfDeathRegistrations-o067>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  90.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -626,8 +637,8 @@
 
 <c19:completenessOfDeathRegistrations-o068>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -635,8 +646,8 @@
 
 <c19:completenessOfDeathRegistrations-o069>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  84.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -644,8 +655,8 @@
 
 <c19:completenessOfDeathRegistrations-o070>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  94.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -653,8 +664,8 @@
 
 <c19:completenessOfDeathRegistrations-o071>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  29.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -662,8 +673,8 @@
 
 <c19:completenessOfDeathRegistrations-o072>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -671,8 +682,8 @@
 
 <c19:completenessOfDeathRegistrations-o073>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -680,8 +691,8 @@
 
 <c19:completenessOfDeathRegistrations-o074>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  68.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -689,8 +700,8 @@
 
 <c19:completenessOfDeathRegistrations-o075>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -698,8 +709,8 @@
 
 <c19:completenessOfDeathRegistrations-o076>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -707,8 +718,8 @@
 
 <c19:completenessOfDeathRegistrations-o077>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  74.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -716,8 +727,8 @@
 
 <c19:completenessOfDeathRegistrations-o078>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  95.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -725,8 +736,8 @@
 
 <c19:completenessOfDeathRegistrations-o079>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  92.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -734,8 +745,8 @@
 
 <c19:completenessOfDeathRegistrations-o080>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  88.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -743,8 +754,8 @@
 
 <c19:completenessOfDeathRegistrations-o081>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  57.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -752,8 +763,8 @@
 
 <c19:completenessOfDeathRegistrations-o082>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  89.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -761,8 +772,8 @@
 
 <c19:completenessOfDeathRegistrations-o083>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -770,8 +781,8 @@
 
 <c19:completenessOfDeathRegistrations-o084>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -779,8 +790,8 @@
 
 <c19:completenessOfDeathRegistrations-o085>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  77.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -788,8 +799,8 @@
 
 <c19:completenessOfDeathRegistrations-o086>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -797,8 +808,8 @@
 
 <c19:completenessOfDeathRegistrations-o087>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -806,8 +817,8 @@
 
 <c19:completenessOfDeathRegistrations-o088>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -815,8 +826,8 @@
 
 <c19:completenessOfDeathRegistrations-o089>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  42.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -824,8 +835,8 @@
 
 <c19:completenessOfDeathRegistrations-o090>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  94.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -833,8 +844,8 @@
 
 <c19:completenessOfDeathRegistrations-o091>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  91.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -842,8 +853,8 @@
 
 <c19:completenessOfDeathRegistrations-o092>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  66.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -851,8 +862,8 @@
 
 <c19:completenessOfDeathRegistrations-o093>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -860,8 +871,8 @@
 
 <c19:completenessOfDeathRegistrations-o094>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -869,8 +880,8 @@
 
 <c19:completenessOfDeathRegistrations-o095>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  92.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -878,8 +889,8 @@
 
 <c19:completenessOfDeathRegistrations-o096>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -887,8 +898,8 @@
 
 <c19:completenessOfDeathRegistrations-o097>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  88.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -896,8 +907,8 @@
 
 <c19:completenessOfDeathRegistrations-o098>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  97.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -905,8 +916,8 @@
 
 <c19:completenessOfDeathRegistrations-o099>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -914,8 +925,8 @@
 
 <c19:completenessOfDeathRegistrations-o0100>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  80.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -923,8 +934,8 @@
 
 <c19:completenessOfDeathRegistrations-o0101>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -932,8 +943,8 @@
 
 <c19:completenessOfDeathRegistrations-o0102>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -941,8 +952,8 @@
 
 <c19:completenessOfDeathRegistrations-o0103>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  83.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -950,8 +961,8 @@
 
 <c19:completenessOfDeathRegistrations-o0104>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  87.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -959,8 +970,8 @@
 
 <c19:completenessOfDeathRegistrations-o0105>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  87.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -968,8 +979,8 @@
 
 <c19:completenessOfDeathRegistrations-o0106>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  83.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -977,8 +988,8 @@
 
 <c19:completenessOfDeathRegistrations-o0107>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  29.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -986,8 +997,8 @@
 
 <c19:completenessOfDeathRegistrations-o0108>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  92.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -995,8 +1006,8 @@
 
 <c19:completenessOfDeathRegistrations-o0109>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  85.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -1004,8 +1015,8 @@
 
 <c19:completenessOfDeathRegistrations-o0110>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  99.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -1013,8 +1024,8 @@
 
 <c19:completenessOfDeathRegistrations-o0111>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  59.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -1022,8 +1033,8 @@
 
 <c19:completenessOfDeathRegistrations-o0112>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -1031,8 +1042,8 @@
 
 <c19:completenessOfDeathRegistrations-o0113>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -1040,8 +1051,8 @@
 
 <c19:completenessOfDeathRegistrations-o0114>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  100.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -1049,8 +1060,8 @@
 
 <c19:completenessOfDeathRegistrations-o0115>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  93.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
@@ -1058,8 +1069,8 @@
 
 <c19:completenessOfDeathRegistrations-o0116>
         rdf:type                       qb:Observation ;
-        qb:dataSet                     c19:dataset-completenessOfDeathRegistrations ;
-        c19-dimension:refPeriod        c19-interval:Year2017 ;
+        qb:dataSet                     c19:dataset-completeness_death_registration ;
+        c19-dimension:refPeriod        c19-interval:Year2008-16 ;
         c19-measure:completenessOfDeathRegistrations  89.0 ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;

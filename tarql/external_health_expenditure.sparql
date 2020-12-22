@@ -13,7 +13,7 @@ PREFIX wd: <http://www.wikidata.org/entity/>
 
 CONSTRUCT { 
 	?obs a qb:Observation; 
-		qb:dataSet c19:dataset-externalHealthExpenditure; 
+		qb:dataSet c19:dataset-external_health_expenditure; 
 		c19-dimension:refPeriod c19-interval:Year2017; 
 		c19-measure:externalHealthExpenditure ?data ; 
 		sdmx-attribute:unitMultiplier  -2; 

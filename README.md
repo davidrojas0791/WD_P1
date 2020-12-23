@@ -107,13 +107,13 @@ c19-structure:dsd-completeness_birth_registration a qb:DataStructureDefinition;
     qb:attribute sdmx-attribute:unitMultiplier ;];
 .
 
- # c19-structure:dsd-completeness_birth_registration
-c19-structure:dsd-completeness_birth_registration a qb:DataStructureDefinition;
+ # c19-structure:dsd-completeness_death_registration
+c19-structure:dsd-completeness_death_registration a qb:DataStructureDefinition;
     qb:component
     [ qb:dimension c19-dimension:refArea;               qb:order 2 ],
     [ qb:dimension c19-dimension:refPeriod;               qb:order 1 ];
     qb:component
-    [ qb:measure c19-measure:completenessOfBirthRegistrations ];
+    [ qb:measure c19-measure:completenessOfDeathRegistrations ];
     qb:component
     [ qb:attribute sdmx-attribute:decimals ;
     qb:attribute sdmx-attribute:unitMultiplier ;];

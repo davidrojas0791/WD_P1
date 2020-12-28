@@ -17,7 +17,6 @@ CONSTRUCT {
 		c19-dimension:refPeriod c19-interval:Year2013-18 ; 
 		c19-measure:adultMortalityRateMale ?adultMortalityRateMale ; 
 		sdmx-attribute:unitMultiplier -3 ; 
-		sdmx-attribute:decimals 1 ; 
 		c19-measure:adultMortalityRateFemale ?adultMortalityRateFemale ; 
 		sdmx-attribute:unitMultiplier -3 ; 
 		sdmx-attribute:decimals 1 ; 

@@ -1,1649 +1,1588 @@
-@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl:      <http://www.w3.org/2002/07/owl#> .
-@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
-@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
-@prefix void:     <http://rdfs.org/ns/void#> .
-@prefix dct:      <http://purl.org/dc/terms/> .
-@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
-@prefix org:      <http://www.w3.org/ns/org#> .
-@prefix admingeo: <http://data.ordnancesurvey.co.uk/ontology/admingeo/> .
-@prefix interval: <http://reference.data.gov.uk/def/intervals/> .
-@prefix time: <http://www.w3.org/2006/time#> .
+@prefix c19-measure:  <http://example.org/measure#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix c19:  <http://example.org/ns#> .
 @prefix wd:  <http://www.wikidata.org/entity/> .
-
 @prefix qb:  <http://purl.org/linked-data/cube#> .
 @prefix ex:  <http://ex.org/a#> .
-
-@prefix sdmx-concept:    <http://purl.org/linked-data/sdmx/2009/concept#> .
-@prefix sdmx-dimension:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
-@prefix sdmx-attribute:  <http://purl.org/linked-data/sdmx/2009/attribute#> .
-@prefix sdmx-measure:    <http://purl.org/linked-data/sdmx/2009/measure#> .
-@prefix sdmx-metadata:   <http://purl.org/linked-data/sdmx/2009/metadata#> .
-@prefix sdmx-code:       <http://purl.org/linked-data/sdmx/2009/code#> .
-@prefix sdmx-subject:    <http://purl.org/linked-data/sdmx/2009/subject#> .
-
-
-@prefix c19:  <http://example.org/ns#> .
-@prefix c19-measure:  <http://example.org/measure#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdmx-code:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
 @prefix c19-dimension:  <http://example.org/dimension#> .
 @prefix c19-unit:  <http://example.org/unit#> .
-@prefix c19-structure:  <http://example.org/structure#> .
+@prefix sdmx-attribute:  <http://purl.org/linked-data/sdmx/2009/attribute#> .
 @prefix c19-interval:  <http://example.org/interval#> .
+@prefix sdmx-dimension:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
 
-# -- Data Set ---------------------------------------------
-
-c19:dataset-specialist_surgical_workforce a qb:Dataset ; 
-	dct:title "Specialist surgical workforce"@en ; 
-	rdfs:label "specialist_surgical_workforce"@en ; 
-	rdfs:comment "12.2 | World Development Indicators: Health systems"@en ; 
-	dct:description "Specialist surgical workforce is the number of specialist surgical, anaesthetic, and obstetric (SAO) providers who are working in each country per 100,000 population."@en ; 
-	dct:publisher wd:Q7164 ; 
-	dct:issued "2020-09-22"^^xsd:date ; 
-	dct:source <http://wdi.worldbank.org/table/2.12> ; 
-	qb:structure c19-structure:dsd-specialist_surgical_workforce ; 
-. 
-
-# -- Data structure definition ----------------------------
-
-c19-structure:dsd-specialist_surgical_workforce a qb:DataStructureDefinition; 
-        qb:component 
-                [ qb:dimension c19-dimension:refArea; qb:order 2 ] , 
-                [ qb:dimension c19-dimension:refPeriod; qb:order 1 ] ; 
-        qb:component 
-                [ qb:measure c19-measure:specialistSurgicalWorkforce ] ; 
-        qb:component 
-                [ qb:attribute sdmx-attribute:decimals ; 
-                qb:attribute sdmx-attribute:unitMultiplier ;]; 
-.
-
-# -- Intervals --------------------------------------------
-
-c19-interval:Year2008-18 a time:Interval ;
-    time:hasBeginning "2008"^^xsd:gYear ;
-    time:hasEnd "2018"^^xsd:gYear ;
-    rdfs:label "2008-18" .
-
-# -- Dimensions and measures ------------------------------
-
-c19-measure:specialistSurgicalWorkforce a rdf:Property, qb:MeasureProperty; 
-        rdfs:label "Specialist Surgical Workforce per 100000 population"@en; 
-        rdfs:subPropertyOf sdmx-measure:obsValue; 
-        rdfs:range xsd:decimal ; .
-
-# -- Observations -----------------------------------------
-
-c19:specialistSurgicalWorkforce-o00
+<c19:specialistSurgicalWorkforce-o00>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.0 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q889 .
+        c19-dimension:refArea          <wd:Q889> .
 
-c19:specialistSurgicalWorkforce-o01
+<c19:specialistSurgicalWorkforce-o01>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  11.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q222 .
+        c19-dimension:refArea          <wd:Q222> .
 
-c19:specialistSurgicalWorkforce-o02
+<c19:specialistSurgicalWorkforce-o02>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  12.1 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q262 .
+        c19-dimension:refArea          <wd:Q262> .
 
-c19:specialistSurgicalWorkforce-o03
+<c19:specialistSurgicalWorkforce-o03>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  83.1 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q228 .
+        c19-dimension:refArea          <wd:Q228> .
 
-c19:specialistSurgicalWorkforce-o04
+<c19:specialistSurgicalWorkforce-o04>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  14.0 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q781 .
+        c19-dimension:refArea          <wd:Q781> .
 
-c19:specialistSurgicalWorkforce-o05
+<c19:specialistSurgicalWorkforce-o05>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  50.1 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q414 .
+        c19-dimension:refArea          <wd:Q414> .
 
-c19:specialistSurgicalWorkforce-o06
+<c19:specialistSurgicalWorkforce-o06>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  86.7 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q399 .
+        c19-dimension:refArea          <wd:Q399> .
 
-c19:specialistSurgicalWorkforce-o07
+<c19:specialistSurgicalWorkforce-o07>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  45.1 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q408 .
+        c19-dimension:refArea          <wd:Q408> .
 
-c19:specialistSurgicalWorkforce-o08
+<c19:specialistSurgicalWorkforce-o08>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  109.9 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q40 .
+        c19-dimension:refArea          <wd:Q40> .
 
-c19:specialistSurgicalWorkforce-o09
+<c19:specialistSurgicalWorkforce-o09>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  67.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q227 .
+        c19-dimension:refArea          <wd:Q227> .
 
-c19:specialistSurgicalWorkforce-o010
+<c19:specialistSurgicalWorkforce-o010>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  14.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q398 .
+        c19-dimension:refArea          <wd:Q398> .
 
-c19:specialistSurgicalWorkforce-o011
+<c19:specialistSurgicalWorkforce-o011>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  2.9 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q902 .
+        c19-dimension:refArea          <wd:Q902> .
 
-c19:specialistSurgicalWorkforce-o012
+<c19:specialistSurgicalWorkforce-o012>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  17.2 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q244 .
+        c19-dimension:refArea          <wd:Q244> .
 
-c19:specialistSurgicalWorkforce-o013
+<c19:specialistSurgicalWorkforce-o013>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  124.2 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q184 .
+        c19-dimension:refArea          <wd:Q184> .
 
-c19:specialistSurgicalWorkforce-o014
+<c19:specialistSurgicalWorkforce-o014>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  89.8 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q31 .
+        c19-dimension:refArea          <wd:Q31> .
 
-c19:specialistSurgicalWorkforce-o015
+<c19:specialistSurgicalWorkforce-o015>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  10.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q242 .
+        c19-dimension:refArea          <wd:Q242> .
 
-c19:specialistSurgicalWorkforce-o016
+<c19:specialistSurgicalWorkforce-o016>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  1.9 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q962 .
+        c19-dimension:refArea          <wd:Q962> .
 
-c19:specialistSurgicalWorkforce-o017
+<c19:specialistSurgicalWorkforce-o017>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  2.9 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q917 .
+        c19-dimension:refArea          <wd:Q917> .
 
-c19:specialistSurgicalWorkforce-o018
+<c19:specialistSurgicalWorkforce-o018>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  33.9 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q750 .
+        c19-dimension:refArea          <wd:Q750> .
 
-c19:specialistSurgicalWorkforce-o019
+<c19:specialistSurgicalWorkforce-o019>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  32.3 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q225 .
+        c19-dimension:refArea          <wd:Q225> .
 
-c19:specialistSurgicalWorkforce-o020
+<c19:specialistSurgicalWorkforce-o020>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  3.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q963 .
+        c19-dimension:refArea          <wd:Q963> .
 
-c19:specialistSurgicalWorkforce-o021
+<c19:specialistSurgicalWorkforce-o021>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  55.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q155 .
+        c19-dimension:refArea          <wd:Q155> .
 
-c19:specialistSurgicalWorkforce-o022
+<c19:specialistSurgicalWorkforce-o022>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  112.7 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q219 .
+        c19-dimension:refArea          <wd:Q219> .
 
-c19:specialistSurgicalWorkforce-o023
+<c19:specialistSurgicalWorkforce-o023>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q965 .
+        c19-dimension:refArea          <wd:Q965> .
 
-c19:specialistSurgicalWorkforce-o024
+<c19:specialistSurgicalWorkforce-o024>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q967 .
+        c19-dimension:refArea          <wd:Q967> .
 
-c19:specialistSurgicalWorkforce-o025
+<c19:specialistSurgicalWorkforce-o025>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  16.0 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1011 .
+        c19-dimension:refArea          <wd:Q1011> .
 
-c19:specialistSurgicalWorkforce-o026
+<c19:specialistSurgicalWorkforce-o026>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  4.2 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q424 .
+        c19-dimension:refArea          <wd:Q424> .
 
-c19:specialistSurgicalWorkforce-o027
+<c19:specialistSurgicalWorkforce-o027>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  1.2 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1009 .
+        c19-dimension:refArea          <wd:Q1009> .
 
-c19:specialistSurgicalWorkforce-o028
+<c19:specialistSurgicalWorkforce-o028>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  43.9 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q16 .
+        c19-dimension:refArea          <wd:Q16> .
 
-c19:specialistSurgicalWorkforce-o029
+<c19:specialistSurgicalWorkforce-o029>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  156.8 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q5785 .
+        c19-dimension:refArea          <wd:Q5785> .
 
-c19:specialistSurgicalWorkforce-o030
+<c19:specialistSurgicalWorkforce-o030>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q929 .
+        c19-dimension:refArea          <wd:Q929> .
 
-c19:specialistSurgicalWorkforce-o031
+<c19:specialistSurgicalWorkforce-o031>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.3 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q657 .
+        c19-dimension:refArea          <wd:Q657> .
 
-c19:specialistSurgicalWorkforce-o032
+<c19:specialistSurgicalWorkforce-o032>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  38.7 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q42314 .
+        c19-dimension:refArea          <wd:Q42314> .
 
-c19:specialistSurgicalWorkforce-o033
+<c19:specialistSurgicalWorkforce-o033>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  59.3 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q298 .
+        c19-dimension:refArea          <wd:Q298> .
 
-c19:specialistSurgicalWorkforce-o034
+<c19:specialistSurgicalWorkforce-o034>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  40.1 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q148 .
+        c19-dimension:refArea          <wd:Q148> .
 
-c19:specialistSurgicalWorkforce-o035
+<c19:specialistSurgicalWorkforce-o035>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  27.8 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q8646 .
+        c19-dimension:refArea          <wd:Q8646> .
 
-c19:specialistSurgicalWorkforce-o036
+<c19:specialistSurgicalWorkforce-o036>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  22.7 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q739 .
+        c19-dimension:refArea          <wd:Q739> .
 
-c19:specialistSurgicalWorkforce-o037
+<c19:specialistSurgicalWorkforce-o037>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.2 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q974 .
+        c19-dimension:refArea          <wd:Q974> .
 
-c19:specialistSurgicalWorkforce-o038
+<c19:specialistSurgicalWorkforce-o038>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.2 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q971 .
+        c19-dimension:refArea          <wd:Q971> .
 
-c19:specialistSurgicalWorkforce-o039
+<c19:specialistSurgicalWorkforce-o039>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  25.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q800 .
+        c19-dimension:refArea          <wd:Q800> .
 
-c19:specialistSurgicalWorkforce-o040
+<c19:specialistSurgicalWorkforce-o040>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  2.8 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1008 .
+        c19-dimension:refArea          <wd:Q1008> .
 
-c19:specialistSurgicalWorkforce-o041
+<c19:specialistSurgicalWorkforce-o041>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  81.2 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q224 .
+        c19-dimension:refArea          <wd:Q224> .
 
-c19:specialistSurgicalWorkforce-o042
+<c19:specialistSurgicalWorkforce-o042>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  100.9 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q241 .
+        c19-dimension:refArea          <wd:Q241> .
 
-c19:specialistSurgicalWorkforce-o043
+<c19:specialistSurgicalWorkforce-o043>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  84.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q229 .
+        c19-dimension:refArea          <wd:Q229> .
 
-c19:specialistSurgicalWorkforce-o044
+<c19:specialistSurgicalWorkforce-o044>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  124.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q213 .
+        c19-dimension:refArea          <wd:Q213> .
 
-c19:specialistSurgicalWorkforce-o045
+<c19:specialistSurgicalWorkforce-o045>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  69.0 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q35 .
+        c19-dimension:refArea          <wd:Q35> .
 
-c19:specialistSurgicalWorkforce-o046
+<c19:specialistSurgicalWorkforce-o046>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  4.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q977 .
+        c19-dimension:refArea          <wd:Q977> .
 
-c19:specialistSurgicalWorkforce-o047
+<c19:specialistSurgicalWorkforce-o047>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  11.3 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q784 .
+        c19-dimension:refArea          <wd:Q784> .
 
-c19:specialistSurgicalWorkforce-o048
+<c19:specialistSurgicalWorkforce-o048>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  59.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q736 .
+        c19-dimension:refArea          <wd:Q736> .
 
-c19:specialistSurgicalWorkforce-o049
+<c19:specialistSurgicalWorkforce-o049>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  50.1 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q79 .
+        c19-dimension:refArea          <wd:Q79> .
 
-c19:specialistSurgicalWorkforce-o050
+<c19:specialistSurgicalWorkforce-o050>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  22.3 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q792 .
+        c19-dimension:refArea          <wd:Q792> .
 
-c19:specialistSurgicalWorkforce-o051
+<c19:specialistSurgicalWorkforce-o051>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q986 .
+        c19-dimension:refArea          <wd:Q986> .
 
-c19:specialistSurgicalWorkforce-o052
+<c19:specialistSurgicalWorkforce-o052>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  65.0 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q191 .
+        c19-dimension:refArea          <wd:Q191> .
 
-c19:specialistSurgicalWorkforce-o053
+<c19:specialistSurgicalWorkforce-o053>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.2 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1050 .
+        c19-dimension:refArea          <wd:Q1050> .
 
-c19:specialistSurgicalWorkforce-o054
+<c19:specialistSurgicalWorkforce-o054>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q115 .
+        c19-dimension:refArea          <wd:Q115> .
 
-c19:specialistSurgicalWorkforce-o055
+<c19:specialistSurgicalWorkforce-o055>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  5.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q712 .
+        c19-dimension:refArea          <wd:Q712> .
 
-c19:specialistSurgicalWorkforce-o056
+<c19:specialistSurgicalWorkforce-o056>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  76.3 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q33 .
+        c19-dimension:refArea          <wd:Q33> .
 
-c19:specialistSurgicalWorkforce-o057
+<c19:specialistSurgicalWorkforce-o057>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  58.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q142 .
+        c19-dimension:refArea          <wd:Q142> .
 
-c19:specialistSurgicalWorkforce-o058
+<c19:specialistSurgicalWorkforce-o058>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  32.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q30971 .
+        c19-dimension:refArea          <wd:Q30971> .
 
-c19:specialistSurgicalWorkforce-o059
+<c19:specialistSurgicalWorkforce-o059>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  1.8 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1005 .
+        c19-dimension:refArea          <wd:Q1005> .
 
-c19:specialistSurgicalWorkforce-o060
+<c19:specialistSurgicalWorkforce-o060>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  130.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q230 .
+        c19-dimension:refArea          <wd:Q230> .
 
-c19:specialistSurgicalWorkforce-o061
+<c19:specialistSurgicalWorkforce-o061>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  108.0 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q183 .
+        c19-dimension:refArea          <wd:Q183> .
 
-c19:specialistSurgicalWorkforce-o062
+<c19:specialistSurgicalWorkforce-o062>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  163.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q41 .
+        c19-dimension:refArea          <wd:Q41> .
 
-c19:specialistSurgicalWorkforce-o063
+<c19:specialistSurgicalWorkforce-o063>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  12.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q769 .
+        c19-dimension:refArea          <wd:Q769> .
 
-c19:specialistSurgicalWorkforce-o064
+<c19:specialistSurgicalWorkforce-o064>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  3.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q774 .
+        c19-dimension:refArea          <wd:Q774> .
 
-c19:specialistSurgicalWorkforce-o065
+<c19:specialistSurgicalWorkforce-o065>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  8.8 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q734 .
+        c19-dimension:refArea          <wd:Q734> .
 
-c19:specialistSurgicalWorkforce-o066
+<c19:specialistSurgicalWorkforce-o066>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  5.9 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q790 .
+        c19-dimension:refArea          <wd:Q790> .
 
-c19:specialistSurgicalWorkforce-o067
+<c19:specialistSurgicalWorkforce-o067>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  13.7 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q783 .
+        c19-dimension:refArea          <wd:Q783> .
 
-c19:specialistSurgicalWorkforce-o068
+<c19:specialistSurgicalWorkforce-o068>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  55.7 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q28 .
+        c19-dimension:refArea          <wd:Q28> .
 
-c19:specialistSurgicalWorkforce-o069
+<c19:specialistSurgicalWorkforce-o069>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  101.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q189 .
+        c19-dimension:refArea          <wd:Q189> .
 
-c19:specialistSurgicalWorkforce-o070
+<c19:specialistSurgicalWorkforce-o070>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  6.8 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q668 .
+        c19-dimension:refArea          <wd:Q668> .
 
-c19:specialistSurgicalWorkforce-o071
+<c19:specialistSurgicalWorkforce-o071>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  5.0 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q794 .
+        c19-dimension:refArea          <wd:Q794> .
 
-c19:specialistSurgicalWorkforce-o072
+<c19:specialistSurgicalWorkforce-o072>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  7.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q796 .
+        c19-dimension:refArea          <wd:Q796> .
 
-c19:specialistSurgicalWorkforce-o073
+<c19:specialistSurgicalWorkforce-o073>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  72.0 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q27 .
+        c19-dimension:refArea          <wd:Q27> .
 
-c19:specialistSurgicalWorkforce-o074
+<c19:specialistSurgicalWorkforce-o074>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  52.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q9676 .
+        c19-dimension:refArea          <wd:Q9676> .
 
-c19:specialistSurgicalWorkforce-o075
+<c19:specialistSurgicalWorkforce-o075>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  75.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q801 .
+        c19-dimension:refArea          <wd:Q801> .
 
-c19:specialistSurgicalWorkforce-o076
+<c19:specialistSurgicalWorkforce-o076>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  142.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q38 .
+        c19-dimension:refArea          <wd:Q38> .
 
-c19:specialistSurgicalWorkforce-o077
+<c19:specialistSurgicalWorkforce-o077>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  11.2 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q766 .
+        c19-dimension:refArea          <wd:Q766> .
 
-c19:specialistSurgicalWorkforce-o078
+<c19:specialistSurgicalWorkforce-o078>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  37.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q17 .
+        c19-dimension:refArea          <wd:Q17> .
 
-c19:specialistSurgicalWorkforce-o079
+<c19:specialistSurgicalWorkforce-o079>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  24.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q810 .
+        c19-dimension:refArea          <wd:Q810> .
 
-c19:specialistSurgicalWorkforce-o080
+<c19:specialistSurgicalWorkforce-o080>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  73.2 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q232 .
+        c19-dimension:refArea          <wd:Q232> .
 
-c19:specialistSurgicalWorkforce-o081
+<c19:specialistSurgicalWorkforce-o081>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  2.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q114 .
+        c19-dimension:refArea          <wd:Q114> .
 
-c19:specialistSurgicalWorkforce-o082
+<c19:specialistSurgicalWorkforce-o082>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  8.2 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q710 .
+        c19-dimension:refArea          <wd:Q710> .
 
-c19:specialistSurgicalWorkforce-o083
+<c19:specialistSurgicalWorkforce-o083>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  49.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q884 .
+        c19-dimension:refArea          <wd:Q884> .
 
-c19:specialistSurgicalWorkforce-o084
+<c19:specialistSurgicalWorkforce-o084>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  27.7 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1246 .
+        c19-dimension:refArea          <wd:Q1246> .
 
-c19:specialistSurgicalWorkforce-o085
+<c19:specialistSurgicalWorkforce-o085>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  50.1 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q813 .
+        c19-dimension:refArea          <wd:Q813> .
 
-c19:specialistSurgicalWorkforce-o086
+<c19:specialistSurgicalWorkforce-o086>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  3.7 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q819 .
+        c19-dimension:refArea          <wd:Q819> .
 
-c19:specialistSurgicalWorkforce-o087
+<c19:specialistSurgicalWorkforce-o087>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  67.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q211 .
+        c19-dimension:refArea          <wd:Q211> .
 
-c19:specialistSurgicalWorkforce-o088
+<c19:specialistSurgicalWorkforce-o088>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  87.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q822 .
+        c19-dimension:refArea          <wd:Q822> .
 
-c19:specialistSurgicalWorkforce-o089
+<c19:specialistSurgicalWorkforce-o089>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1013 .
+        c19-dimension:refArea          <wd:Q1013> .
 
-c19:specialistSurgicalWorkforce-o090
+<c19:specialistSurgicalWorkforce-o090>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1014 .
+        c19-dimension:refArea          <wd:Q1014> .
 
-c19:specialistSurgicalWorkforce-o091
+<c19:specialistSurgicalWorkforce-o091>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  71.9 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q347 .
+        c19-dimension:refArea          <wd:Q347> .
 
-c19:specialistSurgicalWorkforce-o092
+<c19:specialistSurgicalWorkforce-o092>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  130.9 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q37 .
+        c19-dimension:refArea          <wd:Q37> .
 
-c19:specialistSurgicalWorkforce-o093
+<c19:specialistSurgicalWorkforce-o093>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  80.8 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q32 .
+        c19-dimension:refArea          <wd:Q32> .
 
-c19:specialistSurgicalWorkforce-o094
+<c19:specialistSurgicalWorkforce-o094>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.8 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1019 .
+        c19-dimension:refArea          <wd:Q1019> .
 
-c19:specialistSurgicalWorkforce-o095
+<c19:specialistSurgicalWorkforce-o095>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1020 .
+        c19-dimension:refArea          <wd:Q1020> .
 
-c19:specialistSurgicalWorkforce-o096
+<c19:specialistSurgicalWorkforce-o096>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  11.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q833 .
+        c19-dimension:refArea          <wd:Q833> .
 
-c19:specialistSurgicalWorkforce-o097
+<c19:specialistSurgicalWorkforce-o097>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  4.8 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q826 .
+        c19-dimension:refArea          <wd:Q826> .
 
-c19:specialistSurgicalWorkforce-o098
+<c19:specialistSurgicalWorkforce-o098>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  1.1 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q912 .
+        c19-dimension:refArea          <wd:Q912> .
 
-c19:specialistSurgicalWorkforce-o099
+<c19:specialistSurgicalWorkforce-o099>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  113.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q233 .
+        c19-dimension:refArea          <wd:Q233> .
 
-c19:specialistSurgicalWorkforce-o0100
+<c19:specialistSurgicalWorkforce-o0100>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  15.9 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q709 .
+        c19-dimension:refArea          <wd:Q709> .
 
-c19:specialistSurgicalWorkforce-o0101
+<c19:specialistSurgicalWorkforce-o0101>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  17.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1027 .
+        c19-dimension:refArea          <wd:Q1027> .
 
-c19:specialistSurgicalWorkforce-o0102
+<c19:specialistSurgicalWorkforce-o0102>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  7.0 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q702 .
+        c19-dimension:refArea          <wd:Q702> .
 
-c19:specialistSurgicalWorkforce-o0103
+<c19:specialistSurgicalWorkforce-o0103>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  86.1 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q217 .
+        c19-dimension:refArea          <wd:Q217> .
 
-c19:specialistSurgicalWorkforce-o0104
+<c19:specialistSurgicalWorkforce-o0104>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  195.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q235 .
+        c19-dimension:refArea          <wd:Q235> .
 
-c19:specialistSurgicalWorkforce-o0105
+<c19:specialistSurgicalWorkforce-o0105>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  45.0 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q711 .
+        c19-dimension:refArea          <wd:Q711> .
 
-c19:specialistSurgicalWorkforce-o0106
+<c19:specialistSurgicalWorkforce-o0106>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  64.1 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q236 .
+        c19-dimension:refArea          <wd:Q236> .
 
-c19:specialistSurgicalWorkforce-o0107
+<c19:specialistSurgicalWorkforce-o0107>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  3.7 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1028 .
+        c19-dimension:refArea          <wd:Q1028> .
 
-c19:specialistSurgicalWorkforce-o0108
+<c19:specialistSurgicalWorkforce-o0108>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1029 .
+        c19-dimension:refArea          <wd:Q1029> .
 
-c19:specialistSurgicalWorkforce-o0109
+<c19:specialistSurgicalWorkforce-o0109>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  2.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q836 .
+        c19-dimension:refArea          <wd:Q836> .
 
-c19:specialistSurgicalWorkforce-o0110
+<c19:specialistSurgicalWorkforce-o0110>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  6.1 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1030 .
+        c19-dimension:refArea          <wd:Q1030> .
 
-c19:specialistSurgicalWorkforce-o0111
+<c19:specialistSurgicalWorkforce-o0111>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  3.0 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q837 .
+        c19-dimension:refArea          <wd:Q837> .
 
-c19:specialistSurgicalWorkforce-o0112
+<c19:specialistSurgicalWorkforce-o0112>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  49.0 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q55 .
+        c19-dimension:refArea          <wd:Q55> .
 
-c19:specialistSurgicalWorkforce-o0113
+<c19:specialistSurgicalWorkforce-o0113>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  43.0 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q664 .
+        c19-dimension:refArea          <wd:Q664> .
 
-c19:specialistSurgicalWorkforce-o0114
+<c19:specialistSurgicalWorkforce-o0114>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  15.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q811 .
+        c19-dimension:refArea          <wd:Q811> .
 
-c19:specialistSurgicalWorkforce-o0115
+<c19:specialistSurgicalWorkforce-o0115>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1032 .
+        c19-dimension:refArea          <wd:Q1032> .
 
-c19:specialistSurgicalWorkforce-o0116
+<c19:specialistSurgicalWorkforce-o0116>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  1.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1033 .
+        c19-dimension:refArea          <wd:Q1033> .
 
-c19:specialistSurgicalWorkforce-o0117
+<c19:specialistSurgicalWorkforce-o0117>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  61.2 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q221 .
+        c19-dimension:refArea          <wd:Q221> .
 
-c19:specialistSurgicalWorkforce-o0118
+<c19:specialistSurgicalWorkforce-o0118>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  67.2 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q20 .
+        c19-dimension:refArea          <wd:Q20> .
 
-c19:specialistSurgicalWorkforce-o0119
+<c19:specialistSurgicalWorkforce-o0119>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  30.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q842 .
+        c19-dimension:refArea          <wd:Q842> .
 
-c19:specialistSurgicalWorkforce-o0120
+<c19:specialistSurgicalWorkforce-o0120>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  5.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q843 .
+        c19-dimension:refArea          <wd:Q843> .
 
-c19:specialistSurgicalWorkforce-o0121
+<c19:specialistSurgicalWorkforce-o0121>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  26.2 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q804 .
+        c19-dimension:refArea          <wd:Q804> .
 
-c19:specialistSurgicalWorkforce-o0122
+<c19:specialistSurgicalWorkforce-o0122>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  2.3 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q691 .
+        c19-dimension:refArea          <wd:Q691> .
 
-c19:specialistSurgicalWorkforce-o0123
+<c19:specialistSurgicalWorkforce-o0123>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  20.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q733 .
+        c19-dimension:refArea          <wd:Q733> .
 
-c19:specialistSurgicalWorkforce-o0124
+<c19:specialistSurgicalWorkforce-o0124>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  42.9 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q419 .
+        c19-dimension:refArea          <wd:Q419> .
 
-c19:specialistSurgicalWorkforce-o0125
+<c19:specialistSurgicalWorkforce-o0125>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  9.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q928 .
+        c19-dimension:refArea          <wd:Q928> .
 
-c19:specialistSurgicalWorkforce-o0126
+<c19:specialistSurgicalWorkforce-o0126>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  67.9 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q36 .
+        c19-dimension:refArea          <wd:Q36> .
 
-c19:specialistSurgicalWorkforce-o0127
+<c19:specialistSurgicalWorkforce-o0127>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  86.1 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q45 .
+        c19-dimension:refArea          <wd:Q45> .
 
-c19:specialistSurgicalWorkforce-o0128
+<c19:specialistSurgicalWorkforce-o0128>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  14.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q846 .
+        c19-dimension:refArea          <wd:Q846> .
 
-c19:specialistSurgicalWorkforce-o0129
+<c19:specialistSurgicalWorkforce-o0129>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  60.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q218 .
+        c19-dimension:refArea          <wd:Q218> .
 
-c19:specialistSurgicalWorkforce-o0130
+<c19:specialistSurgicalWorkforce-o0130>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  63.1 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q159 .
+        c19-dimension:refArea          <wd:Q159> .
 
-c19:specialistSurgicalWorkforce-o0131
+<c19:specialistSurgicalWorkforce-o0131>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.8 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1037 .
+        c19-dimension:refArea          <wd:Q1037> .
 
-c19:specialistSurgicalWorkforce-o0132
+<c19:specialistSurgicalWorkforce-o0132>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  1.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q683 .
+        c19-dimension:refArea          <wd:Q683> .
 
-c19:specialistSurgicalWorkforce-o0133
+<c19:specialistSurgicalWorkforce-o0133>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  112.9 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q238 .
+        c19-dimension:refArea          <wd:Q238> .
 
-c19:specialistSurgicalWorkforce-o0134
+<c19:specialistSurgicalWorkforce-o0134>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  1.1 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1041 .
+        c19-dimension:refArea          <wd:Q1041> .
 
-c19:specialistSurgicalWorkforce-o0135
+<c19:specialistSurgicalWorkforce-o0135>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  86.7 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q403 .
+        c19-dimension:refArea          <wd:Q403> .
 
-c19:specialistSurgicalWorkforce-o0136
+<c19:specialistSurgicalWorkforce-o0136>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  48.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1042 .
+        c19-dimension:refArea          <wd:Q1042> .
 
-c19:specialistSurgicalWorkforce-o0137
+<c19:specialistSurgicalWorkforce-o0137>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.1 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1044 .
+        c19-dimension:refArea          <wd:Q1044> .
 
-c19:specialistSurgicalWorkforce-o0138
+<c19:specialistSurgicalWorkforce-o0138>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  31.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q334 .
+        c19-dimension:refArea          <wd:Q334> .
 
-c19:specialistSurgicalWorkforce-o0139
+<c19:specialistSurgicalWorkforce-o0139>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  53.9 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q214 .
+        c19-dimension:refArea          <wd:Q214> .
 
-c19:specialistSurgicalWorkforce-o0140
+<c19:specialistSurgicalWorkforce-o0140>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  66.7 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q215 .
+        c19-dimension:refArea          <wd:Q215> .
 
-c19:specialistSurgicalWorkforce-o0141
+<c19:specialistSurgicalWorkforce-o0141>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  2.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q685 .
+        c19-dimension:refArea          <wd:Q685> .
 
-c19:specialistSurgicalWorkforce-o0142
+<c19:specialistSurgicalWorkforce-o0142>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.2 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1045 .
+        c19-dimension:refArea          <wd:Q1045> .
 
-c19:specialistSurgicalWorkforce-o0143
+<c19:specialistSurgicalWorkforce-o0143>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  11.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q258 .
+        c19-dimension:refArea          <wd:Q258> .
 
-c19:specialistSurgicalWorkforce-o0144
+<c19:specialistSurgicalWorkforce-o0144>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.3 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q958 .
+        c19-dimension:refArea          <wd:Q958> .
 
-c19:specialistSurgicalWorkforce-o0145
+<c19:specialistSurgicalWorkforce-o0145>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  79.9 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q29 .
+        c19-dimension:refArea          <wd:Q29> .
 
-c19:specialistSurgicalWorkforce-o0146
+<c19:specialistSurgicalWorkforce-o0146>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  2.8 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q854 .
+        c19-dimension:refArea          <wd:Q854> .
 
-c19:specialistSurgicalWorkforce-o0147
+<c19:specialistSurgicalWorkforce-o0147>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  33.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q763 .
+        c19-dimension:refArea          <wd:Q763> .
 
-c19:specialistSurgicalWorkforce-o0148
+<c19:specialistSurgicalWorkforce-o0148>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  23.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q760 .
+        c19-dimension:refArea          <wd:Q760> .
 
-c19:specialistSurgicalWorkforce-o0149
+<c19:specialistSurgicalWorkforce-o0149>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  23.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q757 .
+        c19-dimension:refArea          <wd:Q757> .
 
-c19:specialistSurgicalWorkforce-o0150
+<c19:specialistSurgicalWorkforce-o0150>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  2.7 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1049 .
+        c19-dimension:refArea          <wd:Q1049> .
 
-c19:specialistSurgicalWorkforce-o0151
+<c19:specialistSurgicalWorkforce-o0151>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  113.1 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q34 .
+        c19-dimension:refArea          <wd:Q34> .
 
-c19:specialistSurgicalWorkforce-o0152
+<c19:specialistSurgicalWorkforce-o0152>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  94.8 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q39 .
+        c19-dimension:refArea          <wd:Q39> .
 
-c19:specialistSurgicalWorkforce-o0153
+<c19:specialistSurgicalWorkforce-o0153>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  41.7 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q863 .
+        c19-dimension:refArea          <wd:Q863> .
 
-c19:specialistSurgicalWorkforce-o0154
+<c19:specialistSurgicalWorkforce-o0154>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q924 .
+        c19-dimension:refArea          <wd:Q924> .
 
-c19:specialistSurgicalWorkforce-o0155
+<c19:specialistSurgicalWorkforce-o0155>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  13.1 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q869 .
+        c19-dimension:refArea          <wd:Q869> .
 
-c19:specialistSurgicalWorkforce-o0156
+<c19:specialistSurgicalWorkforce-o0156>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.9 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q574 .
+        c19-dimension:refArea          <wd:Q574> .
 
-c19:specialistSurgicalWorkforce-o0157
+<c19:specialistSurgicalWorkforce-o0157>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q945 .
+        c19-dimension:refArea          <wd:Q945> .
 
-c19:specialistSurgicalWorkforce-o0158
+<c19:specialistSurgicalWorkforce-o0158>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  14.0 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q678 .
+        c19-dimension:refArea          <wd:Q678> .
 
-c19:specialistSurgicalWorkforce-o0159
+<c19:specialistSurgicalWorkforce-o0159>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  30.9 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q754 .
+        c19-dimension:refArea          <wd:Q754> .
 
-c19:specialistSurgicalWorkforce-o0160
+<c19:specialistSurgicalWorkforce-o0160>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  11.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q948 .
+        c19-dimension:refArea          <wd:Q948> .
 
-c19:specialistSurgicalWorkforce-o0161
+<c19:specialistSurgicalWorkforce-o0161>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  47.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q43 .
+        c19-dimension:refArea          <wd:Q43> .
 
-c19:specialistSurgicalWorkforce-o0162
+<c19:specialistSurgicalWorkforce-o0162>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  58.8 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q874 .
+        c19-dimension:refArea          <wd:Q874> .
 
-c19:specialistSurgicalWorkforce-o0163
+<c19:specialistSurgicalWorkforce-o0163>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  26.1 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q672 .
+        c19-dimension:refArea          <wd:Q672> .
 
-c19:specialistSurgicalWorkforce-o0164
+<c19:specialistSurgicalWorkforce-o0164>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  1.1 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q1036 .
+        c19-dimension:refArea          <wd:Q1036> .
 
-c19:specialistSurgicalWorkforce-o0165
+<c19:specialistSurgicalWorkforce-o0165>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  86.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q212 .
+        c19-dimension:refArea          <wd:Q212> .
 
-c19:specialistSurgicalWorkforce-o0166
+<c19:specialistSurgicalWorkforce-o0166>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  133.3 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q145 .
+        c19-dimension:refArea          <wd:Q145> .
 
-c19:specialistSurgicalWorkforce-o0167
+<c19:specialistSurgicalWorkforce-o0167>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  54.7 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q30 .
+        c19-dimension:refArea          <wd:Q30> .
 
-c19:specialistSurgicalWorkforce-o0168
+<c19:specialistSurgicalWorkforce-o0168>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  38.9 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q77 .
+        c19-dimension:refArea          <wd:Q77> .
 
-c19:specialistSurgicalWorkforce-o0169
+<c19:specialistSurgicalWorkforce-o0169>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  50.4 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q265 .
+        c19-dimension:refArea          <wd:Q265> .
 
-c19:specialistSurgicalWorkforce-o0170
+<c19:specialistSurgicalWorkforce-o0170>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  3.2 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q686 .
+        c19-dimension:refArea          <wd:Q686> .
 
-c19:specialistSurgicalWorkforce-o0171
+<c19:specialistSurgicalWorkforce-o0171>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  18.1 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q717 .
+        c19-dimension:refArea          <wd:Q717> .
 
-c19:specialistSurgicalWorkforce-o0172
+<c19:specialistSurgicalWorkforce-o0172>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  0.8 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q805 .
+        c19-dimension:refArea          <wd:Q805> .
 
-c19:specialistSurgicalWorkforce-o0173
+<c19:specialistSurgicalWorkforce-o0173>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  1.5 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q953 .
+        c19-dimension:refArea          <wd:Q953> .
 
-c19:specialistSurgicalWorkforce-o0174
+<c19:specialistSurgicalWorkforce-o0174>
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-specialist_surgical_workforce ;
         c19-dimension:refPeriod        c19-interval:Year2008-18 ;
         c19-measure:specialistSurgicalWorkforce  1.6 ;
         sdmx-attribute:unitMultiplier  -5 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          wd:Q954 .
+        c19-dimension:refArea          <wd:Q954> .

@@ -351,6 +351,18 @@ c19:dataset-adult_mortality_rate a qb:Dataset ;
 
 # -- Data structure definition ----------------------------
 
+c19-structure:dsd-adult_mortality_rate a qb:DataStructureDefinition;
+        qb:component
+                [ qb:dimension c19-dimension:refArea; qb:order 2 ],
+                [ qb:dimension c19-dimension:refPeriod; qb:order 1 ];
+        qb:component
+                [ qb:measure c19-measure:adultMortalityRateMale ;
+        qb:measure c19-measure:adultMortalityRateFemale ;] ;
+        qb:component
+                [ qb:attribute sdmx-attribute:decimals ;
+                qb:attribute sdmx-attribute:unitMultiplier ;];
+.
+
 # -- Intervals --------------------------------------------
 
 c19-interval:Year2013-18 a time:Interval ;
@@ -359,6 +371,16 @@ c19-interval:Year2013-18 a time:Interval ;
     rdfs:label "2013-18" .
 
 # -- Dimensions and measures ------------------------------
+
+c19-measure:adultMortalityRateMale  a rdf:Property, qb:MeasureProperty;
+        rdfs:label "Adult male mortality per 1000 population"@en;
+        rdfs:subPropertyOf sdmx-measure:obsValue;
+        rdfs:range xsd:decimal ; .
+
+c19-measure:adultMortalityRateFemale  a rdf:Property, qb:MeasureProperty;
+        rdfs:label "Adult female mortality per 1000 population"@en;
+        rdfs:subPropertyOf sdmx-measure:obsValue;
+        rdfs:range xsd:decimal ; .
 
 ```
 
@@ -380,14 +402,36 @@ c19:dataset-infant_mortality_rate a qb:Dataset ;
 
 # -- Data structure definition ----------------------------
 
+c19-structure:dsd-infant_mortality_rate a qb:DataStructureDefinition;
+        qb:component
+                [ qb:dimension c19-dimension:refArea; qb:order 2 ],
+                [ qb:dimension c19-dimension:refPeriod; qb:order 1 ];
+        qb:component
+                [ qb:measure c19-measure:infantMortalityRate1990 ;
+                qb:measure c19-measure:infantMortalityRate2019 ;] ;
+        qb:component
+                [ qb:attribute sdmx-attribute:decimals ;
+                qb:attribute sdmx-attribute:unitMultiplier ;];
+.
+
 # -- Intervals --------------------------------------------
 
-c19-interval:Year1990-2019 a time:Interval ;
+c19-interval:Year1990-19 a time:Interval ;
     time:hasBeginning "1990"^^xsd:gYear ;
     time:hasEnd "2019"^^xsd:gYear ;
-    rdfs:label "1990-2019" .
+    rdfs:label "1990-19" .
 
 # -- Dimensions and measures ------------------------------
+
+c19-measure:infantMortalityRate1990  a rdf:Property, qb:MeasureProperty;
+        rdfs:label "Infant mortality per 1000 live births in 1990"@en;
+        rdfs:subPropertyOf sdmx-measure:obsValue;
+        rdfs:range xsd:decimal ; .
+
+c19-measure:infantMortalityRate2019  a rdf:Property, qb:MeasureProperty;
+        rdfs:label "Infant mortality per 1000 live births in 2019"@en;
+        rdfs:subPropertyOf sdmx-measure:obsValue;
+        rdfs:range xsd:decimal ; .
 
 ```
 
@@ -409,14 +453,36 @@ c19:dataset-life_expectancy_birth_total a qb:Dataset ;
 
 # -- Data structure definition ----------------------------
 
+c19-structure:dsd-life_expectancy_birth_total a qb:DataStructureDefinition;
+        qb:component
+                [ qb:dimension c19-dimension:refArea; qb:order 2 ],
+                [ qb:dimension c19-dimension:refPeriod; qb:order 1 ] ;
+        qb:component
+                [ qb:measure c19-measure:lifeExpectancyBirthTotal1990 ;
+                qb:measure c19-measure:lifeExpectancyBirthTotal2018 ;] ;
+        qb:component
+                [ qb:attribute sdmx-attribute:decimals ;
+                qb:attribute sdmx-attribute:unitMultiplier ;] ;
+.
+
 # -- Intervals --------------------------------------------
 
-c19-interval:Year1990-2018 a time:Interval ;
+c19-interval:Year1990-18 a time:Interval ;
     time:hasBeginning "1990"^^xsd:gYear ;
     time:hasEnd "2018"^^xsd:gYear ;
-    rdfs:label "1990-2018" .
+    rdfs:label "1990-18" .
 
 # -- Dimensions and measures ------------------------------
+
+c19-measure:lifeExpectancyBirthTotal1990  a rdf:Property, qb:MeasureProperty;
+        rdfs:label "Percent of life expectancy at birth in 1990"@en;
+        rdfs:subPropertyOf sdmx-measure:obsValue;
+        rdfs:range xsd:decimal ; .
+
+c19-measure:lifeExpectancyBirthTotal2018  a rdf:Property, qb:MeasureProperty;
+        rdfs:label "Percent of life expectancy at birth in 2018"@en;
+        rdfs:subPropertyOf sdmx-measure:obsValue;
+        rdfs:range xsd:decimal ; .
 
 ```
 
@@ -438,14 +504,36 @@ c19:dataset-neonatal_mortality_rate a qb:Dataset ;
 
 # -- Data structure definition ----------------------------
 
+c19-structure:dsd-neonatal_mortality_rate a qb:DataStructureDefinition;
+        qb:component
+                [ qb:dimension c19-dimension:refArea; qb:order 2 ],
+                [ qb:dimension c19-dimension:refPeriod; qb:order 1 ] ;
+        qb:component
+                [ qb:measure c19-measure:neonatalMortalityRate1990 ;
+                qb:measure c19-measure:neonatalMortalityRate2019 ;] ;
+        qb:component
+                [ qb:attribute sdmx-attribute:decimals ;
+                qb:attribute sdmx-attribute:unitMultiplier ;] ;
+.
+
 # -- Intervals --------------------------------------------
 
-c19-interval:Year1990-2019 a time:Interval ;
+c19-interval:Year1990-19 a time:Interval ;
     time:hasBeginning "1990"^^xsd:gYear ;
     time:hasEnd "2019"^^xsd:gYear ;
-    rdfs:label "1990-2019" .
+    rdfs:label "1990-19" .
 
 # -- Dimensions and measures ------------------------------
+
+c19-measure:neonatalMortalityRate1990  a rdf:Property, qb:MeasureProperty;
+        rdfs:label "Neonatal mortality per 1000 live births in 1990"@en;
+        rdfs:subPropertyOf sdmx-measure:obsValue;
+        rdfs:range xsd:decimal ; .
+
+c19-measure:neonatalMortalityRate2019  a rdf:Property, qb:MeasureProperty;
+        rdfs:label "Neonatal mortality per 1000 live births in 2019"@en;
+        rdfs:subPropertyOf sdmx-measure:obsValue;
+        rdfs:range xsd:decimal ; .
 
 ```
 
@@ -467,13 +555,47 @@ c19:dataset-under-five_mortality_rate_complete a qb:Dataset ;
 
 # -- Data structure definition ----------------------------
 
+c19-structure:dsd-under_five_mortality_rate_complete a qb:DataStructureDefinition;
+        qb:component
+                [ qb:dimension c19-dimension:refArea; qb:order 2 ],
+                [ qb:dimension c19-dimension:refPeriod; qb:order 1 ] ;
+        qb:component
+                [ qb:measure c19-measure:underFiveMortalityRateCompleteTotal1990 ;
+                qb:measure c19-measure:underFiveMortalityRateCompleteTotal2019 ;
+                qb:measure c19-measure:underFiveMortalityRateCompleteMale2019 ;
+                qb:measure c19-measure:underFiveMortalityRateCompleteFemale2019 ;] ;
+        qb:component
+                [ qb:attribute sdmx-attribute:decimals ;
+                qb:attribute sdmx-attribute:unitMultiplier ;] ;
+.
+
 # -- Intervals --------------------------------------------
 
-c19-interval:Year1990-2019 a time:Interval ;
+c19-interval:Year1990-19 a time:Interval ;
     time:hasBeginning "1990"^^xsd:gYear ;
     time:hasEnd "2019"^^xsd:gYear ;
-    rdfs:label "1990-2019" .
+    rdfs:label "1990-19" .
 
 # -- Dimensions and measures ------------------------------
+
+c19-measure:underFiveMortalityRateCompleteTotal1990  a rdf:Property, qb:MeasureProperty;
+        rdfs:label "Under five average mortality rate per 1000 live births in 1990"@en;
+        rdfs:subPropertyOf sdmx-measure:obsValue;
+        rdfs:range xsd:decimal ; .
+
+c19-measure:underFiveMortalityRateCompleteTotal2019  a rdf:Property, qb:MeasureProperty;
+        rdfs:label "Under five average mortality rate per 1000 live births in 2019"@en;
+        rdfs:subPropertyOf sdmx-measure:obsValue;
+        rdfs:range xsd:decimal ; .
+
+c19-measure:underFiveMortalityRateCompleteMale2019  a rdf:Property, qb:MeasureProperty;
+        rdfs:label "Under five male mortality rate per 1000 live births in 2019"@en;
+        rdfs:subPropertyOf sdmx-measure:obsValue;
+        rdfs:range xsd:decimal ; .
+
+c19-measure:underFiveMortalityRateCompleteFemale2019  a rdf:Property, qb:MeasureProperty;
+        rdfs:label "Under five female mortality rate per 1000 live births in 2019"@en;
+        rdfs:subPropertyOf sdmx-measure:obsValue;
+        rdfs:range xsd:decimal ; .
 
 ```

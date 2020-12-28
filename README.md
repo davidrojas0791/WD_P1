@@ -104,13 +104,6 @@ c19-measure:specialistSurgicalWorkforce  a rdf:Property, qb:MeasureProperty;
     rdfs:range xsd:decimal ;
     .
 
-
-
-
-
-
-
-
 c19-measure:adultMortalityRateMale  a rdf:Property, qb:MeasureProperty;
     rdfs:label "Adult male mortality per 1000 population"@en;
     rdfs:subPropertyOf sdmx-measure:obsValue;
@@ -122,7 +115,6 @@ c19-measure:adultMortalityRateFemale  a rdf:Property, qb:MeasureProperty;
     rdfs:subPropertyOf sdmx-measure:obsValue;
     rdfs:range xsd:decimal ;
     .
-
 
 c19-measure:infantMortalityRate1990  a rdf:Property, qb:MeasureProperty;
     rdfs:label "Infant mortality per 1000 live births in 1990"@en;
@@ -136,13 +128,53 @@ c19-measure:infantMortalityRate2019  a rdf:Property, qb:MeasureProperty;
     rdfs:range xsd:decimal ;
     .
 
-
 c19-measure:lifeExpectancyBirthTotal1990  a rdf:Property, qb:MeasureProperty;
-    rdfs:label "Infant mortality per 1000 live births in 2019"@en;
+    rdfs:label "Percent of life expectancy at birth in 1990"@en;
     rdfs:subPropertyOf sdmx-measure:obsValue;
     rdfs:range xsd:decimal ;
     .
 
+c19-measure:lifeExpectancyBirthTotal2018  a rdf:Property, qb:MeasureProperty;
+    rdfs:label "Percent of life expectancy at birth in 2018"@en;
+    rdfs:subPropertyOf sdmx-measure:obsValue;
+    rdfs:range xsd:decimal ;
+    .
+
+c19-measure:neonatalMortalityRate1990  a rdf:Property, qb:MeasureProperty;
+    rdfs:label "Neonatal mortality per 1000 live births in 1990"@en;
+    rdfs:subPropertyOf sdmx-measure:obsValue;
+    rdfs:range xsd:decimal ;
+    .
+
+c19-measure:neonatalMortalityRate2019  a rdf:Property, qb:MeasureProperty;
+    rdfs:label "Neonatal mortality per 1000 live births in 2019"@en;
+    rdfs:subPropertyOf sdmx-measure:obsValue;
+    rdfs:range xsd:decimal ;
+    .
+
+c19-measure:underFiveMortalityRateCompleteTotal1990  a rdf:Property, qb:MeasureProperty;
+    rdfs:label "Under five average mortality rate per 1000 live births in 1990"@en;
+    rdfs:subPropertyOf sdmx-measure:obsValue;
+    rdfs:range xsd:decimal ;
+    .
+
+c19-measure:underFiveMortalityRateCompleteTotal2019  a rdf:Property, qb:MeasureProperty;
+    rdfs:label "Under five average mortality rate per 1000 live births in 2019"@en;
+    rdfs:subPropertyOf sdmx-measure:obsValue;
+    rdfs:range xsd:decimal ;
+    .
+
+c19-measure:underFiveMortalityRateCompleteMale2019  a rdf:Property, qb:MeasureProperty;
+    rdfs:label "Under five male mortality rate per 1000 live births in 2019"@en;
+    rdfs:subPropertyOf sdmx-measure:obsValue;
+    rdfs:range xsd:decimal ;
+    .
+
+c19-measure:underFiveMortalityRateCompleteFemale2019  a rdf:Property, qb:MeasureProperty;
+    rdfs:label "Under five female mortality rate per 1000 live births in 2019"@en;
+    rdfs:subPropertyOf sdmx-measure:obsValue;
+    rdfs:range xsd:decimal ;
+    .
 
 
 #################### structure ####################

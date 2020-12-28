@@ -11,6 +11,7 @@
 @prefix sdmx-attribute:  <http://purl.org/linked-data/sdmx/2009/attribute#> .
 @prefix c19-interval:  <http://example.org/interval#> .
 @prefix sdmx-dimension:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix dct:      <http://purl.org/dc/terms/> .
 
 # -- Data Set ---------------------------------------------
 

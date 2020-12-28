@@ -1,7 +1,7 @@
 # Web-Datos-Proy1-T10
 
 ## Prefixes
-
+```
 @prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl:      <http://www.w3.org/2002/07/owl#> .
@@ -34,11 +34,13 @@
 @prefix c19-unit:  <http://example.org/unit#> .
 @prefix c19-structure:  <http://example.org/structure#> .
 @prefix c19-interval:  <http://example.org/interval#> .
+```
 
 ## Metadata: Health systems
 
 ### Completeness birth registration
 
+```
 # -- Data Set ---------------------------------------------
 
 c19:dataset-completeness_birth_registration a qb:Dataset ; 
@@ -77,9 +79,11 @@ c19-measure:completenessOfBirthRegistrations a rdf:Property, qb:MeasureProperty 
 	rdfs:label "Percent of Completed Birth Registrations"@en ; 
 	rdfs:subPropertyOf sdmx-measure:obsValue ; 
 	rdfs:range xsd:decimal ; .
+```
 
 ### Completeness death registration
 
+```
 # -- Data Set ---------------------------------------------
 
 c19:dataset-completeness_death_registration a qb:Dataset ; 
@@ -119,9 +123,11 @@ c19-measure:completenessOfDeathRegistrations a rdf:Property, qb:MeasureProperty;
         rdfs:label "Percent of Completed Death Registrations"@en; 
         rdfs:subPropertyOf sdmx-measure:obsValue; 
         rdfs:range xsd:decimal ; .
+```
 
 ### External health expenditure
 
+```
 # -- Data Set ---------------------------------------------
 
 c19:dataset-external_health_expenditure a qb:Dataset ; 
@@ -161,9 +167,11 @@ c19-measure:externalHealthExpenditure a rdf:Property, qb:MeasureProperty;
         rdfs:label "Percent of current external health expenditure"@en; 
         rdfs:subPropertyOf sdmx-measure:obsValue; 
         rdfs:range xsd:decimal ; .
+```
 
 ### Health expenditure
 
+```
 # -- Data Set ---------------------------------------------
 
 c19:dataset-health_expenditure a qb:Dataset ; 
@@ -227,9 +235,11 @@ c19-measure:percapitaPPPHealthExpenditure a rdf:Property, qb:MeasureProperty;
         rdfs:label "Percent of public health expenditure"@en; 
         rdfs:subPropertyOf sdmx-measure:obsValue; 
         rdfs:range xsd:decimal ; .
+```
 
-## Health workers
+### Health workers
 
+```
 # -- Data Set ---------------------------------------------
 
 c19:dataset-health_workers a qb:Dataset ; 
@@ -275,9 +285,11 @@ c19-measure:healthWorkersNursesAndMidwives a rdf:Property, qb:MeasureProperty;
         rdfs:label "Nurses and midwives per 1000 people"@en; 
         rdfs:subPropertyOf sdmx-measure:obsValue; 
         rdfs:range xsd:decimal ; .
+```
 
-## Specialist surgical workforce
+### Specialist surgical workforce
 
+```
 # -- Data Set ---------------------------------------------
 
 c19:dataset-specialist_surgical_workforce a qb:Dataset ; 
@@ -317,6 +329,7 @@ c19-measure:specialistSurgicalWorkforce a rdf:Property, qb:MeasureProperty;
         rdfs:label "Specialist Surgical Workforce per 100000 population"@en; 
         rdfs:subPropertyOf sdmx-measure:obsValue; 
         rdfs:range xsd:decimal ; .
+```
 
 ## Metadata: Mortality
 

@@ -351,16 +351,6 @@ c19:dataset-adult_mortality_rate a qb:Dataset ;
 
 # -- Data structure definition ----------------------------
 
-c19-structure:dsd-adult_mortality_rate a qb:DataStructureDefinition ;
-	qb:component
-		[ qb:dimension c19-dimension:refArea; qb:order 2 ] ,
-		[ qb:dimension c19-dimension:refPeriod; qb:order 1 ] ;
-	qb:component 
-		[ qb:measure c19-measure:adultMortalityRate ] ; 
-	qb:component
-		[ qb:attribute sdmx-attribute:decimals ; qb:attribute sdmx-attribute:unitMultiplier ;] ; 
-.
-
 # -- Intervals --------------------------------------------
 
 c19-interval:Year2013-18 a time:Interval ;
@@ -370,16 +360,120 @@ c19-interval:Year2013-18 a time:Interval ;
 
 # -- Dimensions and measures ------------------------------
 
-c19-measure:adultMortalityRate a rdf:Property, qb:MeasureProperty ; 
-	rdfs:label ""@en ; 
-	rdfs:subPropertyOf sdmx-measure:obsValue ; 
-	rdfs:range xsd:decimal ; .
 ```
 
 ### Infant mortality rate
 
+```
+# -- Data Set ---------------------------------------------
+
+c19:dataset-infant_mortality_rate a qb:Dataset ; 
+    dct:title "Infant mortality rate"@en ; 
+    rdfs:label "infant_mortality_rate"@en ; 
+    rdfs:comment "2.18 | World Development Indicators: Mortality"@en ; 
+    dct:description "Infant mortality rate is the number of infants dying before reaching one year of age, per 1,000 live births in a given year."@en ; 
+    dct:publisher wd:Q7164 ; 
+    dct:issued "2020-09-22"^^xsd:date ; 
+    dct:source <http://wdi.worldbank.org/table/2.18> ; 
+    qb:structure c19-structure:dsd-infant_mortality_rate ; 
+. 
+
+# -- Data structure definition ----------------------------
+
+# -- Intervals --------------------------------------------
+
+c19-interval:Year1990-2019 a time:Interval ;
+    time:hasBeginning "1990"^^xsd:gYear ;
+    time:hasEnd "2019"^^xsd:gYear ;
+    rdfs:label "1990-2019" .
+
+# -- Dimensions and measures ------------------------------
+
+```
+
 ### Life expectancy birth total
+
+```
+# -- Data Set ---------------------------------------------
+
+c19:dataset-life_expectancy_birth_total a qb:Dataset ; 
+    dct:title "Life expectancy birth total"@en ; 
+    rdfs:label "life_expectancy_birth_total"@en ; 
+    rdfs:comment "2.18 | World Development Indicators: Mortality"@en ; 
+    dct:description "Life expectancy at birth indicates the number of years a newborn infant would live if prevailing patterns of mortality at the time of its birth were to stay the same throughout its life."@en ; 
+    dct:publisher wd:Q7164 ; 
+    dct:issued "2020-09-22"^^xsd:date ; 
+    dct:source <http://wdi.worldbank.org/table/2.18> ; 
+    qb:structure c19-structure:dsd-life_expectancy_birth_total ; 
+. 
+
+# -- Data structure definition ----------------------------
+
+# -- Intervals --------------------------------------------
+
+c19-interval:Year1990-2018 a time:Interval ;
+    time:hasBeginning "1990"^^xsd:gYear ;
+    time:hasEnd "2018"^^xsd:gYear ;
+    rdfs:label "1990-2018" .
+
+# -- Dimensions and measures ------------------------------
+
+```
 
 ### Neonatal mortality rate
 
+```
+# -- Data Set ---------------------------------------------
+
+c19:dataset-neonatal_mortality_rate a qb:Dataset ; 
+    dct:title "Neonatal mortality rate"@en ; 
+    rdfs:label "neonatal_mortality_rate"@en ; 
+    rdfs:comment "2.18 | World Development Indicators: Mortality"@en ; 
+    dct:description "Neonatal mortality rate is the number of neonates dying before reaching 28 days of age, per 1,000 live births in a given year."@en ; 
+    dct:publisher wd:Q7164 ; 
+    dct:issued "2020-09-22"^^xsd:date ; 
+    dct:source <http://wdi.worldbank.org/table/2.18> ; 
+    qb:structure c19-structure:dsd-neonatal_mortality_rate ; 
+. 
+
+# -- Data structure definition ----------------------------
+
+# -- Intervals --------------------------------------------
+
+c19-interval:Year1990-2019 a time:Interval ;
+    time:hasBeginning "1990"^^xsd:gYear ;
+    time:hasEnd "2019"^^xsd:gYear ;
+    rdfs:label "1990-2019" .
+
+# -- Dimensions and measures ------------------------------
+
+```
+
 ### Under-five mortality rate complete
+
+```
+# -- Data Set ---------------------------------------------
+
+c19:dataset-under-five_mortality_rate_complete a qb:Dataset ; 
+    dct:title "Under-five mortality rate complete"@en ; 
+    rdfs:label "under-five_mortality_rate_complete"@en ; 
+    rdfs:comment "2.18 | World Development Indicators: Mortality"@en ; 
+    dct:description "Under-five mortality rate is the probability per 1,000 that a newborn baby will die before reaching age five, if subject to age-specific mortality rates of the specified year."@en ; 
+    dct:publisher wd:Q7164 ; 
+    dct:issued "2020-09-22"^^xsd:date ; 
+    dct:source <http://wdi.worldbank.org/table/2.18> ; 
+    qb:structure c19-structure:dsd-under-five_mortality_rate_complete ; 
+. 
+
+# -- Data structure definition ----------------------------
+
+# -- Intervals --------------------------------------------
+
+c19-interval:Year1990-2019 a time:Interval ;
+    time:hasBeginning "1990"^^xsd:gYear ;
+    time:hasEnd "2019"^^xsd:gYear ;
+    rdfs:label "1990-2019" .
+
+# -- Dimensions and measures ------------------------------
+
+```

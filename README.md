@@ -106,6 +106,45 @@ c19-measure:specialistSurgicalWorkforce  a rdf:Property, qb:MeasureProperty;
 
 
 
+
+
+
+
+
+c19-measure:adultMortalityRateMale  a rdf:Property, qb:MeasureProperty;
+    rdfs:label "Adult male mortality per 1000 population"@en;
+    rdfs:subPropertyOf sdmx-measure:obsValue;
+    rdfs:range xsd:decimal ;
+    .
+
+c19-measure:adultMortalityRateFemale  a rdf:Property, qb:MeasureProperty;
+    rdfs:label "Adult female mortality per 1000 population"@en;
+    rdfs:subPropertyOf sdmx-measure:obsValue;
+    rdfs:range xsd:decimal ;
+    .
+
+
+c19-measure:infantMortalityRate1990  a rdf:Property, qb:MeasureProperty;
+    rdfs:label "Infant mortality per 1000 live births in 1990"@en;
+    rdfs:subPropertyOf sdmx-measure:obsValue;
+    rdfs:range xsd:decimal ;
+    .
+
+c19-measure:infantMortalityRate2019  a rdf:Property, qb:MeasureProperty;
+    rdfs:label "Infant mortality per 1000 live births in 2019"@en;
+    rdfs:subPropertyOf sdmx-measure:obsValue;
+    rdfs:range xsd:decimal ;
+    .
+
+
+c19-measure:lifeExpectancyBirthTotal1990  a rdf:Property, qb:MeasureProperty;
+    rdfs:label "Infant mortality per 1000 live births in 2019"@en;
+    rdfs:subPropertyOf sdmx-measure:obsValue;
+    rdfs:range xsd:decimal ;
+    .
+
+
+
 #################### structure ####################
  # c19-structure:dsd-completeness_birth_registration
 c19-structure:dsd-completeness_birth_registration a qb:DataStructureDefinition;

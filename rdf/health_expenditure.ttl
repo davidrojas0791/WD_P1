@@ -1,17 +1,35 @@
-@prefix c19-measure:  <http://example.org/measure#> .
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
-@prefix c19:  <http://example.org/ns#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix void:     <http://rdfs.org/ns/void#> .
+@prefix dct:      <http://purl.org/dc/terms/> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+@prefix org:      <http://www.w3.org/ns/org#> .
+@prefix admingeo: <http://data.ordnancesurvey.co.uk/ontology/admingeo/> .
+@prefix interval: <http://reference.data.gov.uk/def/intervals/> .
+@prefix time: <http://www.w3.org/2006/time#> .
 @prefix wd:  <http://www.wikidata.org/entity/> .
+
 @prefix qb:  <http://purl.org/linked-data/cube#> .
 @prefix ex:  <http://ex.org/a#> .
-@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix sdmx-code:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
+
+@prefix sdmx-concept:    <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix sdmx-dimension:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-attribute:  <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix sdmx-measure:    <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix sdmx-metadata:   <http://purl.org/linked-data/sdmx/2009/metadata#> .
+@prefix sdmx-code:       <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix sdmx-subject:    <http://purl.org/linked-data/sdmx/2009/subject#> .
+
+
+@prefix c19:  <http://example.org/ns#> .
+@prefix c19-measure:  <http://example.org/measure#> .
 @prefix c19-dimension:  <http://example.org/dimension#> .
 @prefix c19-unit:  <http://example.org/unit#> .
-@prefix sdmx-attribute:  <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix c19-structure:  <http://example.org/structure#> .
 @prefix c19-interval:  <http://example.org/interval#> .
-@prefix sdmx-dimension:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
-@prefix dct:      <http://purl.org/dc/terms/> .
 
 # -- Data Set ---------------------------------------------
 

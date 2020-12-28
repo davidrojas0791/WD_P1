@@ -24,12 +24,16 @@ c19-interval:Year2013-18 a time:Interval ;
 
 
 
+
+c19-interval:Year1990-18 a time:Interval ;
+    time:hasBeginning "1990"^^xsd:gYear ;
+    time:hasEnd "2018"^^xsd:gYear ;
+    rdfs:label "1990-18" .
+
 c19-interval:Year1990-19 a time:Interval ;
     time:hasBeginning "1990"^^xsd:gYear ;
     time:hasEnd "2019"^^xsd:gYear ;
     rdfs:label "1990-19" .
-
-
 
 #################### dimension_measure ####################
 

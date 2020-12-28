@@ -63,10 +63,10 @@ c19-structure:dsd-health_expenditure a qb:DataStructureDefinition;
 
 # -- Intervals --------------------------------------------
 
-c19-interval:Year2013-18 a time:Interval ;
-    time:hasBeginning "2013"^^xsd:gYear ;
-    time:hasEnd "2018"^^xsd:gYear ;
-    rdfs:label "2013-18" .
+c19-interval:Year2017 a time:Interval ;
+    time:hasBeginning "2017"^^xsd:gYear ;
+    time:hasEnd "2017"^^xsd:gYear ;
+    rdfs:label "2017" .
 
 # -- Dimensions and measures ------------------------------
 

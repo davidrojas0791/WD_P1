@@ -30,6 +30,7 @@
 @prefix c19-unit:  <http://example.org/unit#> .
 @prefix c19-structure:  <http://example.org/structure#> .
 @prefix c19-interval:  <http://example.org/interval#> .
+
 # -- Data Set ---------------------------------------------
 
 c19:dataset-completeness_death_registration a qb:Dataset ; 
@@ -58,10 +59,10 @@ c19-structure:dsd-completeness_death_registration a qb:DataStructureDefinition;
 
 # -- Intervals --------------------------------------------
 
-c19-interval:Year2013-18 a time:Interval ;
-    time:hasBeginning "2013"^^xsd:gYear ;
-    time:hasEnd "2018"^^xsd:gYear ;
-    rdfs:label "2013-18" .
+c19-interval:Year2008-16 a time:Interval ;
+    time:hasBeginning "2008"^^xsd:gYear ;
+    time:hasEnd "2016"^^xsd:gYear ;
+    rdfs:label "2008-16" .
 
 # -- Dimensions and measures ------------------------------
 

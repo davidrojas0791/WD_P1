@@ -33,8 +33,8 @@ FROM <file:https://raw.githubusercontent.com/davidrojas0791/Web-Datos-Proy1-T10/
 WHERE {
 	BIND (URI(CONCAT("c19:neonatalMortalityRate-o0", ?id_row)) AS ?obs)
 	BIND (URI(CONCAT("wd:",?ID)) AS ?wdID)
-	BIND (xsd:decimal(?Total1990) AS ?Total1990)
-	BIND (xsd:decimal(?Total2019) AS ?Total2019)
-	BIND (xsd:decimal(?Male2019) AS ?Male2019)
-	BIND (xsd:decimal(?Female2019) AS ?Female2019)
+	BIND (xsd:decimal(?Total90) AS ?Total1990)
+	BIND (xsd:decimal(?Total19) AS ?Total2019)
+	BIND (xsd:decimal(?Male19) AS ?Male2019)
+	BIND (xsd:decimal(?Female19) AS ?Female2019)
 } 

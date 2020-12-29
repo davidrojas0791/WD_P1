@@ -1,0 +1,3469 @@
+@prefix c19-measure:  <http://example.org/measure#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix c19:  <http://example.org/ns#> .
+@prefix wd:  <http://www.wikidata.org/entity/> .
+@prefix qb:  <http://purl.org/linked-data/cube#> .
+@prefix ex:  <http://ex.org/a#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdmx-code:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix c19-dimension:  <http://example.org/dimension#> .
+@prefix c19-unit:  <http://example.org/unit#> .
+@prefix sdmx-attribute:  <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix c19-interval:  <http://example.org/interval#> .
+@prefix sdmx-dimension:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
+
+<c19:neonatalMortalityRate-o00>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "178"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "60"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "64"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "57"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q889> .
+
+<c19:neonatalMortalityRate-o01>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "41"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "10"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "11"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "9"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q222> .
+
+<c19:neonatalMortalityRate-o02>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "50"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "23"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "25"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "22"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q262> .
+
+<c19:neonatalMortalityRate-o03>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "13"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q228> .
+
+<c19:neonatalMortalityRate-o04>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "222"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "75"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "80"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "69"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q916> .
+
+<c19:neonatalMortalityRate-o05>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "14"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "6"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q781> .
+
+<c19:neonatalMortalityRate-o06>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "29"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "9"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "10"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q414> .
+
+<c19:neonatalMortalityRate-o07>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "49"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "12"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "13"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "11"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q399> .
+
+<c19:neonatalMortalityRate-o08>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "9"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q408> .
+
+<c19:neonatalMortalityRate-o09>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "10"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q40> .
+
+<c19:neonatalMortalityRate-o010>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "95"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "20"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "22"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "18"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q227> .
+
+<c19:neonatalMortalityRate-o011>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "24"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "13"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "14"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "12"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q778> .
+
+<c19:neonatalMortalityRate-o012>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "23"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q398> .
+
+<c19:neonatalMortalityRate-o013>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "144"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "31"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "33"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "29"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q902> .
+
+<c19:neonatalMortalityRate-o014>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "18"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "13"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "14"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "12"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q244> .
+
+<c19:neonatalMortalityRate-o015>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q184> .
+
+<c19:neonatalMortalityRate-o016>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "10"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q31> .
+
+<c19:neonatalMortalityRate-o017>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "38"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "12"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "14"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "11"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q242> .
+
+<c19:neonatalMortalityRate-o018>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "175"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "90"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "96"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "84"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q962> .
+
+<c19:neonatalMortalityRate-o019>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "127"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "29"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "31"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "26"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q917> .
+
+<c19:neonatalMortalityRate-o020>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "122"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "26"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "29"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "23"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q750> .
+
+<c19:neonatalMortalityRate-o021>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "18"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "6"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "6"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "5"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q225> .
+
+<c19:neonatalMortalityRate-o022>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "48"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "42"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "45"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "38"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q963> .
+
+<c19:neonatalMortalityRate-o023>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "63"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "14"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "16"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "12"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q155> .
+
+<c19:neonatalMortalityRate-o024>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "13"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "11"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "13"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "10"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q921> .
+
+<c19:neonatalMortalityRate-o025>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "18"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "6"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q219> .
+
+<c19:neonatalMortalityRate-o026>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "199"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "88"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "92"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "83"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q965> .
+
+<c19:neonatalMortalityRate-o027>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "174"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "57"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "61"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "52"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q967> .
+
+<c19:neonatalMortalityRate-o028>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "61"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "16"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "13"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1011> .
+
+<c19:neonatalMortalityRate-o029>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "116"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "27"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "30"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "23"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q424> .
+
+<c19:neonatalMortalityRate-o030>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "136"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "75"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "81"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "69"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1009> .
+
+<c19:neonatalMortalityRate-o031>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "5"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "5"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "5"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q16> .
+
+<c19:neonatalMortalityRate-o032>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "177"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "110"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "116"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "104"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q929> .
+
+<c19:neonatalMortalityRate-o033>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "212"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "114"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "120"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "107"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q657> .
+
+<c19:neonatalMortalityRate-o034>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "19"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "6"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q298> .
+
+<c19:neonatalMortalityRate-o035>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "54"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q148> .
+
+<c19:neonatalMortalityRate-o036>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "35"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "14"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "12"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q739> .
+
+<c19:neonatalMortalityRate-o037>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "124"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "63"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "68"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "58"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q970> .
+
+<c19:neonatalMortalityRate-o038>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "185"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "85"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "91"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "78"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q974> .
+
+<c19:neonatalMortalityRate-o039>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "90"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "48"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "52"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "44"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q971> .
+
+<c19:neonatalMortalityRate-o040>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "17"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "9"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "9"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q800> .
+
+<c19:neonatalMortalityRate-o041>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "152"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "79"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "87"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "71"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1008> .
+
+<c19:neonatalMortalityRate-o042>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "13"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "5"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "5"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q224> .
+
+<c19:neonatalMortalityRate-o043>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "14"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "5"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "6"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "5"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q241> .
+
+<c19:neonatalMortalityRate-o044>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "11"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q229> .
+
+<c19:neonatalMortalityRate-o045>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "12"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q213> .
+
+<c19:neonatalMortalityRate-o046>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "9"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q35> .
+
+<c19:neonatalMortalityRate-o047>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "118"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "58"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "62"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "52"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q977> .
+
+<c19:neonatalMortalityRate-o048>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "17"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "35"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "39"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "34"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q784> .
+
+<c19:neonatalMortalityRate-o049>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "60"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "28"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "31"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "25"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q786> .
+
+<c19:neonatalMortalityRate-o050>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "54"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "14"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "16"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "12"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q736> .
+
+<c19:neonatalMortalityRate-o051>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "86"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "20"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "22"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "19"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q79> .
+
+<c19:neonatalMortalityRate-o052>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "60"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "13"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "12"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q792> .
+
+<c19:neonatalMortalityRate-o053>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "178"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "82"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "88"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "76"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q983> .
+
+<c19:neonatalMortalityRate-o054>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "153"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "41"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "46"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "35"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q986> .
+
+<c19:neonatalMortalityRate-o055>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "18"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q191> .
+
+<c19:neonatalMortalityRate-o056>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "67"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "49"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "54"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "45"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1050> .
+
+<c19:neonatalMortalityRate-o057>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "200"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "51"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "56"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "45"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q115> .
+
+<c19:neonatalMortalityRate-o058>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "29"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "26"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "28"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "23"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q712> .
+
+<c19:neonatalMortalityRate-o059>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q33> .
+
+<c19:neonatalMortalityRate-o060>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "9"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "5"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "5"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q142> .
+
+<c19:neonatalMortalityRate-o061>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "92"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "43"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "47"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "38"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1000> .
+
+<c19:neonatalMortalityRate-o062>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "167"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "52"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "56"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "47"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1005> .
+
+<c19:neonatalMortalityRate-o063>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "48"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "10"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "11"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "9"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q230> .
+
+<c19:neonatalMortalityRate-o064>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "9"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q183> .
+
+<c19:neonatalMortalityRate-o065>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "127"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "46"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "51"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "41"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q117> .
+
+<c19:neonatalMortalityRate-o066>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "10"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q41> .
+
+<c19:neonatalMortalityRate-o067>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "22"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "17"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "18"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q769> .
+
+<c19:neonatalMortalityRate-o068>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "80"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "25"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "27"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "22"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q774> .
+
+<c19:neonatalMortalityRate-o069>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "231"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "99"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "105"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "93"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1006> .
+
+<c19:neonatalMortalityRate-o070>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "221"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "79"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "85"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "72"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1007> .
+
+<c19:neonatalMortalityRate-o071>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "60"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "29"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "33"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "25"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q734> .
+
+<c19:neonatalMortalityRate-o072>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "145"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "63"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "68"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "57"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q790> .
+
+<c19:neonatalMortalityRate-o073>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "58"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "17"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "19"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q783> .
+
+<c19:neonatalMortalityRate-o074>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "17"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q28> .
+
+<c19:neonatalMortalityRate-o075>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q189> .
+
+<c19:neonatalMortalityRate-o076>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "126"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "34"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "34"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "35"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q668> .
+
+<c19:neonatalMortalityRate-o077>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "84"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "24"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "26"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "21"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q252> .
+
+<c19:neonatalMortalityRate-o078>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "56"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "14"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "13"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q794> .
+
+<c19:neonatalMortalityRate-o079>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "54"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "26"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "28"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "23"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q796> .
+
+<c19:neonatalMortalityRate-o080>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "9"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q27> .
+
+<c19:neonatalMortalityRate-o081>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "12"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q801> .
+
+<c19:neonatalMortalityRate-o082>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "10"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q38> .
+
+<c19:neonatalMortalityRate-o083>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "30"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "14"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "16"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "12"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q766> .
+
+<c19:neonatalMortalityRate-o084>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "6"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q17> .
+
+<c19:neonatalMortalityRate-o085>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "36"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "16"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "17"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "14"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q810> .
+
+<c19:neonatalMortalityRate-o086>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "52"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "11"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "12"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "9"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q232> .
+
+<c19:neonatalMortalityRate-o087>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "102"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "43"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "47"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "39"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q114> .
+
+<c19:neonatalMortalityRate-o088>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "96"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "51"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "56"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "46"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q710> .
+
+<c19:neonatalMortalityRate-o089>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "43"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "17"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "19"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q423> .
+
+<c19:neonatalMortalityRate-o090>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q884> .
+
+<c19:neonatalMortalityRate-o091>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "18"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "9"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q817> .
+
+<c19:neonatalMortalityRate-o092>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "65"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "18"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "20"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "16"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q813> .
+
+<c19:neonatalMortalityRate-o093>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "153"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "46"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "50"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "41"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q819> .
+
+<c19:neonatalMortalityRate-o094>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "17"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q211> .
+
+<c19:neonatalMortalityRate-o095>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "32"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q822> .
+
+<c19:neonatalMortalityRate-o096>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "85"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "86"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "94"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "79"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1013> .
+
+<c19:neonatalMortalityRate-o097>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "263"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "85"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "91"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "78"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1014> .
+
+<c19:neonatalMortalityRate-o098>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "42"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "12"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "13"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "10"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1016> .
+
+<c19:neonatalMortalityRate-o099>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q37> .
+
+<c19:neonatalMortalityRate-o0100>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "9"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q32> .
+
+<c19:neonatalMortalityRate-o0101>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "157"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "51"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "55"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "46"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1019> .
+
+<c19:neonatalMortalityRate-o0102>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "243"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "42"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "46"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "37"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1020> .
+
+<c19:neonatalMortalityRate-o0103>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "17"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "9"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "9"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q833> .
+
+<c19:neonatalMortalityRate-o0104>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "86"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q826> .
+
+<c19:neonatalMortalityRate-o0105>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "230"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "94"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "99"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "88"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q912> .
+
+<c19:neonatalMortalityRate-o0106>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "11"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "6"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q233> .
+
+<c19:neonatalMortalityRate-o0107>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "49"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "32"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "35"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "28"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q709> .
+
+<c19:neonatalMortalityRate-o0108>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "118"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "73"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "79"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "67"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1025> .
+
+<c19:neonatalMortalityRate-o0109>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "23"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "16"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "18"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "14"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1027> .
+
+<c19:neonatalMortalityRate-o0110>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "45"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "14"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "16"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "13"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q96> .
+
+<c19:neonatalMortalityRate-o0111>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "55"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "29"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "32"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "26"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q702> .
+
+<c19:neonatalMortalityRate-o0112>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "33"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "14"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "16"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "13"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q217> .
+
+<c19:neonatalMortalityRate-o0113>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q235> .
+
+<c19:neonatalMortalityRate-o0114>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "108"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "16"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "18"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "14"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q711> .
+
+<c19:neonatalMortalityRate-o0115>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "17"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q236> .
+
+<c19:neonatalMortalityRate-o0116>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "79"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "21"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "24"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "19"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1028> .
+
+<c19:neonatalMortalityRate-o0117>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "243"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "74"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "79"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "70"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1029> .
+
+<c19:neonatalMortalityRate-o0118>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "115"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "45"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "49"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "40"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q836> .
+
+<c19:neonatalMortalityRate-o0119>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "72"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "42"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "46"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "39"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1030> .
+
+<c19:neonatalMortalityRate-o0120>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "140"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "31"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "33"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "29"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q837> .
+
+<c19:neonatalMortalityRate-o0121>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q55> .
+
+<c19:neonatalMortalityRate-o0122>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "11"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "5"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "5"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q664> .
+
+<c19:neonatalMortalityRate-o0123>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "67"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "17"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "19"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q811> .
+
+<c19:neonatalMortalityRate-o0124>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "329"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "80"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "84"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "77"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1032> .
+
+<c19:neonatalMortalityRate-o0125>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "210"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "117"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "124"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "110"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1033> .
+
+<c19:neonatalMortalityRate-o0126>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "36"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "6"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "6"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q221> .
+
+<c19:neonatalMortalityRate-o0127>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "9"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q20> .
+
+<c19:neonatalMortalityRate-o0128>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "39"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "11"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "13"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "10"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q842> .
+
+<c19:neonatalMortalityRate-o0129>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "140"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "67"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "72"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "63"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q843> .
+
+<c19:neonatalMortalityRate-o0130>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "35"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "17"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "19"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q695> .
+
+<c19:neonatalMortalityRate-o0131>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "31"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "16"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "13"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q804> .
+
+<c19:neonatalMortalityRate-o0132>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "85"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "45"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "49"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "41"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q691> .
+
+<c19:neonatalMortalityRate-o0133>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "45"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "19"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "21"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "17"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q733> .
+
+<c19:neonatalMortalityRate-o0134>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "80"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "13"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "14"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "12"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q419> .
+
+<c19:neonatalMortalityRate-o0135>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "57"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "27"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "30"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "24"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q928> .
+
+<c19:neonatalMortalityRate-o0136>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "17"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "5"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q36> .
+
+<c19:neonatalMortalityRate-o0137>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q45> .
+
+<c19:neonatalMortalityRate-o0138>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "21"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "6"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q846> .
+
+<c19:neonatalMortalityRate-o0139>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "31"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "6"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q218> .
+
+<c19:neonatalMortalityRate-o0140>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "22"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "6"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "6"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "5"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q159> .
+
+<c19:neonatalMortalityRate-o0141>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "150"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "34"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "38"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "31"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1037> .
+
+<c19:neonatalMortalityRate-o0142>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "30"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "16"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "14"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q683> .
+
+<c19:neonatalMortalityRate-o0143>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "14"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q238> .
+
+<c19:neonatalMortalityRate-o0144>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "108"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "30"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "33"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "27"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1039> .
+
+<c19:neonatalMortalityRate-o0145>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "44"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "6"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q851> .
+
+<c19:neonatalMortalityRate-o0146>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "139"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "45"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "49"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "41"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1041> .
+
+<c19:neonatalMortalityRate-o0147>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "28"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "5"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "6"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "5"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q403> .
+
+<c19:neonatalMortalityRate-o0148>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "16"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "14"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "13"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1042> .
+
+<c19:neonatalMortalityRate-o0149>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "260"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "109"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "115"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "103"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1044> .
+
+<c19:neonatalMortalityRate-o0150>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q334> .
+
+<c19:neonatalMortalityRate-o0151>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "6"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "6"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "5"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q214> .
+
+<c19:neonatalMortalityRate-o0152>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "10"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q215> .
+
+<c19:neonatalMortalityRate-o0153>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "38"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "20"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "21"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "18"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q685> .
+
+<c19:neonatalMortalityRate-o0154>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "178"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "117"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "123"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "111"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1045> .
+
+<c19:neonatalMortalityRate-o0155>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "57"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "35"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "37"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "31"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q258> .
+
+<c19:neonatalMortalityRate-o0156>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "250"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "96"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "101"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "92"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q958> .
+
+<c19:neonatalMortalityRate-o0157>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "9"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q29> .
+
+<c19:neonatalMortalityRate-o0158>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "22"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q854> .
+
+<c19:neonatalMortalityRate-o0159>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "31"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "17"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "14"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q763> .
+
+<c19:neonatalMortalityRate-o0160>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "22"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "22"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "24"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "20"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q760> .
+
+<c19:neonatalMortalityRate-o0161>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "24"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "16"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "13"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q757> .
+
+<c19:neonatalMortalityRate-o0162>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "131"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "58"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "63"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "53"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1049> .
+
+<c19:neonatalMortalityRate-o0163>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "45"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "18"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "20"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "16"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q730> .
+
+<c19:neonatalMortalityRate-o0164>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "3"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "2"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q34> .
+
+<c19:neonatalMortalityRate-o0165>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q39> .
+
+<c19:neonatalMortalityRate-o0166>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "37"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "22"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "23"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "20"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q858> .
+
+<c19:neonatalMortalityRate-o0167>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "102"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "34"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "38"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "30"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q863> .
+
+<c19:neonatalMortalityRate-o0168>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "165"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "50"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "54"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "47"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q924> .
+
+<c19:neonatalMortalityRate-o0169>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "37"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "9"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "10"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q869> .
+
+<c19:neonatalMortalityRate-o0170>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "175"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "44"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "48"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "40"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q574> .
+
+<c19:neonatalMortalityRate-o0171>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "145"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "67"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "72"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "61"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q945> .
+
+<c19:neonatalMortalityRate-o0172>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "22"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "17"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "18"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q678> .
+
+<c19:neonatalMortalityRate-o0173>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "30"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "18"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "19"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "16"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q754> .
+
+<c19:neonatalMortalityRate-o0174>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "55"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "17"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "18"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q948> .
+
+<c19:neonatalMortalityRate-o0175>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "74"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "10"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "11"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "9"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q43> .
+
+<c19:neonatalMortalityRate-o0176>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "80"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "42"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "48"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "36"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q874> .
+
+<c19:neonatalMortalityRate-o0177>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "53"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "24"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "26"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "22"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q672> .
+
+<c19:neonatalMortalityRate-o0178>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "182"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "46"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "51"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "41"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q1036> .
+
+<c19:neonatalMortalityRate-o0179>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "19"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "9"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q212> .
+
+<c19:neonatalMortalityRate-o0180>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "17"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q878> .
+
+<c19:neonatalMortalityRate-o0181>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "9"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "5"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "4"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q145> .
+
+<c19:neonatalMortalityRate-o0182>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "11"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "6"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q30> .
+
+<c19:neonatalMortalityRate-o0183>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "23"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "7"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "8"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "6"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q77> .
+
+<c19:neonatalMortalityRate-o0184>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "72"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "17"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "20"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "15"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q265> .
+
+<c19:neonatalMortalityRate-o0185>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "35"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "26"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "28"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "24"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q686> .
+
+<c19:neonatalMortalityRate-o0186>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "30"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "24"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "26"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "22"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q717> .
+
+<c19:neonatalMortalityRate-o0187>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "51"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "20"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "23"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "17"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q881> .
+
+<c19:neonatalMortalityRate-o0188>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "45"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "19"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "21"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "18"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q407199> .
+
+<c19:neonatalMortalityRate-o0189>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "126"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "58"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "62"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "54"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q805> .
+
+<c19:neonatalMortalityRate-o0190>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "180"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "62"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "66"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "57"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q953> .
+
+<c19:neonatalMortalityRate-o0191>
+        rdf:type                       qb:Observation ;
+        qb:dataSet                     c19:dataset-under_five_mortality_rate_complete ;
+        c19-dimension:refPeriod        c19-interval:Year1990-19 ;
+        c19-measure:underFiveMortalityRateCompleteTotal1990  "77"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteTotal2019  "55"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteMale2019  "59"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-measure:underFiveMortalityRateCompleteFemale2019  "50"^^xsd:decimal ;
+        sdmx-attribute:unitMultiplier  -3 ;
+        sdmx-attribute:decimals        1 ;
+        c19-dimension:refArea          <wd:Q954> .

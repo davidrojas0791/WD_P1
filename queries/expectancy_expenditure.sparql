@@ -1,0 +1,22 @@
+PREFIX c19-measure: <http://example.org/measure#>
+PREFIX c19-dimension: <http://example.org/dimension#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+SELECT ?countryName ?expectancy ?expenditure
+WHERE {
+    GRAPH <http://example.org/graph/life_expectancy_birth_total> { 
+        ?country c19-dimension:refArea ?countryId .
+        ?country c19-measure:lifeExpectancyBirthTotal2018 ?expectancy
+        GRAPH $g {
+            ?countryId rdfs:label ?countryName
+            FILTER(LANG(?countryName)='en')
+        }
+    }
+    GRAPH <http://example.org/graph/health_expenditure> { 
+        ?heCountry c19-dimension:refArea ?countryId.
+        ?heCountry c19-measure:currentHealthExpenditure ?expenditure.
+    }
+}
+ORDER BY ASC(?expectancy)
+LIMIT 50

@@ -9,7 +9,7 @@ WHERE {
         ?country c19-dimension:refArea ?countryId .
         ?country c19-measure:underFiveMortalityRateCompleteMale2019 ?male .
         ?country c19-measure:underFiveMortalityRateCompleteFemale2019 ?female
-        GRAPH $g {
+        GRAPH ?g {
             ?countryId rdfs:label ?countryName
             FILTER(LANG(?countryName)='en')
         }

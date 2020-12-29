@@ -8,7 +8,7 @@ WHERE {
     GRAPH <http://example.org/graph/life_expectancy_birth_total> { 
         ?country c19-dimension:refArea ?countryId .
         ?country c19-measure:lifeExpectancyBirthTotal2018 ?expectancy
-        GRAPH $g {
+        GRAPH ?g {
             ?countryId rdfs:label ?countryName
             FILTER(LANG(?countryName)='en')
         }

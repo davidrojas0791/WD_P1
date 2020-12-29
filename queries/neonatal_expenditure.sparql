@@ -3,7 +3,7 @@ PREFIX c19-dimension: <http://example.org/dimension#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
 PREFIX wd: <http://www.wikidata.org/entity/>
 
-SELECT ?countryName ?mortality ?expenditure
+SELECT ?countryName ?mortality ?expenditure ?public
 WHERE {
     GRAPH <http://example.org/graph/neonatal_mortality_rate> { 
         ?country c19-dimension:refArea ?countryId .
@@ -14,8 +14,9 @@ WHERE {
         }
     }
 	GRAPH <http://example.org/graph/health_expenditure> { 
-        ?heCountry c19-dimension:refArea ?countryId.
-		?heCountry c19-measure:currentHealthExpenditure ?expenditure.
+        ?heCountry c19-dimension:refArea ?countryId .
+		?heCountry c19-measure:currentHealthExpenditure ?expenditure .
+        ?heCountry c19-measure:publicHealthExpenditure ?public .
 	}
 }
 ORDER BY DESC(?mortality)

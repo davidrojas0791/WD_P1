@@ -1,18 +1,85 @@
-@prefix c19-measure:  <http://example.org/measure#> .
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
-@prefix c19:  <http://example.org/ns#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix void:     <http://rdfs.org/ns/void#> .
+@prefix dct:      <http://purl.org/dc/terms/> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+@prefix org:      <http://www.w3.org/ns/org#> .
+@prefix admingeo: <http://data.ordnancesurvey.co.uk/ontology/admingeo/> .
+@prefix interval: <http://reference.data.gov.uk/def/intervals/> .
+@prefix time: <http://www.w3.org/2006/time#> .
 @prefix wd:  <http://www.wikidata.org/entity/> .
+
 @prefix qb:  <http://purl.org/linked-data/cube#> .
 @prefix ex:  <http://ex.org/a#> .
-@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix sdmx-code:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
+
+@prefix sdmx-concept:    <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix sdmx-dimension:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-attribute:  <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix sdmx-measure:    <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix sdmx-metadata:   <http://purl.org/linked-data/sdmx/2009/metadata#> .
+@prefix sdmx-code:       <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix sdmx-subject:    <http://purl.org/linked-data/sdmx/2009/subject#> .
+
+
+@prefix c19:  <http://example.org/ns#> .
+@prefix c19-measure:  <http://example.org/measure#> .
 @prefix c19-dimension:  <http://example.org/dimension#> .
 @prefix c19-unit:  <http://example.org/unit#> .
-@prefix sdmx-attribute:  <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix c19-structure:  <http://example.org/structure#> .
 @prefix c19-interval:  <http://example.org/interval#> .
-@prefix sdmx-dimension:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
 
-<c19:lifeExpectancyBirthTotal-o00>
+# -- Data Set ---------------------------------------------
+
+c19:dataset-life_expectancy_birth_total a qb:Dataset ; 
+    dct:title "Life expectancy birth total"@en ; 
+    rdfs:label "life_expectancy_birth_total"@en ; 
+    rdfs:comment "2.18 | World Development Indicators: Mortality"@en ; 
+    dct:description "Life expectancy at birth indicates the number of years a newborn infant would live if prevailing patterns of mortality at the time of its birth were to stay the same throughout its life."@en ; 
+    dct:publisher wd:Q7164 ; 
+    dct:issued "2020-09-22"^^xsd:date ; 
+    dct:source <http://wdi.worldbank.org/table/2.18> ; 
+    qb:structure c19-structure:dsd-life_expectancy_birth_total ; 
+. 
+
+# -- Data structure definition ----------------------------
+
+c19-structure:dsd-life_expectancy_birth_total a qb:DataStructureDefinition;
+        qb:component
+                [ qb:dimension c19-dimension:refArea; qb:order 2 ],
+                [ qb:dimension c19-dimension:refPeriod; qb:order 1 ] ;
+        qb:component
+                [ qb:measure c19-measure:lifeExpectancyBirthTotal1990 ;
+                qb:measure c19-measure:lifeExpectancyBirthTotal2018 ;] ;
+        qb:component
+                [ qb:attribute sdmx-attribute:decimals ;
+                qb:attribute sdmx-attribute:unitMultiplier ;] ;
+.
+
+# -- Intervals --------------------------------------------
+
+c19-interval:Year1990-18 a time:Interval ;
+    time:hasBeginning "1990"^^xsd:gYear ;
+    time:hasEnd "2018"^^xsd:gYear ;
+    rdfs:label "1990-18" .
+
+# -- Dimensions and measures ------------------------------
+
+c19-measure:lifeExpectancyBirthTotal1990  a rdf:Property, qb:MeasureProperty;
+        rdfs:label "Percent of life expectancy at birth in 1990"@en;
+        rdfs:subPropertyOf sdmx-measure:obsValue;
+        rdfs:range xsd:decimal ; .
+
+c19-measure:lifeExpectancyBirthTotal2018  a rdf:Property, qb:MeasureProperty;
+        rdfs:label "Percent of life expectancy at birth in 2018"@en;
+        rdfs:subPropertyOf sdmx-measure:obsValue;
+        rdfs:range xsd:decimal ; .
+
+# -- Observations -----------------------------------------
+
+c19:lifeExpectancyBirthTotal-o00
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -22,9 +89,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "64"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q889> .
+        c19-dimension:refArea          wd:Q889 .
 
-<c19:lifeExpectancyBirthTotal-o01>
+c19:lifeExpectancyBirthTotal-o01
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -34,9 +101,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "78"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q222> .
+        c19-dimension:refArea          wd:Q222 .
 
-<c19:lifeExpectancyBirthTotal-o02>
+c19:lifeExpectancyBirthTotal-o02
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -46,9 +113,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "77"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q262> .
+        c19-dimension:refArea          wd:Q262 .
 
-<c19:lifeExpectancyBirthTotal-o03>
+c19:lifeExpectancyBirthTotal-o03
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -58,9 +125,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "61"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q916> .
+        c19-dimension:refArea          wd:Q916 .
 
-<c19:lifeExpectancyBirthTotal-o04>
+c19:lifeExpectancyBirthTotal-o04
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -70,9 +137,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "77"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q781> .
+        c19-dimension:refArea          wd:Q781 .
 
-<c19:lifeExpectancyBirthTotal-o05>
+c19:lifeExpectancyBirthTotal-o05
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -82,9 +149,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "77"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q414> .
+        c19-dimension:refArea          wd:Q414 .
 
-<c19:lifeExpectancyBirthTotal-o06>
+c19:lifeExpectancyBirthTotal-o06
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -94,9 +161,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "75"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q399> .
+        c19-dimension:refArea          wd:Q399 .
 
-<c19:lifeExpectancyBirthTotal-o07>
+c19:lifeExpectancyBirthTotal-o07
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -106,9 +173,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "76"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q21203> .
+        c19-dimension:refArea          wd:Q21203 .
 
-<c19:lifeExpectancyBirthTotal-o08>
+c19:lifeExpectancyBirthTotal-o08
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -118,9 +185,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "83"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q408> .
+        c19-dimension:refArea          wd:Q408 .
 
-<c19:lifeExpectancyBirthTotal-o09>
+c19:lifeExpectancyBirthTotal-o09
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -130,9 +197,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "82"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q40> .
+        c19-dimension:refArea          wd:Q40 .
 
-<c19:lifeExpectancyBirthTotal-o010>
+c19:lifeExpectancyBirthTotal-o010
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -142,9 +209,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "73"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q227> .
+        c19-dimension:refArea          wd:Q227 .
 
-<c19:lifeExpectancyBirthTotal-o011>
+c19:lifeExpectancyBirthTotal-o011
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -154,9 +221,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "74"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q778> .
+        c19-dimension:refArea          wd:Q778 .
 
-<c19:lifeExpectancyBirthTotal-o012>
+c19:lifeExpectancyBirthTotal-o012
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -166,9 +233,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "77"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q398> .
+        c19-dimension:refArea          wd:Q398 .
 
-<c19:lifeExpectancyBirthTotal-o013>
+c19:lifeExpectancyBirthTotal-o013
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -178,9 +245,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "72"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q902> .
+        c19-dimension:refArea          wd:Q902 .
 
-<c19:lifeExpectancyBirthTotal-o014>
+c19:lifeExpectancyBirthTotal-o014
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -190,9 +257,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "79"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q244> .
+        c19-dimension:refArea          wd:Q244 .
 
-<c19:lifeExpectancyBirthTotal-o015>
+c19:lifeExpectancyBirthTotal-o015
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -202,9 +269,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "74"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q184> .
+        c19-dimension:refArea          wd:Q184 .
 
-<c19:lifeExpectancyBirthTotal-o016>
+c19:lifeExpectancyBirthTotal-o016
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -214,9 +281,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "82"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q31> .
+        c19-dimension:refArea          wd:Q31 .
 
-<c19:lifeExpectancyBirthTotal-o017>
+c19:lifeExpectancyBirthTotal-o017
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -226,9 +293,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "74"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q242> .
+        c19-dimension:refArea          wd:Q242 .
 
-<c19:lifeExpectancyBirthTotal-o018>
+c19:lifeExpectancyBirthTotal-o018
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -238,9 +305,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "61"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q962> .
+        c19-dimension:refArea          wd:Q962 .
 
-<c19:lifeExpectancyBirthTotal-o019>
+c19:lifeExpectancyBirthTotal-o019
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -250,9 +317,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "82"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q23635> .
+        c19-dimension:refArea          wd:Q23635 .
 
-<c19:lifeExpectancyBirthTotal-o020>
+c19:lifeExpectancyBirthTotal-o020
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -262,9 +329,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "71"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q917> .
+        c19-dimension:refArea          wd:Q917 .
 
-<c19:lifeExpectancyBirthTotal-o021>
+c19:lifeExpectancyBirthTotal-o021
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -274,9 +341,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "71"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q750> .
+        c19-dimension:refArea          wd:Q750 .
 
-<c19:lifeExpectancyBirthTotal-o022>
+c19:lifeExpectancyBirthTotal-o022
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -286,9 +353,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "77"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q225> .
+        c19-dimension:refArea          wd:Q225 .
 
-<c19:lifeExpectancyBirthTotal-o023>
+c19:lifeExpectancyBirthTotal-o023
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -298,9 +365,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "69"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q963> .
+        c19-dimension:refArea          wd:Q963 .
 
-<c19:lifeExpectancyBirthTotal-o024>
+c19:lifeExpectancyBirthTotal-o024
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -310,9 +377,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "76"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q155> .
+        c19-dimension:refArea          wd:Q155 .
 
-<c19:lifeExpectancyBirthTotal-o025>
+c19:lifeExpectancyBirthTotal-o025
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -322,9 +389,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "76"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q921> .
+        c19-dimension:refArea          wd:Q921 .
 
-<c19:lifeExpectancyBirthTotal-o026>
+c19:lifeExpectancyBirthTotal-o026
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -334,9 +401,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "75"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q219> .
+        c19-dimension:refArea          wd:Q219 .
 
-<c19:lifeExpectancyBirthTotal-o027>
+c19:lifeExpectancyBirthTotal-o027
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -346,9 +413,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "61"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q965> .
+        c19-dimension:refArea          wd:Q965 .
 
-<c19:lifeExpectancyBirthTotal-o028>
+c19:lifeExpectancyBirthTotal-o028
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -358,9 +425,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "61"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q967> .
+        c19-dimension:refArea          wd:Q967 .
 
-<c19:lifeExpectancyBirthTotal-o029>
+c19:lifeExpectancyBirthTotal-o029
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -370,9 +437,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "73"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1011> .
+        c19-dimension:refArea          wd:Q1011 .
 
-<c19:lifeExpectancyBirthTotal-o030>
+c19:lifeExpectancyBirthTotal-o030
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -382,9 +449,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "70"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q424> .
+        c19-dimension:refArea          wd:Q424 .
 
-<c19:lifeExpectancyBirthTotal-o031>
+c19:lifeExpectancyBirthTotal-o031
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -394,9 +461,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "59"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1009> .
+        c19-dimension:refArea          wd:Q1009 .
 
-<c19:lifeExpectancyBirthTotal-o032>
+c19:lifeExpectancyBirthTotal-o032
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -406,9 +473,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "82"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q16> .
+        c19-dimension:refArea          wd:Q16 .
 
-<c19:lifeExpectancyBirthTotal-o033>
+c19:lifeExpectancyBirthTotal-o033
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -418,9 +485,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "53"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q929> .
+        c19-dimension:refArea          wd:Q929 .
 
-<c19:lifeExpectancyBirthTotal-o034>
+c19:lifeExpectancyBirthTotal-o034
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -430,9 +497,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "54"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q657> .
+        c19-dimension:refArea          wd:Q657 .
 
-<c19:lifeExpectancyBirthTotal-o035>
+c19:lifeExpectancyBirthTotal-o035
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -442,9 +509,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "83"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q42314> .
+        c19-dimension:refArea          wd:Q42314 .
 
-<c19:lifeExpectancyBirthTotal-o036>
+c19:lifeExpectancyBirthTotal-o036
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -454,9 +521,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "80"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q298> .
+        c19-dimension:refArea          wd:Q298 .
 
-<c19:lifeExpectancyBirthTotal-o037>
+c19:lifeExpectancyBirthTotal-o037
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -466,9 +533,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "77"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q148> .
+        c19-dimension:refArea          wd:Q148 .
 
-<c19:lifeExpectancyBirthTotal-o038>
+c19:lifeExpectancyBirthTotal-o038
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -478,9 +545,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "85"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q8646> .
+        c19-dimension:refArea          wd:Q8646 .
 
-<c19:lifeExpectancyBirthTotal-o039>
+c19:lifeExpectancyBirthTotal-o039
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -490,9 +557,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "84"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q14773> .
+        c19-dimension:refArea          wd:Q14773 .
 
-<c19:lifeExpectancyBirthTotal-o040>
+c19:lifeExpectancyBirthTotal-o040
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -502,9 +569,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "77"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q739> .
+        c19-dimension:refArea          wd:Q739 .
 
-<c19:lifeExpectancyBirthTotal-o041>
+c19:lifeExpectancyBirthTotal-o041
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -514,9 +581,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "64"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q970> .
+        c19-dimension:refArea          wd:Q970 .
 
-<c19:lifeExpectancyBirthTotal-o042>
+c19:lifeExpectancyBirthTotal-o042
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -526,9 +593,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "60"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q974> .
+        c19-dimension:refArea          wd:Q974 .
 
-<c19:lifeExpectancyBirthTotal-o043>
+c19:lifeExpectancyBirthTotal-o043
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -538,9 +605,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "64"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q971> .
+        c19-dimension:refArea          wd:Q971 .
 
-<c19:lifeExpectancyBirthTotal-o044>
+c19:lifeExpectancyBirthTotal-o044
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -550,9 +617,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "80"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q800> .
+        c19-dimension:refArea          wd:Q800 .
 
-<c19:lifeExpectancyBirthTotal-o045>
+c19:lifeExpectancyBirthTotal-o045
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -562,9 +629,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "57"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1008> .
+        c19-dimension:refArea          wd:Q1008 .
 
-<c19:lifeExpectancyBirthTotal-o046>
+c19:lifeExpectancyBirthTotal-o046
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -574,9 +641,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "78"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q224> .
+        c19-dimension:refArea          wd:Q224 .
 
-<c19:lifeExpectancyBirthTotal-o047>
+c19:lifeExpectancyBirthTotal-o047
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -586,9 +653,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "79"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q241> .
+        c19-dimension:refArea          wd:Q241 .
 
-<c19:lifeExpectancyBirthTotal-o048>
+c19:lifeExpectancyBirthTotal-o048
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -598,9 +665,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "81"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q229> .
+        c19-dimension:refArea          wd:Q229 .
 
-<c19:lifeExpectancyBirthTotal-o049>
+c19:lifeExpectancyBirthTotal-o049
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -610,9 +677,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "79"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q213> .
+        c19-dimension:refArea          wd:Q213 .
 
-<c19:lifeExpectancyBirthTotal-o050>
+c19:lifeExpectancyBirthTotal-o050
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -622,9 +689,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "81"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q35> .
+        c19-dimension:refArea          wd:Q35 .
 
-<c19:lifeExpectancyBirthTotal-o051>
+c19:lifeExpectancyBirthTotal-o051
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -634,9 +701,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "67"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q977> .
+        c19-dimension:refArea          wd:Q977 .
 
-<c19:lifeExpectancyBirthTotal-o052>
+c19:lifeExpectancyBirthTotal-o052
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -646,9 +713,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "74"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q786> .
+        c19-dimension:refArea          wd:Q786 .
 
-<c19:lifeExpectancyBirthTotal-o053>
+c19:lifeExpectancyBirthTotal-o053
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -658,9 +725,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "77"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q736> .
+        c19-dimension:refArea          wd:Q736 .
 
-<c19:lifeExpectancyBirthTotal-o054>
+c19:lifeExpectancyBirthTotal-o054
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -670,9 +737,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "72"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q79> .
+        c19-dimension:refArea          wd:Q79 .
 
-<c19:lifeExpectancyBirthTotal-o055>
+c19:lifeExpectancyBirthTotal-o055
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -682,9 +749,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "73"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q792> .
+        c19-dimension:refArea          wd:Q792 .
 
-<c19:lifeExpectancyBirthTotal-o056>
+c19:lifeExpectancyBirthTotal-o056
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -694,9 +761,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "58"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q983> .
+        c19-dimension:refArea          wd:Q983 .
 
-<c19:lifeExpectancyBirthTotal-o057>
+c19:lifeExpectancyBirthTotal-o057
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -706,9 +773,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "66"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q986> .
+        c19-dimension:refArea          wd:Q986 .
 
-<c19:lifeExpectancyBirthTotal-o058>
+c19:lifeExpectancyBirthTotal-o058
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -718,9 +785,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "78"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q191> .
+        c19-dimension:refArea          wd:Q191 .
 
-<c19:lifeExpectancyBirthTotal-o059>
+c19:lifeExpectancyBirthTotal-o059
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -730,9 +797,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "59"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1050> .
+        c19-dimension:refArea          wd:Q1050 .
 
-<c19:lifeExpectancyBirthTotal-o060>
+c19:lifeExpectancyBirthTotal-o060
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -742,9 +809,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "66"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q115> .
+        c19-dimension:refArea          wd:Q115 .
 
-<c19:lifeExpectancyBirthTotal-o061>
+c19:lifeExpectancyBirthTotal-o061
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -754,9 +821,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "83"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q4628> .
+        c19-dimension:refArea          wd:Q4628 .
 
-<c19:lifeExpectancyBirthTotal-o062>
+c19:lifeExpectancyBirthTotal-o062
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -766,9 +833,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "67"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q712> .
+        c19-dimension:refArea          wd:Q712 .
 
-<c19:lifeExpectancyBirthTotal-o063>
+c19:lifeExpectancyBirthTotal-o063
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -778,9 +845,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "82"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q33> .
+        c19-dimension:refArea          wd:Q33 .
 
-<c19:lifeExpectancyBirthTotal-o064>
+c19:lifeExpectancyBirthTotal-o064
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -790,9 +857,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "83"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q142> .
+        c19-dimension:refArea          wd:Q142 .
 
-<c19:lifeExpectancyBirthTotal-o065>
+c19:lifeExpectancyBirthTotal-o065
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -802,9 +869,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "77"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q30971> .
+        c19-dimension:refArea          wd:Q30971 .
 
-<c19:lifeExpectancyBirthTotal-o066>
+c19:lifeExpectancyBirthTotal-o066
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -814,9 +881,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "66"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1000> .
+        c19-dimension:refArea          wd:Q1000 .
 
-<c19:lifeExpectancyBirthTotal-o067>
+c19:lifeExpectancyBirthTotal-o067
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -826,9 +893,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "62"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1005> .
+        c19-dimension:refArea          wd:Q1005 .
 
-<c19:lifeExpectancyBirthTotal-o068>
+c19:lifeExpectancyBirthTotal-o068
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -838,9 +905,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "74"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q230> .
+        c19-dimension:refArea          wd:Q230 .
 
-<c19:lifeExpectancyBirthTotal-o069>
+c19:lifeExpectancyBirthTotal-o069
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -850,9 +917,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "81"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q183> .
+        c19-dimension:refArea          wd:Q183 .
 
-<c19:lifeExpectancyBirthTotal-o070>
+c19:lifeExpectancyBirthTotal-o070
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -862,9 +929,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "64"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q117> .
+        c19-dimension:refArea          wd:Q117 .
 
-<c19:lifeExpectancyBirthTotal-o071>
+c19:lifeExpectancyBirthTotal-o071
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -874,9 +941,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "82"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q41> .
+        c19-dimension:refArea          wd:Q41 .
 
-<c19:lifeExpectancyBirthTotal-o072>
+c19:lifeExpectancyBirthTotal-o072
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -886,9 +953,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "71"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q223> .
+        c19-dimension:refArea          wd:Q223 .
 
-<c19:lifeExpectancyBirthTotal-o073>
+c19:lifeExpectancyBirthTotal-o073
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -898,9 +965,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "72"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q769> .
+        c19-dimension:refArea          wd:Q769 .
 
-<c19:lifeExpectancyBirthTotal-o074>
+c19:lifeExpectancyBirthTotal-o074
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -910,9 +977,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "80"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q16635> .
+        c19-dimension:refArea          wd:Q16635 .
 
-<c19:lifeExpectancyBirthTotal-o075>
+c19:lifeExpectancyBirthTotal-o075
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -922,9 +989,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "74"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q774> .
+        c19-dimension:refArea          wd:Q774 .
 
-<c19:lifeExpectancyBirthTotal-o076>
+c19:lifeExpectancyBirthTotal-o076
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -934,9 +1001,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "61"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1006> .
+        c19-dimension:refArea          wd:Q1006 .
 
-<c19:lifeExpectancyBirthTotal-o077>
+c19:lifeExpectancyBirthTotal-o077
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -946,9 +1013,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "58"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1007> .
+        c19-dimension:refArea          wd:Q1007 .
 
-<c19:lifeExpectancyBirthTotal-o078>
+c19:lifeExpectancyBirthTotal-o078
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -958,9 +1025,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "70"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q734> .
+        c19-dimension:refArea          wd:Q734 .
 
-<c19:lifeExpectancyBirthTotal-o079>
+c19:lifeExpectancyBirthTotal-o079
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -970,9 +1037,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "64"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q790> .
+        c19-dimension:refArea          wd:Q790 .
 
-<c19:lifeExpectancyBirthTotal-o080>
+c19:lifeExpectancyBirthTotal-o080
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -982,9 +1049,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "75"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q783> .
+        c19-dimension:refArea          wd:Q783 .
 
-<c19:lifeExpectancyBirthTotal-o081>
+c19:lifeExpectancyBirthTotal-o081
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -994,9 +1061,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "76"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q28> .
+        c19-dimension:refArea          wd:Q28 .
 
-<c19:lifeExpectancyBirthTotal-o082>
+c19:lifeExpectancyBirthTotal-o082
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1006,9 +1073,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "83"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q189> .
+        c19-dimension:refArea          wd:Q189 .
 
-<c19:lifeExpectancyBirthTotal-o083>
+c19:lifeExpectancyBirthTotal-o083
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1018,9 +1085,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "69"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q668> .
+        c19-dimension:refArea          wd:Q668 .
 
-<c19:lifeExpectancyBirthTotal-o084>
+c19:lifeExpectancyBirthTotal-o084
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1030,9 +1097,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "72"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q252> .
+        c19-dimension:refArea          wd:Q252 .
 
-<c19:lifeExpectancyBirthTotal-o085>
+c19:lifeExpectancyBirthTotal-o085
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1042,9 +1109,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "76"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q794> .
+        c19-dimension:refArea          wd:Q794 .
 
-<c19:lifeExpectancyBirthTotal-o086>
+c19:lifeExpectancyBirthTotal-o086
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1054,9 +1121,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "70"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q796> .
+        c19-dimension:refArea          wd:Q796 .
 
-<c19:lifeExpectancyBirthTotal-o087>
+c19:lifeExpectancyBirthTotal-o087
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1066,9 +1133,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "82"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q27> .
+        c19-dimension:refArea          wd:Q27 .
 
-<c19:lifeExpectancyBirthTotal-o088>
+c19:lifeExpectancyBirthTotal-o088
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1078,9 +1145,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "83"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q801> .
+        c19-dimension:refArea          wd:Q801 .
 
-<c19:lifeExpectancyBirthTotal-o089>
+c19:lifeExpectancyBirthTotal-o089
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1090,9 +1157,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "83"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q38> .
+        c19-dimension:refArea          wd:Q38 .
 
-<c19:lifeExpectancyBirthTotal-o090>
+c19:lifeExpectancyBirthTotal-o090
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1102,9 +1169,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "74"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q766> .
+        c19-dimension:refArea          wd:Q766 .
 
-<c19:lifeExpectancyBirthTotal-o091>
+c19:lifeExpectancyBirthTotal-o091
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1114,9 +1181,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "84"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q17> .
+        c19-dimension:refArea          wd:Q17 .
 
-<c19:lifeExpectancyBirthTotal-o092>
+c19:lifeExpectancyBirthTotal-o092
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1126,9 +1193,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "74"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q810> .
+        c19-dimension:refArea          wd:Q810 .
 
-<c19:lifeExpectancyBirthTotal-o093>
+c19:lifeExpectancyBirthTotal-o093
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1138,9 +1205,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "73"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q232> .
+        c19-dimension:refArea          wd:Q232 .
 
-<c19:lifeExpectancyBirthTotal-o094>
+c19:lifeExpectancyBirthTotal-o094
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1150,9 +1217,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "66"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q114> .
+        c19-dimension:refArea          wd:Q114 .
 
-<c19:lifeExpectancyBirthTotal-o095>
+c19:lifeExpectancyBirthTotal-o095
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1162,9 +1229,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "68"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q710> .
+        c19-dimension:refArea          wd:Q710 .
 
-<c19:lifeExpectancyBirthTotal-o096>
+c19:lifeExpectancyBirthTotal-o096
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1174,9 +1241,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "72"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q423> .
+        c19-dimension:refArea          wd:Q423 .
 
-<c19:lifeExpectancyBirthTotal-o097>
+c19:lifeExpectancyBirthTotal-o097
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1186,9 +1253,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "83"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q884> .
+        c19-dimension:refArea          wd:Q884 .
 
-<c19:lifeExpectancyBirthTotal-o098>
+c19:lifeExpectancyBirthTotal-o098
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1198,9 +1265,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "72"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1246> .
+        c19-dimension:refArea          wd:Q1246 .
 
-<c19:lifeExpectancyBirthTotal-o099>
+c19:lifeExpectancyBirthTotal-o099
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1210,9 +1277,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "75"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q817> .
+        c19-dimension:refArea          wd:Q817 .
 
-<c19:lifeExpectancyBirthTotal-o0100>
+c19:lifeExpectancyBirthTotal-o0100
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1222,9 +1289,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "71"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q813> .
+        c19-dimension:refArea          wd:Q813 .
 
-<c19:lifeExpectancyBirthTotal-o0101>
+c19:lifeExpectancyBirthTotal-o0101
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1234,9 +1301,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "68"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q819> .
+        c19-dimension:refArea          wd:Q819 .
 
-<c19:lifeExpectancyBirthTotal-o0102>
+c19:lifeExpectancyBirthTotal-o0102
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1246,9 +1313,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "75"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q211> .
+        c19-dimension:refArea          wd:Q211 .
 
-<c19:lifeExpectancyBirthTotal-o0103>
+c19:lifeExpectancyBirthTotal-o0103
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1258,9 +1325,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "79"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q822> .
+        c19-dimension:refArea          wd:Q822 .
 
-<c19:lifeExpectancyBirthTotal-o0104>
+c19:lifeExpectancyBirthTotal-o0104
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1270,9 +1337,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "54"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1013> .
+        c19-dimension:refArea          wd:Q1013 .
 
-<c19:lifeExpectancyBirthTotal-o0105>
+c19:lifeExpectancyBirthTotal-o0105
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1282,9 +1349,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "64"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1014> .
+        c19-dimension:refArea          wd:Q1014 .
 
-<c19:lifeExpectancyBirthTotal-o0106>
+c19:lifeExpectancyBirthTotal-o0106
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1294,9 +1361,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "73"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1016> .
+        c19-dimension:refArea          wd:Q1016 .
 
-<c19:lifeExpectancyBirthTotal-o0107>
+c19:lifeExpectancyBirthTotal-o0107
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1306,9 +1373,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "76"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q37> .
+        c19-dimension:refArea          wd:Q37 .
 
-<c19:lifeExpectancyBirthTotal-o0108>
+c19:lifeExpectancyBirthTotal-o0108
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1318,9 +1385,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "82"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q32> .
+        c19-dimension:refArea          wd:Q32 .
 
-<c19:lifeExpectancyBirthTotal-o0109>
+c19:lifeExpectancyBirthTotal-o0109
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1330,9 +1397,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "67"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1019> .
+        c19-dimension:refArea          wd:Q1019 .
 
-<c19:lifeExpectancyBirthTotal-o0110>
+c19:lifeExpectancyBirthTotal-o0110
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1342,9 +1409,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "64"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1020> .
+        c19-dimension:refArea          wd:Q1020 .
 
-<c19:lifeExpectancyBirthTotal-o0111>
+c19:lifeExpectancyBirthTotal-o0111
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1354,9 +1421,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "76"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q833> .
+        c19-dimension:refArea          wd:Q833 .
 
-<c19:lifeExpectancyBirthTotal-o0112>
+c19:lifeExpectancyBirthTotal-o0112
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1366,9 +1433,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "79"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q826> .
+        c19-dimension:refArea          wd:Q826 .
 
-<c19:lifeExpectancyBirthTotal-o0113>
+c19:lifeExpectancyBirthTotal-o0113
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1378,9 +1445,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "59"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q912> .
+        c19-dimension:refArea          wd:Q912 .
 
-<c19:lifeExpectancyBirthTotal-o0114>
+c19:lifeExpectancyBirthTotal-o0114
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1390,9 +1457,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "82"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q233> .
+        c19-dimension:refArea          wd:Q233 .
 
-<c19:lifeExpectancyBirthTotal-o0115>
+c19:lifeExpectancyBirthTotal-o0115
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1402,9 +1469,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "65"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1025> .
+        c19-dimension:refArea          wd:Q1025 .
 
-<c19:lifeExpectancyBirthTotal-o0116>
+c19:lifeExpectancyBirthTotal-o0116
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1414,9 +1481,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "74"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1027> .
+        c19-dimension:refArea          wd:Q1027 .
 
-<c19:lifeExpectancyBirthTotal-o0117>
+c19:lifeExpectancyBirthTotal-o0117
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1426,9 +1493,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "75"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q96> .
+        c19-dimension:refArea          wd:Q96 .
 
-<c19:lifeExpectancyBirthTotal-o0118>
+c19:lifeExpectancyBirthTotal-o0118
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1438,9 +1505,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "68"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q702> .
+        c19-dimension:refArea          wd:Q702 .
 
-<c19:lifeExpectancyBirthTotal-o0119>
+c19:lifeExpectancyBirthTotal-o0119
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1450,9 +1517,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "72"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q217> .
+        c19-dimension:refArea          wd:Q217 .
 
-<c19:lifeExpectancyBirthTotal-o0120>
+c19:lifeExpectancyBirthTotal-o0120
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1462,9 +1529,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "70"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q711> .
+        c19-dimension:refArea          wd:Q711 .
 
-<c19:lifeExpectancyBirthTotal-o0121>
+c19:lifeExpectancyBirthTotal-o0121
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1474,9 +1541,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "77"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q236> .
+        c19-dimension:refArea          wd:Q236 .
 
-<c19:lifeExpectancyBirthTotal-o0122>
+c19:lifeExpectancyBirthTotal-o0122
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1486,9 +1553,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "76"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1028> .
+        c19-dimension:refArea          wd:Q1028 .
 
-<c19:lifeExpectancyBirthTotal-o0123>
+c19:lifeExpectancyBirthTotal-o0123
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1498,9 +1565,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "60"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1029> .
+        c19-dimension:refArea          wd:Q1029 .
 
-<c19:lifeExpectancyBirthTotal-o0124>
+c19:lifeExpectancyBirthTotal-o0124
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1510,9 +1577,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "67"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q836> .
+        c19-dimension:refArea          wd:Q836 .
 
-<c19:lifeExpectancyBirthTotal-o0125>
+c19:lifeExpectancyBirthTotal-o0125
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1522,9 +1589,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "63"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1030> .
+        c19-dimension:refArea          wd:Q1030 .
 
-<c19:lifeExpectancyBirthTotal-o0126>
+c19:lifeExpectancyBirthTotal-o0126
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1534,9 +1601,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "70"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q837> .
+        c19-dimension:refArea          wd:Q837 .
 
-<c19:lifeExpectancyBirthTotal-o0127>
+c19:lifeExpectancyBirthTotal-o0127
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1546,9 +1613,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "82"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q55> .
+        c19-dimension:refArea          wd:Q55 .
 
-<c19:lifeExpectancyBirthTotal-o0128>
+c19:lifeExpectancyBirthTotal-o0128
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1558,9 +1625,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "77"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q33788> .
+        c19-dimension:refArea          wd:Q33788 .
 
-<c19:lifeExpectancyBirthTotal-o0129>
+c19:lifeExpectancyBirthTotal-o0129
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1570,9 +1637,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "82"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q664> .
+        c19-dimension:refArea          wd:Q664 .
 
-<c19:lifeExpectancyBirthTotal-o0130>
+c19:lifeExpectancyBirthTotal-o0130
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1582,9 +1649,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "74"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q811> .
+        c19-dimension:refArea          wd:Q811 .
 
-<c19:lifeExpectancyBirthTotal-o0131>
+c19:lifeExpectancyBirthTotal-o0131
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1594,9 +1661,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "62"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1032> .
+        c19-dimension:refArea          wd:Q1032 .
 
-<c19:lifeExpectancyBirthTotal-o0132>
+c19:lifeExpectancyBirthTotal-o0132
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1606,9 +1673,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "54"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1033> .
+        c19-dimension:refArea          wd:Q1033 .
 
-<c19:lifeExpectancyBirthTotal-o0133>
+c19:lifeExpectancyBirthTotal-o0133
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1618,9 +1685,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "76"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q221> .
+        c19-dimension:refArea          wd:Q221 .
 
-<c19:lifeExpectancyBirthTotal-o0134>
+c19:lifeExpectancyBirthTotal-o0134
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1630,9 +1697,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "83"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q20> .
+        c19-dimension:refArea          wd:Q20 .
 
-<c19:lifeExpectancyBirthTotal-o0135>
+c19:lifeExpectancyBirthTotal-o0135
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1642,9 +1709,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "78"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q842> .
+        c19-dimension:refArea          wd:Q842 .
 
-<c19:lifeExpectancyBirthTotal-o0136>
+c19:lifeExpectancyBirthTotal-o0136
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1654,9 +1721,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "67"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q843> .
+        c19-dimension:refArea          wd:Q843 .
 
-<c19:lifeExpectancyBirthTotal-o0137>
+c19:lifeExpectancyBirthTotal-o0137
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1666,9 +1733,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "78"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q804> .
+        c19-dimension:refArea          wd:Q804 .
 
-<c19:lifeExpectancyBirthTotal-o0138>
+c19:lifeExpectancyBirthTotal-o0138
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1678,9 +1745,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "64"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q691> .
+        c19-dimension:refArea          wd:Q691 .
 
-<c19:lifeExpectancyBirthTotal-o0139>
+c19:lifeExpectancyBirthTotal-o0139
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1690,9 +1757,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "74"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q733> .
+        c19-dimension:refArea          wd:Q733 .
 
-<c19:lifeExpectancyBirthTotal-o0140>
+c19:lifeExpectancyBirthTotal-o0140
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1702,9 +1769,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "77"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q419> .
+        c19-dimension:refArea          wd:Q419 .
 
-<c19:lifeExpectancyBirthTotal-o0141>
+c19:lifeExpectancyBirthTotal-o0141
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1714,9 +1781,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "71"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q928> .
+        c19-dimension:refArea          wd:Q928 .
 
-<c19:lifeExpectancyBirthTotal-o0142>
+c19:lifeExpectancyBirthTotal-o0142
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1726,9 +1793,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "78"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q36> .
+        c19-dimension:refArea          wd:Q36 .
 
-<c19:lifeExpectancyBirthTotal-o0143>
+c19:lifeExpectancyBirthTotal-o0143
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1738,9 +1805,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "81"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q45> .
+        c19-dimension:refArea          wd:Q45 .
 
-<c19:lifeExpectancyBirthTotal-o0144>
+c19:lifeExpectancyBirthTotal-o0144
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1750,9 +1817,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "80"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1183> .
+        c19-dimension:refArea          wd:Q1183 .
 
-<c19:lifeExpectancyBirthTotal-o0145>
+c19:lifeExpectancyBirthTotal-o0145
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1762,9 +1829,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "80"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q846> .
+        c19-dimension:refArea          wd:Q846 .
 
-<c19:lifeExpectancyBirthTotal-o0146>
+c19:lifeExpectancyBirthTotal-o0146
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1774,9 +1841,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "75"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q218> .
+        c19-dimension:refArea          wd:Q218 .
 
-<c19:lifeExpectancyBirthTotal-o0147>
+c19:lifeExpectancyBirthTotal-o0147
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1786,9 +1853,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "73"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q159> .
+        c19-dimension:refArea          wd:Q159 .
 
-<c19:lifeExpectancyBirthTotal-o0148>
+c19:lifeExpectancyBirthTotal-o0148
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1798,9 +1865,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "69"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1037> .
+        c19-dimension:refArea          wd:Q1037 .
 
-<c19:lifeExpectancyBirthTotal-o0149>
+c19:lifeExpectancyBirthTotal-o0149
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1810,9 +1877,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "73"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q683> .
+        c19-dimension:refArea          wd:Q683 .
 
-<c19:lifeExpectancyBirthTotal-o0150>
+c19:lifeExpectancyBirthTotal-o0150
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1822,9 +1889,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "70"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1039> .
+        c19-dimension:refArea          wd:Q1039 .
 
-<c19:lifeExpectancyBirthTotal-o0151>
+c19:lifeExpectancyBirthTotal-o0151
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1834,9 +1901,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "75"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q851> .
+        c19-dimension:refArea          wd:Q851 .
 
-<c19:lifeExpectancyBirthTotal-o0152>
+c19:lifeExpectancyBirthTotal-o0152
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1846,9 +1913,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "68"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1041> .
+        c19-dimension:refArea          wd:Q1041 .
 
-<c19:lifeExpectancyBirthTotal-o0153>
+c19:lifeExpectancyBirthTotal-o0153
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1858,9 +1925,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "76"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q403> .
+        c19-dimension:refArea          wd:Q403 .
 
-<c19:lifeExpectancyBirthTotal-o0154>
+c19:lifeExpectancyBirthTotal-o0154
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1870,9 +1937,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "73"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1042> .
+        c19-dimension:refArea          wd:Q1042 .
 
-<c19:lifeExpectancyBirthTotal-o0155>
+c19:lifeExpectancyBirthTotal-o0155
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1882,9 +1949,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "54"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1044> .
+        c19-dimension:refArea          wd:Q1044 .
 
-<c19:lifeExpectancyBirthTotal-o0156>
+c19:lifeExpectancyBirthTotal-o0156
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1894,9 +1961,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "83"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q334> .
+        c19-dimension:refArea          wd:Q334 .
 
-<c19:lifeExpectancyBirthTotal-o0157>
+c19:lifeExpectancyBirthTotal-o0157
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1906,9 +1973,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "77"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q214> .
+        c19-dimension:refArea          wd:Q214 .
 
-<c19:lifeExpectancyBirthTotal-o0158>
+c19:lifeExpectancyBirthTotal-o0158
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1918,9 +1985,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "81"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q215> .
+        c19-dimension:refArea          wd:Q215 .
 
-<c19:lifeExpectancyBirthTotal-o0159>
+c19:lifeExpectancyBirthTotal-o0159
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1930,9 +1997,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "73"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q685> .
+        c19-dimension:refArea          wd:Q685 .
 
-<c19:lifeExpectancyBirthTotal-o0160>
+c19:lifeExpectancyBirthTotal-o0160
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1942,9 +2009,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "57"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1045> .
+        c19-dimension:refArea          wd:Q1045 .
 
-<c19:lifeExpectancyBirthTotal-o0161>
+c19:lifeExpectancyBirthTotal-o0161
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1954,9 +2021,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "64"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q258> .
+        c19-dimension:refArea          wd:Q258 .
 
-<c19:lifeExpectancyBirthTotal-o0162>
+c19:lifeExpectancyBirthTotal-o0162
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1966,9 +2033,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "58"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q958> .
+        c19-dimension:refArea          wd:Q958 .
 
-<c19:lifeExpectancyBirthTotal-o0163>
+c19:lifeExpectancyBirthTotal-o0163
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1978,9 +2045,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "83"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q29> .
+        c19-dimension:refArea          wd:Q29 .
 
-<c19:lifeExpectancyBirthTotal-o0164>
+c19:lifeExpectancyBirthTotal-o0164
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -1990,9 +2057,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "77"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q854> .
+        c19-dimension:refArea          wd:Q854 .
 
-<c19:lifeExpectancyBirthTotal-o0165>
+c19:lifeExpectancyBirthTotal-o0165
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2002,9 +2069,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "76"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q760> .
+        c19-dimension:refArea          wd:Q760 .
 
-<c19:lifeExpectancyBirthTotal-o0166>
+c19:lifeExpectancyBirthTotal-o0166
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2014,9 +2081,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "80"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q126125> .
+        c19-dimension:refArea          wd:Q126125 .
 
-<c19:lifeExpectancyBirthTotal-o0167>
+c19:lifeExpectancyBirthTotal-o0167
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2026,9 +2093,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "72"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q757> .
+        c19-dimension:refArea          wd:Q757 .
 
-<c19:lifeExpectancyBirthTotal-o0168>
+c19:lifeExpectancyBirthTotal-o0168
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2038,9 +2105,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "65"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1049> .
+        c19-dimension:refArea          wd:Q1049 .
 
-<c19:lifeExpectancyBirthTotal-o0169>
+c19:lifeExpectancyBirthTotal-o0169
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2050,9 +2117,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "72"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q730> .
+        c19-dimension:refArea          wd:Q730 .
 
-<c19:lifeExpectancyBirthTotal-o0170>
+c19:lifeExpectancyBirthTotal-o0170
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2062,9 +2129,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "83"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q34> .
+        c19-dimension:refArea          wd:Q34 .
 
-<c19:lifeExpectancyBirthTotal-o0171>
+c19:lifeExpectancyBirthTotal-o0171
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2074,9 +2141,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "84"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q39> .
+        c19-dimension:refArea          wd:Q39 .
 
-<c19:lifeExpectancyBirthTotal-o0172>
+c19:lifeExpectancyBirthTotal-o0172
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2086,9 +2153,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "72"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q858> .
+        c19-dimension:refArea          wd:Q858 .
 
-<c19:lifeExpectancyBirthTotal-o0173>
+c19:lifeExpectancyBirthTotal-o0173
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2098,9 +2165,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "71"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q863> .
+        c19-dimension:refArea          wd:Q863 .
 
-<c19:lifeExpectancyBirthTotal-o0174>
+c19:lifeExpectancyBirthTotal-o0174
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2110,9 +2177,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "65"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q924> .
+        c19-dimension:refArea          wd:Q924 .
 
-<c19:lifeExpectancyBirthTotal-o0175>
+c19:lifeExpectancyBirthTotal-o0175
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2122,9 +2189,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "77"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q869> .
+        c19-dimension:refArea          wd:Q869 .
 
-<c19:lifeExpectancyBirthTotal-o0176>
+c19:lifeExpectancyBirthTotal-o0176
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2134,9 +2201,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "69"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q574> .
+        c19-dimension:refArea          wd:Q574 .
 
-<c19:lifeExpectancyBirthTotal-o0177>
+c19:lifeExpectancyBirthTotal-o0177
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2146,9 +2213,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "61"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q945> .
+        c19-dimension:refArea          wd:Q945 .
 
-<c19:lifeExpectancyBirthTotal-o0178>
+c19:lifeExpectancyBirthTotal-o0178
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2158,9 +2225,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "71"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q678> .
+        c19-dimension:refArea          wd:Q678 .
 
-<c19:lifeExpectancyBirthTotal-o0179>
+c19:lifeExpectancyBirthTotal-o0179
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2170,9 +2237,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "73"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q754> .
+        c19-dimension:refArea          wd:Q754 .
 
-<c19:lifeExpectancyBirthTotal-o0180>
+c19:lifeExpectancyBirthTotal-o0180
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2182,9 +2249,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "77"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q948> .
+        c19-dimension:refArea          wd:Q948 .
 
-<c19:lifeExpectancyBirthTotal-o0181>
+c19:lifeExpectancyBirthTotal-o0181
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2194,9 +2261,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "77"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q43> .
+        c19-dimension:refArea          wd:Q43 .
 
-<c19:lifeExpectancyBirthTotal-o0182>
+c19:lifeExpectancyBirthTotal-o0182
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2206,9 +2273,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "68"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q874> .
+        c19-dimension:refArea          wd:Q874 .
 
-<c19:lifeExpectancyBirthTotal-o0183>
+c19:lifeExpectancyBirthTotal-o0183
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2218,9 +2285,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "63"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1036> .
+        c19-dimension:refArea          wd:Q1036 .
 
-<c19:lifeExpectancyBirthTotal-o0184>
+c19:lifeExpectancyBirthTotal-o0184
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2230,9 +2297,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "72"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q212> .
+        c19-dimension:refArea          wd:Q212 .
 
-<c19:lifeExpectancyBirthTotal-o0185>
+c19:lifeExpectancyBirthTotal-o0185
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2242,9 +2309,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "78"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q878> .
+        c19-dimension:refArea          wd:Q878 .
 
-<c19:lifeExpectancyBirthTotal-o0186>
+c19:lifeExpectancyBirthTotal-o0186
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2254,9 +2321,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "81"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q145> .
+        c19-dimension:refArea          wd:Q145 .
 
-<c19:lifeExpectancyBirthTotal-o0187>
+c19:lifeExpectancyBirthTotal-o0187
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2266,9 +2333,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "79"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q30> .
+        c19-dimension:refArea          wd:Q30 .
 
-<c19:lifeExpectancyBirthTotal-o0188>
+c19:lifeExpectancyBirthTotal-o0188
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2278,9 +2345,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "78"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q77> .
+        c19-dimension:refArea          wd:Q77 .
 
-<c19:lifeExpectancyBirthTotal-o0189>
+c19:lifeExpectancyBirthTotal-o0189
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2290,9 +2357,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "72"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q265> .
+        c19-dimension:refArea          wd:Q265 .
 
-<c19:lifeExpectancyBirthTotal-o0190>
+c19:lifeExpectancyBirthTotal-o0190
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2302,9 +2369,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "70"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q686> .
+        c19-dimension:refArea          wd:Q686 .
 
-<c19:lifeExpectancyBirthTotal-o0191>
+c19:lifeExpectancyBirthTotal-o0191
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2314,9 +2381,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "72"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q717> .
+        c19-dimension:refArea          wd:Q717 .
 
-<c19:lifeExpectancyBirthTotal-o0192>
+c19:lifeExpectancyBirthTotal-o0192
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2326,9 +2393,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "75"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q881> .
+        c19-dimension:refArea          wd:Q881 .
 
-<c19:lifeExpectancyBirthTotal-o0193>
+c19:lifeExpectancyBirthTotal-o0193
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2338,9 +2405,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "80"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q11703> .
+        c19-dimension:refArea          wd:Q11703 .
 
-<c19:lifeExpectancyBirthTotal-o0194>
+c19:lifeExpectancyBirthTotal-o0194
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2350,9 +2417,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "74"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q407199> .
+        c19-dimension:refArea          wd:Q407199 .
 
-<c19:lifeExpectancyBirthTotal-o0195>
+c19:lifeExpectancyBirthTotal-o0195
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2362,9 +2429,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "66"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q805> .
+        c19-dimension:refArea          wd:Q805 .
 
-<c19:lifeExpectancyBirthTotal-o0196>
+c19:lifeExpectancyBirthTotal-o0196
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2374,9 +2441,9 @@
         c19-measure:lifeExpectancyBirthTotal2018  "64"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q953> .
+        c19-dimension:refArea          wd:Q953 .
 
-<c19:lifeExpectancyBirthTotal-o0197>
+c19:lifeExpectancyBirthTotal-o0197
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-life_expectancy_birth_total ;
         c19-dimension:refPeriod        c19-interval:Year1990-18 ;
@@ -2386,4 +2453,4 @@
         c19-measure:lifeExpectancyBirthTotal2018  "61"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -2 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q954> .
+        c19-dimension:refArea          wd:Q954 .

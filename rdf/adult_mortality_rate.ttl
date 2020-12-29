@@ -1,18 +1,85 @@
-@prefix c19-measure:  <http://example.org/measure#> .
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
-@prefix c19:  <http://example.org/ns#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix void:     <http://rdfs.org/ns/void#> .
+@prefix dct:      <http://purl.org/dc/terms/> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+@prefix org:      <http://www.w3.org/ns/org#> .
+@prefix admingeo: <http://data.ordnancesurvey.co.uk/ontology/admingeo/> .
+@prefix interval: <http://reference.data.gov.uk/def/intervals/> .
+@prefix time: <http://www.w3.org/2006/time#> .
 @prefix wd:  <http://www.wikidata.org/entity/> .
+
 @prefix qb:  <http://purl.org/linked-data/cube#> .
 @prefix ex:  <http://ex.org/a#> .
-@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix sdmx-code:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
+
+@prefix sdmx-concept:    <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix sdmx-dimension:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-attribute:  <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix sdmx-measure:    <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix sdmx-metadata:   <http://purl.org/linked-data/sdmx/2009/metadata#> .
+@prefix sdmx-code:       <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix sdmx-subject:    <http://purl.org/linked-data/sdmx/2009/subject#> .
+
+
+@prefix c19:  <http://example.org/ns#> .
+@prefix c19-measure:  <http://example.org/measure#> .
 @prefix c19-dimension:  <http://example.org/dimension#> .
 @prefix c19-unit:  <http://example.org/unit#> .
-@prefix sdmx-attribute:  <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix c19-structure:  <http://example.org/structure#> .
 @prefix c19-interval:  <http://example.org/interval#> .
-@prefix sdmx-dimension:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
 
-<c19:adultMortalityRate-o00>
+# -- Data Set ---------------------------------------------
+
+c19:dataset-adult_mortality_rate a qb:Dataset ; 
+        dct:title "Adult mortality rate"@en ; 
+        rdfs:label "adult_mortality_rate"@en ; 
+        rdfs:comment "2.18 | World Development Indicators: Mortality"@en ; 
+        dct:description "Adult mortality rate, male, is the probability of dying between the ages of 15 and 60--that is, the probability of a 15-year-old male dying before reaching age 60, if subject to age-specific mortality rates of the specified year between those ages. Adult mortality rate, female, is the probability of dying between the ages of 15 and 60--that is, the probability of a 15-year-old female dying before reaching age 60, if subject to age-specific mortality rates of the specified year between those ages."@en ; 
+        dct:publisher wd:Q7164 ; 
+        dct:issued "2020-09-22"^^xsd:date ; 
+        dct:source <http://wdi.worldbank.org/table/2.18> ; 
+        qb:structure c19-structure:dsd-adult_mortality_rate ; 
+. 
+
+# -- Data structure definition ----------------------------
+
+c19-structure:dsd-adult_mortality_rate a qb:DataStructureDefinition;
+        qb:component
+                [ qb:dimension c19-dimension:refArea; qb:order 2 ],
+                [ qb:dimension c19-dimension:refPeriod; qb:order 1 ];
+        qb:component
+                [ qb:measure c19-measure:adultMortalityRateMale ;
+        qb:measure c19-measure:adultMortalityRateFemale ;] ;
+        qb:component
+                [ qb:attribute sdmx-attribute:decimals ;
+                qb:attribute sdmx-attribute:unitMultiplier ;];
+.
+
+# -- Intervals --------------------------------------------
+
+c19-interval:Year2013-18 a time:Interval ;
+    time:hasBeginning "2013"^^xsd:gYear ;
+    time:hasEnd "2018"^^xsd:gYear ;
+    rdfs:label "2013-18" .
+
+# -- Dimensions and measures ------------------------------
+
+c19-measure:adultMortalityRateMale  a rdf:Property, qb:MeasureProperty;
+        rdfs:label "Adult male mortality per 1000 population"@en;
+        rdfs:subPropertyOf sdmx-measure:obsValue;
+        rdfs:range xsd:decimal ; .
+
+c19-measure:adultMortalityRateFemale  a rdf:Property, qb:MeasureProperty;
+        rdfs:label "Adult female mortality per 1000 population"@en;
+        rdfs:subPropertyOf sdmx-measure:obsValue;
+        rdfs:range xsd:decimal ; .
+
+# -- Observations -----------------------------------------
+
+c19:adultMortalityRate-o00
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -21,9 +88,9 @@
         c19-measure:adultMortalityRateFemale  "193"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q889> .
+        c19-dimension:refArea          wd:Q889 .
 
-<c19:adultMortalityRate-o01>
+c19:adultMortalityRate-o01
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -32,9 +99,9 @@
         c19-measure:adultMortalityRateFemale  "49"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q222> .
+        c19-dimension:refArea          wd:Q222 .
 
-<c19:adultMortalityRate-o02>
+c19:adultMortalityRate-o02
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -43,9 +110,9 @@
         c19-measure:adultMortalityRateFemale  "81"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q262> .
+        c19-dimension:refArea          wd:Q262 .
 
-<c19:adultMortalityRate-o03>
+c19:adultMortalityRate-o03
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -54,9 +121,9 @@
         c19-measure:adultMortalityRateFemale  "220"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q916> .
+        c19-dimension:refArea          wd:Q916 .
 
-<c19:adultMortalityRate-o04>
+c19:adultMortalityRate-o04
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -65,9 +132,9 @@
         c19-measure:adultMortalityRateFemale  "83"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q781> .
+        c19-dimension:refArea          wd:Q781 .
 
-<c19:adultMortalityRate-o05>
+c19:adultMortalityRate-o05
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -76,9 +143,9 @@
         c19-measure:adultMortalityRateFemale  "79"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q414> .
+        c19-dimension:refArea          wd:Q414 .
 
-<c19:adultMortalityRate-o06>
+c19:adultMortalityRate-o06
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -87,9 +154,9 @@
         c19-measure:adultMortalityRateFemale  "66"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q399> .
+        c19-dimension:refArea          wd:Q399 .
 
-<c19:adultMortalityRate-o07>
+c19:adultMortalityRate-o07
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -98,9 +165,9 @@
         c19-measure:adultMortalityRateFemale  "69"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q21203> .
+        c19-dimension:refArea          wd:Q21203 .
 
-<c19:adultMortalityRate-o08>
+c19:adultMortalityRate-o08
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -109,9 +176,9 @@
         c19-measure:adultMortalityRateFemale  "45"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q408> .
+        c19-dimension:refArea          wd:Q408 .
 
-<c19:adultMortalityRate-o09>
+c19:adultMortalityRate-o09
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -120,9 +187,9 @@
         c19-measure:adultMortalityRateFemale  "42"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q40> .
+        c19-dimension:refArea          wd:Q40 .
 
-<c19:adultMortalityRate-o010>
+c19:adultMortalityRate-o010
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -131,9 +198,9 @@
         c19-measure:adultMortalityRateFemale  "89"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q227> .
+        c19-dimension:refArea          wd:Q227 .
 
-<c19:adultMortalityRate-o011>
+c19:adultMortalityRate-o011
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -142,9 +209,9 @@
         c19-measure:adultMortalityRateFemale  "117"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q778> .
+        c19-dimension:refArea          wd:Q778 .
 
-<c19:adultMortalityRate-o012>
+c19:adultMortalityRate-o012
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -153,9 +220,9 @@
         c19-measure:adultMortalityRateFemale  "56"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q398> .
+        c19-dimension:refArea          wd:Q398 .
 
-<c19:adultMortalityRate-o013>
+c19:adultMortalityRate-o013
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -164,9 +231,9 @@
         c19-measure:adultMortalityRateFemale  "115"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q902> .
+        c19-dimension:refArea          wd:Q902 .
 
-<c19:adultMortalityRate-o014>
+c19:adultMortalityRate-o014
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -175,9 +242,9 @@
         c19-measure:adultMortalityRateFemale  "92"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q244> .
+        c19-dimension:refArea          wd:Q244 .
 
-<c19:adultMortalityRate-o015>
+c19:adultMortalityRate-o015
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -186,9 +253,9 @@
         c19-measure:adultMortalityRateFemale  "83"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q184> .
+        c19-dimension:refArea          wd:Q184 .
 
-<c19:adultMortalityRate-o016>
+c19:adultMortalityRate-o016
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -197,9 +264,9 @@
         c19-measure:adultMortalityRateFemale  "49"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q31> .
+        c19-dimension:refArea          wd:Q31 .
 
-<c19:adultMortalityRate-o017>
+c19:adultMortalityRate-o017
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -208,9 +275,9 @@
         c19-measure:adultMortalityRateFemale  "118"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q242> .
+        c19-dimension:refArea          wd:Q242 .
 
-<c19:adultMortalityRate-o018>
+c19:adultMortalityRate-o018
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -219,9 +286,9 @@
         c19-measure:adultMortalityRateFemale  "211"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q962> .
+        c19-dimension:refArea          wd:Q962 .
 
-<c19:adultMortalityRate-o019>
+c19:adultMortalityRate-o019
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -230,9 +297,9 @@
         c19-measure:adultMortalityRateFemale  "195"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q917> .
+        c19-dimension:refArea          wd:Q917 .
 
-<c19:adultMortalityRate-o020>
+c19:adultMortalityRate-o020
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -241,9 +308,9 @@
         c19-measure:adultMortalityRateFemale  "138"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q750> .
+        c19-dimension:refArea          wd:Q750 .
 
-<c19:adultMortalityRate-o021>
+c19:adultMortalityRate-o021
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -252,9 +319,9 @@
         c19-measure:adultMortalityRateFemale  "60"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q225> .
+        c19-dimension:refArea          wd:Q225 .
 
-<c19:adultMortalityRate-o022>
+c19:adultMortalityRate-o022
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -263,9 +330,9 @@
         c19-measure:adultMortalityRateFemale  "162"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q963> .
+        c19-dimension:refArea          wd:Q963 .
 
-<c19:adultMortalityRate-o023>
+c19:adultMortalityRate-o023
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -274,9 +341,9 @@
         c19-measure:adultMortalityRateFemale  "91"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q155> .
+        c19-dimension:refArea          wd:Q155 .
 
-<c19:adultMortalityRate-o024>
+c19:adultMortalityRate-o024
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -285,9 +352,9 @@
         c19-measure:adultMortalityRateFemale  "99"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q921> .
+        c19-dimension:refArea          wd:Q921 .
 
-<c19:adultMortalityRate-o025>
+c19:adultMortalityRate-o025
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -296,9 +363,9 @@
         c19-measure:adultMortalityRateFemale  "86"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q219> .
+        c19-dimension:refArea          wd:Q219 .
 
-<c19:adultMortalityRate-o026>
+c19:adultMortalityRate-o026
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -307,9 +374,9 @@
         c19-measure:adultMortalityRateFemale  "228"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q965> .
+        c19-dimension:refArea          wd:Q965 .
 
-<c19:adultMortalityRate-o027>
+c19:adultMortalityRate-o027
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -318,9 +385,9 @@
         c19-measure:adultMortalityRateFemale  "253"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q967> .
+        c19-dimension:refArea          wd:Q967 .
 
-<c19:adultMortalityRate-o028>
+c19:adultMortalityRate-o028
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -329,9 +396,9 @@
         c19-measure:adultMortalityRateFemale  "86"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1011> .
+        c19-dimension:refArea          wd:Q1011 .
 
-<c19:adultMortalityRate-o029>
+c19:adultMortalityRate-o029
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -340,9 +407,9 @@
         c19-measure:adultMortalityRateFemale  "132"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q424> .
+        c19-dimension:refArea          wd:Q424 .
 
-<c19:adultMortalityRate-o030>
+c19:adultMortalityRate-o030
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -351,9 +418,9 @@
         c19-measure:adultMortalityRateFemale  "281"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1009> .
+        c19-dimension:refArea          wd:Q1009 .
 
-<c19:adultMortalityRate-o031>
+c19:adultMortalityRate-o031
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -362,9 +429,9 @@
         c19-measure:adultMortalityRateFemale  "52"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q16> .
+        c19-dimension:refArea          wd:Q16 .
 
-<c19:adultMortalityRate-o032>
+c19:adultMortalityRate-o032
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -373,9 +440,9 @@
         c19-measure:adultMortalityRateFemale  "371"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q929> .
+        c19-dimension:refArea          wd:Q929 .
 
-<c19:adultMortalityRate-o033>
+c19:adultMortalityRate-o033
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -384,9 +451,9 @@
         c19-measure:adultMortalityRateFemale  "335"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q657> .
+        c19-dimension:refArea          wd:Q657 .
 
-<c19:adultMortalityRate-o034>
+c19:adultMortalityRate-o034
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -395,9 +462,9 @@
         c19-measure:adultMortalityRateFemale  "33"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q42314> .
+        c19-dimension:refArea          wd:Q42314 .
 
-<c19:adultMortalityRate-o035>
+c19:adultMortalityRate-o035
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -406,9 +473,9 @@
         c19-measure:adultMortalityRateFemale  "59"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q298> .
+        c19-dimension:refArea          wd:Q298 .
 
-<c19:adultMortalityRate-o036>
+c19:adultMortalityRate-o036
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -417,9 +484,9 @@
         c19-measure:adultMortalityRateFemale  "60"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q148> .
+        c19-dimension:refArea          wd:Q148 .
 
-<c19:adultMortalityRate-o037>
+c19:adultMortalityRate-o037
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -428,9 +495,9 @@
         c19-measure:adultMortalityRateFemale  "33"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q8646> .
+        c19-dimension:refArea          wd:Q8646 .
 
-<c19:adultMortalityRate-o038>
+c19:adultMortalityRate-o038
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -439,9 +506,9 @@
         c19-measure:adultMortalityRateFemale  "24"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q14773> .
+        c19-dimension:refArea          wd:Q14773 .
 
-<c19:adultMortalityRate-o039>
+c19:adultMortalityRate-o039
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -450,9 +517,9 @@
         c19-measure:adultMortalityRateFemale  "78"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q739> .
+        c19-dimension:refArea          wd:Q739 .
 
-<c19:adultMortalityRate-o040>
+c19:adultMortalityRate-o040
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -461,9 +528,9 @@
         c19-measure:adultMortalityRateFemale  "194"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q970> .
+        c19-dimension:refArea          wd:Q970 .
 
-<c19:adultMortalityRate-o041>
+c19:adultMortalityRate-o041
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -472,9 +539,9 @@
         c19-measure:adultMortalityRateFemale  "225"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q974> .
+        c19-dimension:refArea          wd:Q974 .
 
-<c19:adultMortalityRate-o042>
+c19:adultMortalityRate-o042
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -483,9 +550,9 @@
         c19-measure:adultMortalityRateFemale  "240"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q971> .
+        c19-dimension:refArea          wd:Q971 .
 
-<c19:adultMortalityRate-o043>
+c19:adultMortalityRate-o043
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -494,9 +561,9 @@
         c19-measure:adultMortalityRateFemale  "57"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q800> .
+        c19-dimension:refArea          wd:Q800 .
 
-<c19:adultMortalityRate-o044>
+c19:adultMortalityRate-o044
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -505,9 +572,9 @@
         c19-measure:adultMortalityRateFemale  "325"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1008> .
+        c19-dimension:refArea          wd:Q1008 .
 
-<c19:adultMortalityRate-o045>
+c19:adultMortalityRate-o045
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -516,9 +583,9 @@
         c19-measure:adultMortalityRateFemale  "50"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q224> .
+        c19-dimension:refArea          wd:Q224 .
 
-<c19:adultMortalityRate-o046>
+c19:adultMortalityRate-o046
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -527,9 +594,9 @@
         c19-measure:adultMortalityRateFemale  "74"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q241> .
+        c19-dimension:refArea          wd:Q241 .
 
-<c19:adultMortalityRate-o047>
+c19:adultMortalityRate-o047
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -538,9 +605,9 @@
         c19-measure:adultMortalityRateFemale  "63"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q25279> .
+        c19-dimension:refArea          wd:Q25279 .
 
-<c19:adultMortalityRate-o048>
+c19:adultMortalityRate-o048
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -549,9 +616,9 @@
         c19-measure:adultMortalityRateFemale  "33"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q229> .
+        c19-dimension:refArea          wd:Q229 .
 
-<c19:adultMortalityRate-o049>
+c19:adultMortalityRate-o049
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -560,9 +627,9 @@
         c19-measure:adultMortalityRateFemale  "51"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q213> .
+        c19-dimension:refArea          wd:Q213 .
 
-<c19:adultMortalityRate-o050>
+c19:adultMortalityRate-o050
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -571,9 +638,9 @@
         c19-measure:adultMortalityRateFemale  "52"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q35> .
+        c19-dimension:refArea          wd:Q35 .
 
-<c19:adultMortalityRate-o051>
+c19:adultMortalityRate-o051
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -582,9 +649,9 @@
         c19-measure:adultMortalityRateFemale  "178"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q977> .
+        c19-dimension:refArea          wd:Q977 .
 
-<c19:adultMortalityRate-o052>
+c19:adultMortalityRate-o052
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -593,9 +660,9 @@
         c19-measure:adultMortalityRateFemale  "115"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q786> .
+        c19-dimension:refArea          wd:Q786 .
 
-<c19:adultMortalityRate-o053>
+c19:adultMortalityRate-o053
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -604,9 +671,9 @@
         c19-measure:adultMortalityRateFemale  "88"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q736> .
+        c19-dimension:refArea          wd:Q736 .
 
-<c19:adultMortalityRate-o054>
+c19:adultMortalityRate-o054
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -615,9 +682,9 @@
         c19-measure:adultMortalityRateFemale  "105"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q79> .
+        c19-dimension:refArea          wd:Q79 .
 
-<c19:adultMortalityRate-o055>
+c19:adultMortalityRate-o055
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -626,9 +693,9 @@
         c19-measure:adultMortalityRateFemale  "103"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q792> .
+        c19-dimension:refArea          wd:Q792 .
 
-<c19:adultMortalityRate-o056>
+c19:adultMortalityRate-o056
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -637,9 +704,9 @@
         c19-measure:adultMortalityRateFemale  "295"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q983> .
+        c19-dimension:refArea          wd:Q983 .
 
-<c19:adultMortalityRate-o057>
+c19:adultMortalityRate-o057
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -648,9 +715,9 @@
         c19-measure:adultMortalityRateFemale  "202"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q986> .
+        c19-dimension:refArea          wd:Q986 .
 
-<c19:adultMortalityRate-o058>
+c19:adultMortalityRate-o058
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -659,9 +726,9 @@
         c19-measure:adultMortalityRateFemale  "56"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q191> .
+        c19-dimension:refArea          wd:Q191 .
 
-<c19:adultMortalityRate-o059>
+c19:adultMortalityRate-o059
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -670,9 +737,9 @@
         c19-measure:adultMortalityRateFemale  "310"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1050> .
+        c19-dimension:refArea          wd:Q1050 .
 
-<c19:adultMortalityRate-o060>
+c19:adultMortalityRate-o060
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -681,9 +748,9 @@
         c19-measure:adultMortalityRateFemale  "185"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q115> .
+        c19-dimension:refArea          wd:Q115 .
 
-<c19:adultMortalityRate-o061>
+c19:adultMortalityRate-o061
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -692,9 +759,9 @@
         c19-measure:adultMortalityRateFemale  "175"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q712> .
+        c19-dimension:refArea          wd:Q712 .
 
-<c19:adultMortalityRate-o062>
+c19:adultMortalityRate-o062
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -703,9 +770,9 @@
         c19-measure:adultMortalityRateFemale  "44"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q33> .
+        c19-dimension:refArea          wd:Q33 .
 
-<c19:adultMortalityRate-o063>
+c19:adultMortalityRate-o063
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -714,9 +781,9 @@
         c19-measure:adultMortalityRateFemale  "48"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q142> .
+        c19-dimension:refArea          wd:Q142 .
 
-<c19:adultMortalityRate-o064>
+c19:adultMortalityRate-o064
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -725,9 +792,9 @@
         c19-measure:adultMortalityRateFemale  "66"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q30971> .
+        c19-dimension:refArea          wd:Q30971 .
 
-<c19:adultMortalityRate-o065>
+c19:adultMortalityRate-o065
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -736,9 +803,9 @@
         c19-measure:adultMortalityRateFemale  "182"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1000> .
+        c19-dimension:refArea          wd:Q1000 .
 
-<c19:adultMortalityRate-o066>
+c19:adultMortalityRate-o066
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -747,9 +814,9 @@
         c19-measure:adultMortalityRateFemale  "224"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1005> .
+        c19-dimension:refArea          wd:Q1005 .
 
-<c19:adultMortalityRate-o067>
+c19:adultMortalityRate-o067
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -758,9 +825,9 @@
         c19-measure:adultMortalityRateFemale  "77"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q230> .
+        c19-dimension:refArea          wd:Q230 .
 
-<c19:adultMortalityRate-o068>
+c19:adultMortalityRate-o068
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -769,9 +836,9 @@
         c19-measure:adultMortalityRateFemale  "48"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q183> .
+        c19-dimension:refArea          wd:Q183 .
 
-<c19:adultMortalityRate-o069>
+c19:adultMortalityRate-o069
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -780,9 +847,9 @@
         c19-measure:adultMortalityRateFemale  "214"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q117> .
+        c19-dimension:refArea          wd:Q117 .
 
-<c19:adultMortalityRate-o070>
+c19:adultMortalityRate-o070
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -791,9 +858,9 @@
         c19-measure:adultMortalityRateFemale  "42"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q41> .
+        c19-dimension:refArea          wd:Q41 .
 
-<c19:adultMortalityRate-o071>
+c19:adultMortalityRate-o071
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -802,9 +869,9 @@
         c19-measure:adultMortalityRateFemale  "118"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q769> .
+        c19-dimension:refArea          wd:Q769 .
 
-<c19:adultMortalityRate-o072>
+c19:adultMortalityRate-o072
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -813,9 +880,9 @@
         c19-measure:adultMortalityRateFemale  "39"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q16635> .
+        c19-dimension:refArea          wd:Q16635 .
 
-<c19:adultMortalityRate-o073>
+c19:adultMortalityRate-o073
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -824,9 +891,9 @@
         c19-measure:adultMortalityRateFemale  "111"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q774> .
+        c19-dimension:refArea          wd:Q774 .
 
-<c19:adultMortalityRate-o074>
+c19:adultMortalityRate-o074
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -835,9 +902,9 @@
         c19-measure:adultMortalityRateFemale  "233"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1006> .
+        c19-dimension:refArea          wd:Q1006 .
 
-<c19:adultMortalityRate-o075>
+c19:adultMortalityRate-o075
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -846,9 +913,9 @@
         c19-measure:adultMortalityRateFemale  "301"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1007> .
+        c19-dimension:refArea          wd:Q1007 .
 
-<c19:adultMortalityRate-o076>
+c19:adultMortalityRate-o076
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -857,9 +924,9 @@
         c19-measure:adultMortalityRateFemale  "182"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q734> .
+        c19-dimension:refArea          wd:Q734 .
 
-<c19:adultMortalityRate-o077>
+c19:adultMortalityRate-o077
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -868,9 +935,9 @@
         c19-measure:adultMortalityRateFemale  "197"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q790> .
+        c19-dimension:refArea          wd:Q790 .
 
-<c19:adultMortalityRate-o078>
+c19:adultMortalityRate-o078
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -879,9 +946,9 @@
         c19-measure:adultMortalityRateFemale  "116"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q783> .
+        c19-dimension:refArea          wd:Q783 .
 
-<c19:adultMortalityRate-o079>
+c19:adultMortalityRate-o079
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -890,9 +957,9 @@
         c19-measure:adultMortalityRateFemale  "81"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q28> .
+        c19-dimension:refArea          wd:Q28 .
 
-<c19:adultMortalityRate-o080>
+c19:adultMortalityRate-o080
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -901,9 +968,9 @@
         c19-measure:adultMortalityRateFemale  "38"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q189> .
+        c19-dimension:refArea          wd:Q189 .
 
-<c19:adultMortalityRate-o081>
+c19:adultMortalityRate-o081
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -912,9 +979,9 @@
         c19-measure:adultMortalityRateFemale  "147"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q668> .
+        c19-dimension:refArea          wd:Q668 .
 
-<c19:adultMortalityRate-o082>
+c19:adultMortalityRate-o082
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -923,9 +990,9 @@
         c19-measure:adultMortalityRateFemale  "126"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q252> .
+        c19-dimension:refArea          wd:Q252 .
 
-<c19:adultMortalityRate-o083>
+c19:adultMortalityRate-o083
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -934,9 +1001,9 @@
         c19-measure:adultMortalityRateFemale  "50"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q794> .
+        c19-dimension:refArea          wd:Q794 .
 
-<c19:adultMortalityRate-o084>
+c19:adultMortalityRate-o084
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -945,9 +1012,9 @@
         c19-measure:adultMortalityRateFemale  "129"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q796> .
+        c19-dimension:refArea          wd:Q796 .
 
-<c19:adultMortalityRate-o085>
+c19:adultMortalityRate-o085
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -956,9 +1023,9 @@
         c19-measure:adultMortalityRateFemale  "42"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q27> .
+        c19-dimension:refArea          wd:Q27 .
 
-<c19:adultMortalityRate-o086>
+c19:adultMortalityRate-o086
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -967,9 +1034,9 @@
         c19-measure:adultMortalityRateFemale  "40"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q801> .
+        c19-dimension:refArea          wd:Q801 .
 
-<c19:adultMortalityRate-o087>
+c19:adultMortalityRate-o087
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -978,9 +1045,9 @@
         c19-measure:adultMortalityRateFemale  "37"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q38> .
+        c19-dimension:refArea          wd:Q38 .
 
-<c19:adultMortalityRate-o088>
+c19:adultMortalityRate-o088
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -989,9 +1056,9 @@
         c19-measure:adultMortalityRateFemale  "104"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q766> .
+        c19-dimension:refArea          wd:Q766 .
 
-<c19:adultMortalityRate-o089>
+c19:adultMortalityRate-o089
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1000,9 +1067,9 @@
         c19-measure:adultMortalityRateFemale  "36"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q17> .
+        c19-dimension:refArea          wd:Q17 .
 
-<c19:adultMortalityRate-o090>
+c19:adultMortalityRate-o090
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1011,9 +1078,9 @@
         c19-measure:adultMortalityRateFemale  "89"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q810> .
+        c19-dimension:refArea          wd:Q810 .
 
-<c19:adultMortalityRate-o091>
+c19:adultMortalityRate-o091
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1022,9 +1089,9 @@
         c19-measure:adultMortalityRateFemale  "94"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q232> .
+        c19-dimension:refArea          wd:Q232 .
 
-<c19:adultMortalityRate-o092>
+c19:adultMortalityRate-o092
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1033,9 +1100,9 @@
         c19-measure:adultMortalityRateFemale  "195"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q114> .
+        c19-dimension:refArea          wd:Q114 .
 
-<c19:adultMortalityRate-o093>
+c19:adultMortalityRate-o093
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1044,9 +1111,9 @@
         c19-measure:adultMortalityRateFemale  "153"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q710> .
+        c19-dimension:refArea          wd:Q710 .
 
-<c19:adultMortalityRate-o094>
+c19:adultMortalityRate-o094
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1055,9 +1122,9 @@
         c19-measure:adultMortalityRateFemale  "96"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q423> .
+        c19-dimension:refArea          wd:Q423 .
 
-<c19:adultMortalityRate-o095>
+c19:adultMortalityRate-o095
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1066,9 +1133,9 @@
         c19-measure:adultMortalityRateFemale  "32"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q884> .
+        c19-dimension:refArea          wd:Q884 .
 
-<c19:adultMortalityRate-o096>
+c19:adultMortalityRate-o096
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1077,9 +1144,9 @@
         c19-measure:adultMortalityRateFemale  "41"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q817> .
+        c19-dimension:refArea          wd:Q817 .
 
-<c19:adultMortalityRate-o097>
+c19:adultMortalityRate-o097
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1088,9 +1155,9 @@
         c19-measure:adultMortalityRateFemale  "94"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q813> .
+        c19-dimension:refArea          wd:Q813 .
 
-<c19:adultMortalityRate-o098>
+c19:adultMortalityRate-o098
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1099,9 +1166,9 @@
         c19-measure:adultMortalityRateFemale  "157"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q819> .
+        c19-dimension:refArea          wd:Q819 .
 
-<c19:adultMortalityRate-o099>
+c19:adultMortalityRate-o099
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1110,9 +1177,9 @@
         c19-measure:adultMortalityRateFemale  "85"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q211> .
+        c19-dimension:refArea          wd:Q211 .
 
-<c19:adultMortalityRate-o0100>
+c19:adultMortalityRate-o0100
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1121,9 +1188,9 @@
         c19-measure:adultMortalityRateFemale  "53"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q822> .
+        c19-dimension:refArea          wd:Q822 .
 
-<c19:adultMortalityRate-o0101>
+c19:adultMortalityRate-o0101
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1132,9 +1199,9 @@
         c19-measure:adultMortalityRateFemale  "419"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1013> .
+        c19-dimension:refArea          wd:Q1013 .
 
-<c19:adultMortalityRate-o0102>
+c19:adultMortalityRate-o0102
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1143,9 +1210,9 @@
         c19-measure:adultMortalityRateFemale  "207"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1014> .
+        c19-dimension:refArea          wd:Q1014 .
 
-<c19:adultMortalityRate-o0103>
+c19:adultMortalityRate-o0103
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1154,9 +1221,9 @@
         c19-measure:adultMortalityRateFemale  "99"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1016> .
+        c19-dimension:refArea          wd:Q1016 .
 
-<c19:adultMortalityRate-o0104>
+c19:adultMortalityRate-o0104
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1165,9 +1232,9 @@
         c19-measure:adultMortalityRateFemale  "79"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q37> .
+        c19-dimension:refArea          wd:Q37 .
 
-<c19:adultMortalityRate-o0105>
+c19:adultMortalityRate-o0105
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1176,9 +1243,9 @@
         c19-measure:adultMortalityRateFemale  "41"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q32> .
+        c19-dimension:refArea          wd:Q32 .
 
-<c19:adultMortalityRate-o0106>
+c19:adultMortalityRate-o0106
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1187,9 +1254,9 @@
         c19-measure:adultMortalityRateFemale  "182"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1019> .
+        c19-dimension:refArea          wd:Q1019 .
 
-<c19:adultMortalityRate-o0107>
+c19:adultMortalityRate-o0107
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1198,9 +1265,9 @@
         c19-measure:adultMortalityRateFemale  "212"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1020> .
+        c19-dimension:refArea          wd:Q1020 .
 
-<c19:adultMortalityRate-o0108>
+c19:adultMortalityRate-o0108
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1209,9 +1276,9 @@
         c19-measure:adultMortalityRateFemale  "84"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q833> .
+        c19-dimension:refArea          wd:Q833 .
 
-<c19:adultMortalityRate-o0109>
+c19:adultMortalityRate-o0109
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1220,9 +1287,9 @@
         c19-measure:adultMortalityRateFemale  "42"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q826> .
+        c19-dimension:refArea          wd:Q826 .
 
-<c19:adultMortalityRate-o0110>
+c19:adultMortalityRate-o0110
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1231,9 +1298,9 @@
         c19-measure:adultMortalityRateFemale  "245"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q912> .
+        c19-dimension:refArea          wd:Q912 .
 
-<c19:adultMortalityRate-o0111>
+c19:adultMortalityRate-o0111
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1242,9 +1309,9 @@
         c19-measure:adultMortalityRateFemale  "35"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q233> .
+        c19-dimension:refArea          wd:Q233 .
 
-<c19:adultMortalityRate-o0112>
+c19:adultMortalityRate-o0112
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1253,9 +1320,9 @@
         c19-measure:adultMortalityRateFemale  "176"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1025> .
+        c19-dimension:refArea          wd:Q1025 .
 
-<c19:adultMortalityRate-o0113>
+c19:adultMortalityRate-o0113
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1264,9 +1331,9 @@
         c19-measure:adultMortalityRateFemale  "94"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1027> .
+        c19-dimension:refArea          wd:Q1027 .
 
-<c19:adultMortalityRate-o0114>
+c19:adultMortalityRate-o0114
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1275,9 +1342,9 @@
         c19-measure:adultMortalityRateFemale  "96"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q96> .
+        c19-dimension:refArea          wd:Q96 .
 
-<c19:adultMortalityRate-o0115>
+c19:adultMortalityRate-o0115
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1286,9 +1353,9 @@
         c19-measure:adultMortalityRateFemale  "146"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q702> .
+        c19-dimension:refArea          wd:Q702 .
 
-<c19:adultMortalityRate-o0116>
+c19:adultMortalityRate-o0116
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1297,9 +1364,9 @@
         c19-measure:adultMortalityRateFemale  "96"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q217> .
+        c19-dimension:refArea          wd:Q217 .
 
-<c19:adultMortalityRate-o0117>
+c19:adultMortalityRate-o0117
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1308,9 +1375,9 @@
         c19-measure:adultMortalityRateFemale  "123"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q711> .
+        c19-dimension:refArea          wd:Q711 .
 
-<c19:adultMortalityRate-o0118>
+c19:adultMortalityRate-o0118
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1319,9 +1386,9 @@
         c19-measure:adultMortalityRateFemale  "66"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q236> .
+        c19-dimension:refArea          wd:Q236 .
 
-<c19:adultMortalityRate-o0119>
+c19:adultMortalityRate-o0119
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1330,9 +1397,9 @@
         c19-measure:adultMortalityRateFemale  "62"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1028> .
+        c19-dimension:refArea          wd:Q1028 .
 
-<c19:adultMortalityRate-o0120>
+c19:adultMortalityRate-o0120
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1341,9 +1408,9 @@
         c19-measure:adultMortalityRateFemale  "268"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1029> .
+        c19-dimension:refArea          wd:Q1029 .
 
-<c19:adultMortalityRate-o0121>
+c19:adultMortalityRate-o0121
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1352,9 +1419,9 @@
         c19-measure:adultMortalityRateFemale  "150"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q836> .
+        c19-dimension:refArea          wd:Q836 .
 
-<c19:adultMortalityRate-o0122>
+c19:adultMortalityRate-o0122
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1363,9 +1430,9 @@
         c19-measure:adultMortalityRateFemale  "249"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1030> .
+        c19-dimension:refArea          wd:Q1030 .
 
-<c19:adultMortalityRate-o0123>
+c19:adultMortalityRate-o0123
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1374,9 +1441,9 @@
         c19-measure:adultMortalityRateFemale  "130"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q837> .
+        c19-dimension:refArea          wd:Q837 .
 
-<c19:adultMortalityRate-o0124>
+c19:adultMortalityRate-o0124
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1385,9 +1452,9 @@
         c19-measure:adultMortalityRateFemale  "51"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q55> .
+        c19-dimension:refArea          wd:Q55 .
 
-<c19:adultMortalityRate-o0125>
+c19:adultMortalityRate-o0125
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1396,9 +1463,9 @@
         c19-measure:adultMortalityRateFemale  "57"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q33788> .
+        c19-dimension:refArea          wd:Q33788 .
 
-<c19:adultMortalityRate-o0126>
+c19:adultMortalityRate-o0126
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1407,9 +1474,9 @@
         c19-measure:adultMortalityRateFemale  "53"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q664> .
+        c19-dimension:refArea          wd:Q664 .
 
-<c19:adultMortalityRate-o0127>
+c19:adultMortalityRate-o0127
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1418,9 +1485,9 @@
         c19-measure:adultMortalityRateFemale  "103"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q811> .
+        c19-dimension:refArea          wd:Q811 .
 
-<c19:adultMortalityRate-o0128>
+c19:adultMortalityRate-o0128
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1429,9 +1496,9 @@
         c19-measure:adultMortalityRateFemale  "223"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1032> .
+        c19-dimension:refArea          wd:Q1032 .
 
-<c19:adultMortalityRate-o0129>
+c19:adultMortalityRate-o0129
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1440,9 +1507,9 @@
         c19-measure:adultMortalityRateFemale  "325"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1033> .
+        c19-dimension:refArea          wd:Q1033 .
 
-<c19:adultMortalityRate-o0130>
+c19:adultMortalityRate-o0130
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1451,9 +1518,9 @@
         c19-measure:adultMortalityRateFemale  "63"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q221> .
+        c19-dimension:refArea          wd:Q221 .
 
-<c19:adultMortalityRate-o0131>
+c19:adultMortalityRate-o0131
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1462,9 +1529,9 @@
         c19-measure:adultMortalityRateFemale  "39"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q20> .
+        c19-dimension:refArea          wd:Q20 .
 
-<c19:adultMortalityRate-o0132>
+c19:adultMortalityRate-o0132
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1473,9 +1540,9 @@
         c19-measure:adultMortalityRateFemale  "63"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q842> .
+        c19-dimension:refArea          wd:Q842 .
 
-<c19:adultMortalityRate-o0133>
+c19:adultMortalityRate-o0133
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1484,9 +1551,9 @@
         c19-measure:adultMortalityRateFemale  "138"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q843> .
+        c19-dimension:refArea          wd:Q843 .
 
-<c19:adultMortalityRate-o0134>
+c19:adultMortalityRate-o0134
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1495,9 +1562,9 @@
         c19-measure:adultMortalityRateFemale  "77"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q804> .
+        c19-dimension:refArea          wd:Q804 .
 
-<c19:adultMortalityRate-o0135>
+c19:adultMortalityRate-o0135
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1506,9 +1573,9 @@
         c19-measure:adultMortalityRateFemale  "188"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q691> .
+        c19-dimension:refArea          wd:Q691 .
 
-<c19:adultMortalityRate-o0136>
+c19:adultMortalityRate-o0136
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1517,9 +1584,9 @@
         c19-measure:adultMortalityRateFemale  "121"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q733> .
+        c19-dimension:refArea          wd:Q733 .
 
-<c19:adultMortalityRate-o0137>
+c19:adultMortalityRate-o0137
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1528,9 +1595,9 @@
         c19-measure:adultMortalityRateFemale  "85"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q419> .
+        c19-dimension:refArea          wd:Q419 .
 
-<c19:adultMortalityRate-o0138>
+c19:adultMortalityRate-o0138
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1539,9 +1606,9 @@
         c19-measure:adultMortalityRateFemale  "131"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q928> .
+        c19-dimension:refArea          wd:Q928 .
 
-<c19:adultMortalityRate-o0139>
+c19:adultMortalityRate-o0139
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1550,9 +1617,9 @@
         c19-measure:adultMortalityRateFemale  "62"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q36> .
+        c19-dimension:refArea          wd:Q36 .
 
-<c19:adultMortalityRate-o0140>
+c19:adultMortalityRate-o0140
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1561,9 +1628,9 @@
         c19-measure:adultMortalityRateFemale  "42"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q45> .
+        c19-dimension:refArea          wd:Q45 .
 
-<c19:adultMortalityRate-o0141>
+c19:adultMortalityRate-o0141
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1572,9 +1639,9 @@
         c19-measure:adultMortalityRateFemale  "63"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1183> .
+        c19-dimension:refArea          wd:Q1183 .
 
-<c19:adultMortalityRate-o0142>
+c19:adultMortalityRate-o0142
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1583,9 +1650,9 @@
         c19-measure:adultMortalityRateFemale  "32"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q846> .
+        c19-dimension:refArea          wd:Q846 .
 
-<c19:adultMortalityRate-o0143>
+c19:adultMortalityRate-o0143
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1594,9 +1661,9 @@
         c19-measure:adultMortalityRateFemale  "73"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q218> .
+        c19-dimension:refArea          wd:Q218 .
 
-<c19:adultMortalityRate-o0144>
+c19:adultMortalityRate-o0144
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1605,9 +1672,9 @@
         c19-measure:adultMortalityRateFemale  "120"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q159> .
+        c19-dimension:refArea          wd:Q159 .
 
-<c19:adultMortalityRate-o0145>
+c19:adultMortalityRate-o0145
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1616,9 +1683,9 @@
         c19-measure:adultMortalityRateFemale  "162"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1037> .
+        c19-dimension:refArea          wd:Q1037 .
 
-<c19:adultMortalityRate-o0146>
+c19:adultMortalityRate-o0146
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1627,9 +1694,9 @@
         c19-measure:adultMortalityRateFemale  "81"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q683> .
+        c19-dimension:refArea          wd:Q683 .
 
-<c19:adultMortalityRate-o0147>
+c19:adultMortalityRate-o0147
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1638,9 +1705,9 @@
         c19-measure:adultMortalityRateFemale  "124"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1039> .
+        c19-dimension:refArea          wd:Q1039 .
 
-<c19:adultMortalityRate-o0148>
+c19:adultMortalityRate-o0148
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1649,9 +1716,9 @@
         c19-measure:adultMortalityRateFemale  "76"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q851> .
+        c19-dimension:refArea          wd:Q851 .
 
-<c19:adultMortalityRate-o0149>
+c19:adultMortalityRate-o0149
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1660,9 +1727,9 @@
         c19-measure:adultMortalityRateFemale  "145"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1041> .
+        c19-dimension:refArea          wd:Q1041 .
 
-<c19:adultMortalityRate-o0150>
+c19:adultMortalityRate-o0150
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1671,9 +1738,9 @@
         c19-measure:adultMortalityRateFemale  "75"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q403> .
+        c19-dimension:refArea          wd:Q403 .
 
-<c19:adultMortalityRate-o0151>
+c19:adultMortalityRate-o0151
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1682,9 +1749,9 @@
         c19-measure:adultMortalityRateFemale  "98"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1042> .
+        c19-dimension:refArea          wd:Q1042 .
 
-<c19:adultMortalityRate-o0152>
+c19:adultMortalityRate-o0152
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1693,9 +1760,9 @@
         c19-measure:adultMortalityRateFemale  "353"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1044> .
+        c19-dimension:refArea          wd:Q1044 .
 
-<c19:adultMortalityRate-o0153>
+c19:adultMortalityRate-o0153
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1704,9 +1771,9 @@
         c19-measure:adultMortalityRateFemale  "35"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q334> .
+        c19-dimension:refArea          wd:Q334 .
 
-<c19:adultMortalityRate-o0154>
+c19:adultMortalityRate-o0154
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1715,9 +1782,9 @@
         c19-measure:adultMortalityRateFemale  "64"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q214> .
+        c19-dimension:refArea          wd:Q214 .
 
-<c19:adultMortalityRate-o0155>
+c19:adultMortalityRate-o0155
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1726,9 +1793,9 @@
         c19-measure:adultMortalityRateFemale  "45"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q215> .
+        c19-dimension:refArea          wd:Q215 .
 
-<c19:adultMortalityRate-o0156>
+c19:adultMortalityRate-o0156
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1737,9 +1804,9 @@
         c19-measure:adultMortalityRateFemale  "125"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q685> .
+        c19-dimension:refArea          wd:Q685 .
 
-<c19:adultMortalityRate-o0157>
+c19:adultMortalityRate-o0157
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1748,9 +1815,9 @@
         c19-measure:adultMortalityRateFemale  "269"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1045> .
+        c19-dimension:refArea          wd:Q1045 .
 
-<c19:adultMortalityRate-o0158>
+c19:adultMortalityRate-o0158
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1759,9 +1826,9 @@
         c19-measure:adultMortalityRateFemale  "249"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q258> .
+        c19-dimension:refArea          wd:Q258 .
 
-<c19:adultMortalityRate-o0159>
+c19:adultMortalityRate-o0159
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1770,9 +1837,9 @@
         c19-measure:adultMortalityRateFemale  "301"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q958> .
+        c19-dimension:refArea          wd:Q958 .
 
-<c19:adultMortalityRate-o0160>
+c19:adultMortalityRate-o0160
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1781,9 +1848,9 @@
         c19-measure:adultMortalityRateFemale  "38"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q29> .
+        c19-dimension:refArea          wd:Q29 .
 
-<c19:adultMortalityRate-o0161>
+c19:adultMortalityRate-o0161
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1792,9 +1859,9 @@
         c19-measure:adultMortalityRateFemale  "56"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q854> .
+        c19-dimension:refArea          wd:Q854 .
 
-<c19:adultMortalityRate-o0162>
+c19:adultMortalityRate-o0162
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1803,9 +1870,9 @@
         c19-measure:adultMortalityRateFemale  "97"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q760> .
+        c19-dimension:refArea          wd:Q760 .
 
-<c19:adultMortalityRate-o0163>
+c19:adultMortalityRate-o0163
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1814,9 +1881,9 @@
         c19-measure:adultMortalityRateFemale  "125"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q757> .
+        c19-dimension:refArea          wd:Q757 .
 
-<c19:adultMortalityRate-o0164>
+c19:adultMortalityRate-o0164
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1825,9 +1892,9 @@
         c19-measure:adultMortalityRateFemale  "187"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1049> .
+        c19-dimension:refArea          wd:Q1049 .
 
-<c19:adultMortalityRate-o0165>
+c19:adultMortalityRate-o0165
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1836,9 +1903,9 @@
         c19-measure:adultMortalityRateFemale  "118"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q730> .
+        c19-dimension:refArea          wd:Q730 .
 
-<c19:adultMortalityRate-o0166>
+c19:adultMortalityRate-o0166
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1847,9 +1914,9 @@
         c19-measure:adultMortalityRateFemale  "38"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q34> .
+        c19-dimension:refArea          wd:Q34 .
 
-<c19:adultMortalityRate-o0167>
+c19:adultMortalityRate-o0167
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1858,9 +1925,9 @@
         c19-measure:adultMortalityRateFemale  "36"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q39> .
+        c19-dimension:refArea          wd:Q39 .
 
-<c19:adultMortalityRate-o0168>
+c19:adultMortalityRate-o0168
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1869,9 +1936,9 @@
         c19-measure:adultMortalityRateFemale  "73"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q858> .
+        c19-dimension:refArea          wd:Q858 .
 
-<c19:adultMortalityRate-o0169>
+c19:adultMortalityRate-o0169
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1880,9 +1947,9 @@
         c19-measure:adultMortalityRateFemale  "96"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q863> .
+        c19-dimension:refArea          wd:Q863 .
 
-<c19:adultMortalityRate-o0170>
+c19:adultMortalityRate-o0170
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1891,9 +1958,9 @@
         c19-measure:adultMortalityRateFemale  "193"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q924> .
+        c19-dimension:refArea          wd:Q924 .
 
-<c19:adultMortalityRate-o0171>
+c19:adultMortalityRate-o0171
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1902,9 +1969,9 @@
         c19-measure:adultMortalityRateFemale  "78"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q869> .
+        c19-dimension:refArea          wd:Q869 .
 
-<c19:adultMortalityRate-o0172>
+c19:adultMortalityRate-o0172
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1913,9 +1980,9 @@
         c19-measure:adultMortalityRateFemale  "117"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q574> .
+        c19-dimension:refArea          wd:Q574 .
 
-<c19:adultMortalityRate-o0173>
+c19:adultMortalityRate-o0173
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1924,9 +1991,9 @@
         c19-measure:adultMortalityRateFemale  "244"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q945> .
+        c19-dimension:refArea          wd:Q945 .
 
-<c19:adultMortalityRate-o0174>
+c19:adultMortalityRate-o0174
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1935,9 +2002,9 @@
         c19-measure:adultMortalityRateFemale  "121"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q678> .
+        c19-dimension:refArea          wd:Q678 .
 
-<c19:adultMortalityRate-o0175>
+c19:adultMortalityRate-o0175
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1946,9 +2013,9 @@
         c19-measure:adultMortalityRateFemale  "109"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q754> .
+        c19-dimension:refArea          wd:Q754 .
 
-<c19:adultMortalityRate-o0176>
+c19:adultMortalityRate-o0176
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1957,9 +2024,9 @@
         c19-measure:adultMortalityRateFemale  "67"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q948> .
+        c19-dimension:refArea          wd:Q948 .
 
-<c19:adultMortalityRate-o0177>
+c19:adultMortalityRate-o0177
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1968,9 +2035,9 @@
         c19-measure:adultMortalityRateFemale  "62"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q43> .
+        c19-dimension:refArea          wd:Q43 .
 
-<c19:adultMortalityRate-o0178>
+c19:adultMortalityRate-o0178
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1979,9 +2046,9 @@
         c19-measure:adultMortalityRateFemale  "128"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q874> .
+        c19-dimension:refArea          wd:Q874 .
 
-<c19:adultMortalityRate-o0179>
+c19:adultMortalityRate-o0179
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -1990,9 +2057,9 @@
         c19-measure:adultMortalityRateFemale  "233"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q1036> .
+        c19-dimension:refArea          wd:Q1036 .
 
-<c19:adultMortalityRate-o0180>
+c19:adultMortalityRate-o0180
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -2001,9 +2068,9 @@
         c19-measure:adultMortalityRateFemale  "111"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q212> .
+        c19-dimension:refArea          wd:Q212 .
 
-<c19:adultMortalityRate-o0181>
+c19:adultMortalityRate-o0181
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -2012,9 +2079,9 @@
         c19-measure:adultMortalityRateFemale  "45"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q878> .
+        c19-dimension:refArea          wd:Q878 .
 
-<c19:adultMortalityRate-o0182>
+c19:adultMortalityRate-o0182
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -2023,9 +2090,9 @@
         c19-measure:adultMortalityRateFemale  "55"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q145> .
+        c19-dimension:refArea          wd:Q145 .
 
-<c19:adultMortalityRate-o0183>
+c19:adultMortalityRate-o0183
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -2034,9 +2101,9 @@
         c19-measure:adultMortalityRateFemale  "82"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q30> .
+        c19-dimension:refArea          wd:Q30 .
 
-<c19:adultMortalityRate-o0184>
+c19:adultMortalityRate-o0184
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -2045,9 +2112,9 @@
         c19-measure:adultMortalityRateFemale  "76"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q77> .
+        c19-dimension:refArea          wd:Q77 .
 
-<c19:adultMortalityRate-o0185>
+c19:adultMortalityRate-o0185
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -2056,9 +2123,9 @@
         c19-measure:adultMortalityRateFemale  "101"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q265> .
+        c19-dimension:refArea          wd:Q265 .
 
-<c19:adultMortalityRate-o0186>
+c19:adultMortalityRate-o0186
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -2067,9 +2134,9 @@
         c19-measure:adultMortalityRateFemale  "102"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q686> .
+        c19-dimension:refArea          wd:Q686 .
 
-<c19:adultMortalityRate-o0187>
+c19:adultMortalityRate-o0187
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -2078,9 +2145,9 @@
         c19-measure:adultMortalityRateFemale  "95"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q717> .
+        c19-dimension:refArea          wd:Q717 .
 
-<c19:adultMortalityRate-o0188>
+c19:adultMortalityRate-o0188
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -2089,9 +2156,9 @@
         c19-measure:adultMortalityRateFemale  "76"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q881> .
+        c19-dimension:refArea          wd:Q881 .
 
-<c19:adultMortalityRate-o0189>
+c19:adultMortalityRate-o0189
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -2100,9 +2167,9 @@
         c19-measure:adultMortalityRateFemale  "41"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q11703> .
+        c19-dimension:refArea          wd:Q11703 .
 
-<c19:adultMortalityRate-o0190>
+c19:adultMortalityRate-o0190
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -2111,9 +2178,9 @@
         c19-measure:adultMortalityRateFemale  "92"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q407199> .
+        c19-dimension:refArea          wd:Q407199 .
 
-<c19:adultMortalityRate-o0191>
+c19:adultMortalityRate-o0191
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -2122,9 +2189,9 @@
         c19-measure:adultMortalityRateFemale  "175"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q805> .
+        c19-dimension:refArea          wd:Q805 .
 
-<c19:adultMortalityRate-o0192>
+c19:adultMortalityRate-o0192
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -2133,9 +2200,9 @@
         c19-measure:adultMortalityRateFemale  "222"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q953> .
+        c19-dimension:refArea          wd:Q953 .
 
-<c19:adultMortalityRate-o0193>
+c19:adultMortalityRate-o0193
         rdf:type                       qb:Observation ;
         qb:dataSet                     c19:dataset-adult_mortality_rate ;
         c19-dimension:refPeriod        c19-interval:Year2013-18 ;
@@ -2144,4 +2211,4 @@
         c19-measure:adultMortalityRateFemale  "338"^^xsd:decimal ;
         sdmx-attribute:unitMultiplier  -3 ;
         sdmx-attribute:decimals        1 ;
-        c19-dimension:refArea          <wd:Q954> .
+        c19-dimension:refArea          wd:Q954 .
